@@ -7,7 +7,14 @@
   },
   "environment": {
     "tracking_duration_s": 10.0,
-    "max_episode_steps": 50,
+    "phase_completion_reference_steps": 50,
+    "dynamic_episode_steps": {
+      "fast_approach_long": 25,
+      "very_fast_approach": 40,
+      "range_above_3000_m": 100,
+      "range_above_2500_m": 90,
+      "default": 40
+    },
     "dt_measurement_s": 0.5,
     "projectile_velocity_m_s": 800.0,
     "initial_target_z_m": 50.0,
@@ -17,9 +24,9 @@
       1.0
     ],
     "process_noise_std_m_s2": [
-      0.1,
-      0.1,
-      0.1
+      0.5,
+      0.5,
+      0.5
     ],
     "simulated_hp_ramp": {
       "formula": "base_hp * (0.3 + 0.7 * min(1.0, t_elapsed / 5.0))",
@@ -267,8 +274,8 @@
         ],
         "motion_type": "stationary",
         "tracking_duration_s": 10.0,
-        "episode_steps": 20,
-        "note": "episode_steps = tracking_duration_s / dt_measurement_s"
+        "nominal_sensor_intervals": 20,
+        "rl_decision_horizon_steps": 40
       },
       {
         "name": "Fast_Approach_Long",
@@ -280,7 +287,8 @@
         ],
         "motion_type": "fast approaching",
         "tracking_duration_s": 20.0,
-        "episode_steps": 40
+        "nominal_sensor_intervals": 40,
+        "rl_decision_horizon_steps": 25
       },
       {
         "name": "Medium_Approach",
@@ -292,7 +300,8 @@
         ],
         "motion_type": "approaching",
         "tracking_duration_s": 15.0,
-        "episode_steps": 30
+        "nominal_sensor_intervals": 30,
+        "rl_decision_horizon_steps": 40
       },
       {
         "name": "Complex_3D_Motion",
@@ -304,7 +313,8 @@
         ],
         "motion_type": "3D crossing",
         "tracking_duration_s": 14.0,
-        "episode_steps": 28
+        "nominal_sensor_intervals": 28,
+        "rl_decision_horizon_steps": 40
       },
       {
         "name": "ExtremeLong_Large_Lateral",
@@ -316,7 +326,8 @@
         ],
         "motion_type": "pure lateral",
         "tracking_duration_s": 20.0,
-        "episode_steps": 40
+        "nominal_sensor_intervals": 40,
+        "rl_decision_horizon_steps": 90
       }
     ]
   },

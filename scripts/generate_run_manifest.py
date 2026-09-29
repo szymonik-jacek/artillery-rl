@@ -27,7 +27,7 @@ def compute_sha256(file_path: Path) -> str:
     return h.hexdigest()
 
 def get_git_info():
-    info = {"commit": "unknown", "branch": "unknown", "tag": "paper2-v1.0", "remote": "unknown", "is_dirty": False}
+    info = {"commit": "unknown", "branch": "unknown", "tag": None, "remote": "unknown", "is_dirty": False}
     try:
         commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
         info["commit"] = commit
@@ -36,6 +36,11 @@ def get_git_info():
     try:
         branch = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"], cwd=ROOT, text=True).strip()
         info["branch"] = branch
+    except Exception:
+        pass
+    try:
+        tags = subprocess.check_output(["git", "tag", "--points-at", "HEAD"], cwd=ROOT, text=True).splitlines()
+        info["tag"] = tags[0] if tags else None
     except Exception:
         pass
     try:
@@ -96,7 +101,7 @@ def main():
         "manifest_version": "1.0",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "paper_title": "Reinforcement Learning for Optimal Firing Timing Decisions in Anti-Aircraft Fire Control Systems",
-        "release_tag": "paper2-v1.0",
+        "release_tag": git_info["tag"],
         "git": git_info,
         "environment": {
             "python_version": sys.version,
