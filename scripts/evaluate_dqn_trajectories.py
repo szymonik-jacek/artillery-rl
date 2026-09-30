@@ -123,10 +123,11 @@ def evaluate_trajectory(env, q_network, scenario, device, max_steps=100, seed=No
     }
 
 
-def plot_trajectory_results(results, save_path=None):
+def plot_trajectory_results(results, save_path=None, seed=None):
     """Plot hit probability traces with firing decisions and additional analyses."""
     fig = plt.figure(figsize=(16, 12))
-    fig.suptitle('DQN Model Evaluation on Artillery Trajectories', fontsize=16)
+    seed_label = f" (seed {seed})" if seed is not None else ""
+    fig.suptitle(f'DQN Model Evaluation on Artillery Trajectories{seed_label}', fontsize=16)
 
     # Create subplots: 2x3 grid (HP traces + analyses)
     gs = fig.add_gridspec(2, 3, hspace=0.3, wspace=0.3)
@@ -185,14 +186,15 @@ def plot_trajectory_results(results, save_path=None):
         plt.show()
 
 
-def plot_individual_scenarios(results, plots_dir="scenario_plots"):
+def plot_individual_scenarios(results, plots_dir="scenario_plots", seed=None):
     """Create individual plots for each scenario and save to a directory."""
     import os
     os.makedirs(plots_dir, exist_ok=True)
     
     for result in results:
         fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(12, 10))
-        fig.suptitle(f"DQN Evaluation: {result['scenario_name']}", fontsize=14)
+        seed_label = f" (seed {seed})" if seed is not None else ""
+        fig.suptitle(f"DQN Evaluation: {result['scenario_name']}{seed_label}", fontsize=14)
         
         scenario_name = result['scenario_name']
         steps = range(len(result['hp_trace']))
@@ -243,11 +245,11 @@ def plot_individual_scenarios(results, plots_dir="scenario_plots"):
         # Actions are recorded per step, so they have one less element than hp_trace
         action_steps = range(len(result['actions']))
         ax4.step(action_steps, result['actions'], 'orange', linewidth=2, where='post', label='Action')
-        ax4_twin.plot(action_steps, result['rewards'], 'cyan', linewidth=2, marker='s', markersize=3, label='Reward')
+        ax4_twin.plot(action_steps, result['rewards'], 'tab:blue', linewidth=2, marker='s', markersize=3, label='Reward')
         
         ax4.set_xlabel('Time Step')
         ax4.set_ylabel('Action (0=HOLD, 1=FIRE)', color='orange')
-        ax4_twin.set_ylabel('Reward', color='cyan')
+        ax4_twin.set_ylabel('Reward', color='tab:blue')
         ax4.set_title('Actions and Rewards')
         ax4.set_yticks([0, 1])
         ax4.set_yticklabels(['HOLD', 'FIRE'])
@@ -325,8 +327,14 @@ def main(num_runs: int = 1):
     parser = argparse.ArgumentParser()
     parser.add_argument("--num_runs", type=int, default=num_runs,
                         help="Number of independent evaluation runs (each with a different seed)")
+    parser.add_argument("--plot_run", type=int, default=0,
+                        help="Zero-based run/seed used for detailed traces and plots (default: 0)")
     args = parser.parse_args()
     num_runs = args.num_runs
+    if num_runs < 1:
+        parser.error("--num_runs must be at least 1")
+    if not 0 <= args.plot_run < num_runs:
+        parser.error("--plot_run must be between 0 and num_runs - 1")
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -391,8 +399,11 @@ def main(num_runs: int = 1):
             results.append(result)
         all_results.append(results)
 
-    # Print detailed summary
-    print_trajectory_summary(results)
+    plot_results = all_results[args.plot_run]
+
+    # Print a detailed summary for the same run used by the plots.
+    print(f"\nDetailed traces and plots use seed={args.plot_run}.")
+    print_trajectory_summary(plot_results)
 
     import json
     import pandas as pd
@@ -413,11 +424,6 @@ def main(num_runs: int = 1):
                 'initial_range': float(r['initial_range']),
             })
     df_all = pd.DataFrame(flat_rows)
-
-    # Per-run summary (last run for single-run mode)
-    last_results = all_results[-1]
-    if num_runs == 1:
-        print_trajectory_summary(last_results)
 
     def calc_ci95(series):
         """Calculate 95% confidence interval half-width using Student's t distribution."""
@@ -499,16 +505,19 @@ def main(num_runs: int = 1):
         stats.to_csv(results_dir / "evaluation_summary_multiple_runs.csv", index=False)
         print(f"\nPer-run statistics saved to {results_dir / 'evaluation_summary_multiple_runs.csv'}")
 
-    # Save flat CSV with all individual results
+    # Keep single-run diagnostics from overwriting the canonical multi-run data.
     results_dir = ROOT / "results"
     results_dir.mkdir(exist_ok=True)
-    df_all.to_csv(results_dir / "evaluation_summary.csv", index=False)
-    print(f"All results saved to {results_dir / 'evaluation_summary.csv'}")
+    summary_name = "evaluation_summary.csv" if num_runs > 1 else "evaluation_summary_single_run.csv"
+    summary_path = results_dir / summary_name
+    df_all.to_csv(summary_path, index=False)
+    print(f"All results saved to {summary_path}")
 
-    # Save evaluation_details.json with last_results (or representative runs)
+    # Save detailed traces for the explicitly selected plot run.
     details_data = []
-    for r in last_results:
+    for r in plot_results:
         details_data.append({
+            'seed': args.plot_run,
             'scenario_name': r['scenario_name'],
             'initial_range': float(r['initial_range']),
             'steps': int(r['steps']),
@@ -524,9 +533,16 @@ def main(num_runs: int = 1):
         json.dump(details_data, f, indent=2)
     print(f"Evaluation details saved to {results_dir / 'evaluation_details.json'}")
 
-    # Plots based on last run
-    plot_trajectory_results(last_results, save_path=str(results_dir / "trajectory_evaluation.png"))
-    plot_individual_scenarios(last_results, plots_dir=str(results_dir / "scenario_plots"))
+    plot_trajectory_results(
+        plot_results,
+        save_path=str(results_dir / "trajectory_evaluation.png"),
+        seed=args.plot_run,
+    )
+    plot_individual_scenarios(
+        plot_results,
+        plots_dir=str(results_dir / "scenario_plots"),
+        seed=args.plot_run,
+    )
 
     print("\n[OK] Evaluation complete!")
     print("Trajectory plots saved to: trajectory_evaluation.png")

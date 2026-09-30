@@ -1,5 +1,6 @@
 [
   {
+    "seed": 0,
     "scenario_name": "Static_Close",
     "initial_range": 810.9569349857164,
     "steps": 15,
@@ -144,6 +145,7 @@
     ]
   },
   {
+    "seed": 0,
     "scenario_name": "Fast_Approach_Long",
     "initial_range": 2862.2920571808586,
     "steps": 10,
@@ -248,6 +250,7 @@
     ]
   },
   {
+    "seed": 0,
     "scenario_name": "Medium_Approach",
     "initial_range": 2082.5511154555443,
     "steps": 16,
@@ -400,6 +403,7 @@
     ]
   },
   {
+    "seed": 0,
     "scenario_name": "Complex_3D_Motion",
     "initial_range": 1807.852498463776,
     "steps": 22,
@@ -600,6 +604,7 @@
     ]
   },
   {
+    "seed": 0,
     "scenario_name": "ExtremeLong_Large_Lateral",
     "initial_range": 2860.0756725916394,
     "steps": 25,
