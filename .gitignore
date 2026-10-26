@@ -45,6 +45,9 @@ reports/
 !rl_training/models/
 !rl_training/models/checkpoints/
 !rl_training/models/checkpoints/dqn_curriculum_phase4.pth
+!rl_training/models/checkpoints/dqn_v0r_seed*_phase4.pth
+!rl_training/models/checkpoints/dqn_s2_b_seed*_phase4.pth
+!rl_training/models/checkpoints/dqn_s2_bp_seed*_phase4.pth
 
 # VS Code
 .vscode/
