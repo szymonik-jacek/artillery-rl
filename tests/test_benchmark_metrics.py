@@ -351,7 +351,7 @@ class TestParetoFront:
 
 
 # ---------------------------------------------------------------------------
-# non_inferiority (claim T1)
+# non_inferiority
 # ---------------------------------------------------------------------------
 
 from rl_training.utils.benchmark_metrics import non_inferiority

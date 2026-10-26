@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
-Pre-registered analysis of step 4e (corrected environment, no retraining; TODO).
+Rule selection and hypothesis tests on the runs in results/stage4e_eval (Section 4.3 of the paper).
 
-1. Re-select the best rule of each family on the corrected tuning run.
-2. H17: B' ensemble vs the average single B' on the tuning run.
-3. H16 on the new random set (heldout2): (a) V0r vs B'; (b) B' and V0r vs the
-   best tuned rule of each family; (c) on the test set, B' and B vs the best
-   rule, non-inferiority with delta = 0.02.
+Agent labels: B' = Ext-sec (S2_bp), B = Ext-steps (S2_b), V0r = Base.
+1. Select the best rule of each family on the tuning run.
+2. H17 (ensemble rule): the ensemble of the five B' networks vs the average single B'
+   on the tuning run; the ensemble is reported only if it is better.
+3. H16: on random set 2 (heldout2), (a) V0r vs B' and (b) B' and V0r vs the tuned
+   rule of each family; (c) on the test set, B' and B vs the tuned rule of each
+   family, non-inferiority with delta = 0.02.
+In the paper, H16 (a) and (b) are H2, H16 (c) is H1, and H17 is the ensemble rule.
 Writes results/stage4e_eval/stage4e_analysis.json and prints a summary.
 """
 
@@ -83,7 +86,7 @@ def main(n_boot=10000):
 
     (RUN_DIR / "stage4e_analysis.json").write_text(json.dumps(out, indent=2, default=bool))
 
-    print("Selected rules (corrected tuning run):",
+    print("Selected rules (tuning run):",
           {f: f"{v['policy']} ({v['tuning_hp']:.3f})" for f, v in out["selected_rules"].items()})
     for run, s in out["summaries"].items():
         print(f"\n{run}: " + " | ".join(f"{k} {v['mean_hp']:.3f} ({v['min_firing_rate_pct']:.0f}%, "

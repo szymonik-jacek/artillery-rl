@@ -1,5 +1,0 @@
-{
-  "architecture": "dueling",
-  "aux_head": false,
-  "cov_feature": "log"
-}

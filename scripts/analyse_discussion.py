@@ -2,7 +2,7 @@
 """
 Exploratory analyses behind the Discussion (Section 6) of the manuscript.
 
-From the raw per-episode results of step 4e: the length of a decision step in
+From the raw per-episode results of the evaluation runs: the length of a decision step in
 each scenario set, when each agent fires (step and time, and how long before
 the hindsight oracle), and hit probability and firing time per test scenario.
 None of these analyses was prespecified. Writes results/discussion_analysis.json.

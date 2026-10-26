@@ -1,5 +1,5 @@
 """
-Tests for scripts/train_variants.py: the pre-registered run lists (V0r and
+Tests for scripts/train_variants.py: the run lists (V0r and
 V0r on the trajectory pool), the training command line and resume status.
 None of the runs puts hit probability into the agent's state.
 """
@@ -30,14 +30,14 @@ class TestRunLists:
         args = parse_args(runs["dqn_pool_v0r_seed2"])
         assert (args.seed, args.reward_mode, args.trajectory_pool) == (2, "legacy", str(tmp_path))
 
-    def test_prefixes_never_match_published_checkpoints(self, tmp_path):
+    def test_prefixes_never_match_base0_checkpoints(self, tmp_path):
         prefixes = [p for p, _ in v0r_runs() + pool_runs(tmp_path)]
         assert all(not p.startswith("dqn_curriculum") for p in prefixes)
         assert len(set(prefixes)) == len(prefixes)
 
 
 class TestBuildCommand:
-    def test_uses_published_config_and_all_phases(self):
+    def test_uses_experiment_config_and_all_phases(self):
         cmd = build_command("dqn_v0r_seed0", ["--seed", "0"], python="py")
         args = parse_args(cmd[3:])
         assert cmd[:2] == ["py", "-u"]
@@ -62,7 +62,7 @@ def test_refuses_incomplete_pool(tmp_path):
 
 
 # ---------------------------------------------------------------------------
-# Stage-2 runs (pre-registered in ca6e1ac)
+# Stage-2 runs
 # ---------------------------------------------------------------------------
 
 from train_variants import stage2_runs
@@ -75,7 +75,7 @@ class TestStage2Runs:
         assert len(runs) == 15 and len(set(prefixes)) == 15
         assert {p.rsplit("_seed", 1)[0] for p in prefixes} == {"dqn_s2_a0", "dqn_s2_a", "dqn_s2_b"}
 
-    def test_common_preregistered_options(self, tmp_path):
+    def test_common_stage2_options(self, tmp_path):
         for prefix, args, _ in stage2_runs(tmp_path / "pool", checkpoint_dir=tmp_path):
             a = parse_args(args)
             assert (a.architecture, a.double_dqn, a.n_step) == ("dueling", True, 3)

@@ -557,7 +557,7 @@ def test_dqn_decision_never_reads_hit_probability(cov_ablation):
     assert action in (0, 1)
 
 
-def test_published_dqn_inputs_have_14_features():
+def test_baseline_dqn_inputs_have_14_features():
     if not os.path.exists(CHECKPOINT):
         pytest.skip("phase-4 checkpoint not available")
     state = torch.load(CHECKPOINT, map_location="cpu")
@@ -581,7 +581,7 @@ def test_adapter_rejects_unknown_cov_feature():
 
 
 # ---------------------------------------------------------------------------
-# Distribution shifts and the held-out scenario set (claim T3)
+# Distribution shifts and the random scenario sets
 # ---------------------------------------------------------------------------
 
 from rl_training.utils.evaluation_protocol import (
@@ -646,7 +646,7 @@ class TestHeldoutScenarios:
 
 
 class TestSecondHeldoutSet:
-    """Stage 2e: a second held-out set, fixed before any run. Only properties are checked."""
+    """Random set 2: a second random set, fixed before any run. Only properties are checked."""
 
     def test_seed_and_names(self):
         from rl_training.utils.evaluation_protocol import HELDOUT2_SEED
@@ -667,7 +667,7 @@ class TestSecondHeldoutSet:
         assert not second & first and not second & curriculum
 
     def test_first_heldout_set_unchanged(self):
-        # The default arguments must keep producing the set evaluated in step 4.
+        # The default arguments must keep producing the set used in the evaluation runs.
         assert [s.name for s in get_heldout_scenarios()][:2] == ["Heldout_00", "Heldout_01"]
 
 

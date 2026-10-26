@@ -316,7 +316,7 @@ class TestMain:
     def test_main_happy(self, monkeypatch, tmp_path):
         monkeypatch.setattr(sys, "argv", ["prog", "--num_runs", "1"])
         # main() writes under Path(__file__).parent.parent; point it at tmp_path so the
-        # test never overwrites the published results/evaluation_details.json.
+        # test never writes to the repository's results/ folder.
         monkeypatch.setattr(evaluate_dqn_trajectories, "__file__", str(tmp_path / "scripts" / "x.py"))
         with patch("evaluate_dqn_trajectories.load_dqn_model", return_value=MagicMock()), \
              patch("evaluate_dqn_trajectories.evaluate_trajectory",

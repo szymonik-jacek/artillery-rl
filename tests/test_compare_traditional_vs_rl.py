@@ -379,6 +379,7 @@ class TestExportResults:
         assert r"0.80 \to 0.40" not in tex
         assert tex.count(r"\multirow{6}{*}") == 3
 
+    @pytest.mark.skipif(shutil.which("pdflatex") is None, reason="pdflatex not installed")
     def test_table_compiles(self, exported, tmp_path):
         doc = tmp_path / "doc.tex"
         doc.write_text(

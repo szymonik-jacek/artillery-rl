@@ -1,187 +1,115 @@
-# Advanced Ballistics Hit Probability Calculator
+# Reinforcement Learning for Firing Timing in Anti-Aircraft Fire Control
 
-A Python implementation of hit probability calculation for projectiles against moving targets, featuring a 6-DOF ballistics model, Jacobian-based error propagation, Monte Carlo estimation, and a DQN-based RL training pipeline.
-
-> The `mc2/` directory contains legacy MATLAB code. All active development uses `src/` and `rl_training/`.
+Code for training Deep Q-Network (DQN) agents that decide when to fire in a simulated
+anti-aircraft engagement, and for comparing them with 82 threshold rules on the hit
+probability (HP). The simulation combines a modified point-mass projectile model, a
+constant-velocity target, a Kalman filter and an analytical HP model.
 
 ## Installation
 
+Python 3.11:
+
 ```bash
 python -m venv .venv
-source .venv/bin/activate          # Linux/Mac
-
-pip install numpy scipy matplotlib pytest
-pip install gymnasium torch tensorboard  # for RL training
-pip install seaborn pandas optuna        # for parameter sweep and reports
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install -r requirements.txt  # requirements-lock.txt: exact versions used for the reported runs
 ```
+
+All commands below are run from the repository root.
+
+## Repository layout
+
+```
+src/                  ballistics, Kalman filter, intercept solution, analytical HP
+rl_training/          environment, scenarios, DQN components, threshold rules, training, evaluation
+scripts/              training, evaluation and analysis entry points (below)
+config/               paper2_experiment.json: parameters of the reported experiments
+rl_training/models/   checkpoints/: phase-4 checkpoints of the four agents
+                      trajectory_pool/: training trajectories (not stored; built in step 1)
+results/              per-episode results, analyses and checksums
+tests/                pytest suite
+```
+
+## Agents
+
+| Agent (paper) | Checkpoints (`rl_training/models/checkpoints/`) | Label in result files |
+|---|---|---|
+| Base-0 | `dqn_curriculum_phase4.pth` | `DQN` |
+| Base | `dqn_v0r_seed{0,1,2}_phase4.pth` | `V0r_s0` … `V0r_s2` |
+| Ext-steps | `dqn_s2_b_seed{0..4}_phase4.pth` | `S2_b_s0` … `S2_b_s4` |
+| Ext-sec | `dqn_s2_bp_seed{0..4}_phase4.pth` | `S2_bp_s0` … `S2_bp_s4` |
+
+`Ens_bp` in the result files is the ensemble of the five Ext-sec networks.
 
 ## Pipeline
 
-### Step 1: Activate environment
+### 1. Training
+
+Training never overwrites existing checkpoints; use `--checkpoint_prefix` (or delete the
+files) to train new ones.
 
 ```bash
-source .venv/bin/activate
+# Base-0: four curriculum phases, 10,000 steps each, default parameters
+python -m rl_training.train.train_dqn_curriculum --start_phase 1 --end_phase 4 --timesteps 10000 \
+    --checkpoint_prefix my_base0
+
+# Base: three seeds, parameters from config/paper2_experiment.json
+python scripts/train_variants.py --set v0r
+
+# Pool of 750 perturbed training trajectories (needed by the extended agents);
+# results/trajectory_pool_sha256.txt holds the checksums of the pool used for the reported agents
+python scripts/build_trajectory_pool.py
+
+# Ext-steps: imitation warm start (scripts/pretrain_imitation.py), then curriculum training;
+# this set also trains two variants (dqn_s2_a0, dqn_s2_a) that are not reported
+python scripts/train_variants.py --set stage2
+
+# Ext-sec: as Ext-steps, with the time input in seconds
+python scripts/train_variants.py --set stage2e
 ```
 
-### Step 2: Hyperparameter optimization (optional)
+### 2. Evaluation
+
+Each launcher runs `scripts/compare_traditional_vs_rl.py` for several scenario sets in
+parallel and can be restarted (finished seeds are skipped). The launchers call
+`.venv/Scripts/python`; set `PYTHON` to use another interpreter, e.g.
+`PYTHON=python bash scripts/run_step4e_eval.sh`.
 
 ```bash
-# Reward structure optimization — recommended before training
-python scripts/parameter_sweep.py --mode reward_optuna --trials 50 --timesteps 10000 --study_name dqn_reward_optimization
+bash scripts/run_step4e_eval.sh     # tuning set, test set, random set 2
+python scripts/analyse_step4e.py    # rule selection on the tuning set; tests on these sets
+bash scripts/run_step4f_eval.sh     # random set 1 and the four shifts
 
-# General hyperparameter optimization
-python scripts/parameter_sweep.py --mode optuna --trials 50 --timesteps 5000
+# Hit-probability validation (Monte Carlo and true-target check, then NEES) -> results/hp_validation_4e/
+python scripts/validate_hp_mc.py --extrapolate_estimate
+python scripts/diagnose_hp_calibration.py --extrapolate
 
-# Traditional grid search
-python scripts/parameter_sweep.py --mode grid
+# Cost of a decision (rule vs agent) and forward-pass latency
+python scripts/benchmark_decision_cost.py
+python scripts/benchmark_inference_latency.py
 ```
 
-Outputs written to `config/`:
-- `best_<study_name>_params.json` — best parameters found
-- `<study_name>.db` — Optuna study database
-- `*_param_importances.html`, `*_optimization_history.html`, `*_parallel_coordinate.html`
+| Scenario set (paper) | Results folder |
+|---|---|
+| Tuning set | `results/stage4e_eval/tuning_run/` |
+| Test set | `results/stage4e_eval/evaluation_100/` |
+| Random set 1 | `results/stage4f_eval/heldout/` |
+| Random set 2 | `results/stage4e_eval/heldout2/` |
+| Shifts | `results/stage4f_eval/shift_{noise1.5,noise2,size0.7,range1.2}/` |
 
-### Step 3: Train DQN with curriculum learning
+The per-episode results are in `benchmark_traditional_vs_rl_raw.csv` in each folder.
+
+### 3. Numbers, figure and manifest
 
 ```bash
-# All 4 phases with optimized parameters
-python -m rl_training.train.train_dqn_curriculum \
-    --start_phase 1 --end_phase 4 \
-    --timesteps 15000 \
-    --config config/best_dqn_reward_optimization_params.json
-
-# Specific phases only
-python -m rl_training.train.train_dqn_curriculum \
-    --start_phase 1 --end_phase 2 \
-    --timesteps 15000
-
-# Without config (default parameters)
-python -m rl_training.train.train_dqn_curriculum \
-    --start_phase 1 --end_phase 4 \
-    --timesteps 15000
+python scripts/paper_numbers.py         # results/paper_numbers.json: all values of the Results section
+python scripts/analyse_discussion.py    # results/discussion_analysis.json: analyses of the Discussion
+python scripts/plot_hp_vs_time.py       # figure: HP against firing time
+python scripts/generate_run_manifest.py # results/paper2_run_manifest.json: checksums and environment
 ```
 
-Training phases:
-- **Phase 1**: Static targets, slow motion
-- **Phase 2**: Fast approaches, medium targets
-- **Phase 3**: Complex 3D motion, maneuvering targets
-- **Phase 4**: Extreme long-range scenarios (2.5–3 km)
-
-Checkpoints saved to `rl_training/models/checkpoints/dqn_curriculum_phase{1..4}.pth`.
-
-### Step 4: Evaluate trained model
-
-**Single run** — evaluates 5 curriculum scenarios with a single seed:
+## Tests
 
 ```bash
-python scripts/evaluate_dqn_trajectories.py
-```
-
-Outputs:
-- `results/trajectory_evaluation.png` — HP traces and 3D trajectories
-- `results/evaluation_summary.csv` — per-scenario tabular results
-- `results/scenario_plots/` — individual scenario plots
-
-**Multi-run robustness analysis** — repeats evaluation across N seeds with small random perturbations (range ±5%, velocity ±10%, noise ±20%) to measure policy stability:
-
-```bash
-python scripts/evaluate_dqn_trajectories.py --num_runs 10
-```
-
-Additional outputs when `--num_runs > 1`:
-- `results/evaluation_summary_multiple_runs.csv` — per-scenario statistics across all runs
-- Console table with mean HP, std HP, min/max HP, mean/std firing step, firing rate %, and CV% (coefficient of variation — lower means more robust policy)
-
-### Step 5: Generate reports
-
-Requires `results/evaluation_summary.csv` from Step 4.
-
-```bash
-# Markdown report with plots
-python scripts/generate_training_summary.py
-```
-
-Outputs to `reports/`: `training_summary.md`, `hp_distribution.png`, `hp_vs_range.png`, `hp_by_range_bucket.png`, `firing_step_histogram.png`.
-
-```bash
-# LaTeX report (requires results/evaluation_details.json from Step 4)
-python scripts/generate_training_summary_tex.py
-```
-
-Output: `reports/training_summary.tex` with per-scenario trajectory details.
-
-### Step 6: Hit probability scenario analysis
-
-Analyzes engagement scenarios (500–2000m, multiple target and ammo types) using the ballistics model directly, without the RL agent:
-
-```bash
-python scripts/hit_probability_scenarios.py
-```
-
-### Monitor training with TensorBoard
-
-```bash
-tensorboard --logdir=./logs/
-```
-
-## Multi-gun engagements (preview)
-
-Compute firing solutions and hit probabilities for a **battery of N guns** against a
-single target — pure ballistics, no RL agent. The number of guns is a parameter:
-
-```bash
-# 3 guns spaced 50 m apart along the firing line, target at 1000 m
-python scripts/battery_firing_solution.py --num_guns 3 --range 1000
-
-# Single gun (equivalent to the original single-shooter setup)
-python scripts/battery_firing_solution.py --num_guns 1
-```
-
-Prints a per-gun table (position, range, elevation, azimuth, feasibility, hit
-probability) and the **combined salvo kill probability** `1 - Π(1 - HP_i)` over the
-feasible guns — e.g. three guns at ~0.15 each combine to ~0.41:
-
-```
-Gun  Position(x,y,z)      Range    Elev     Azim     Feasible  HP
-0    (0,-50,0)            1006     6.0      2.9      yes       0.140
-1    (0,0,0)              1005     6.1      -0.0     yes       0.182
-2    (0,50,0)             1006     6.0      -2.9     yes       0.160
-Combined salvo kill probability (feasible guns): 0.409
-```
-
-Options: `--num_guns`, `--spacing`, `--axis {x,y,z}`, `--range`, `--target_y`,
-`--target_z`, `--target_vx/vy/vz`, `--ammo`, `--muzzle_velocity`, `--n_samples`.
-
-> Training an RL policy that *controls* a battery (multi-target assignment) is planned —
-> see [docs/MULTI_TARGET_MULTI_GUN_PLAN.md](docs/MULTI_TARGET_MULTI_GUN_PLAN.md).
-
-## Testing
-
-```bash
-pytest tests/ -v
-pytest tests/ -v --cov=src/
-```
-
-## Project structure
-
-```
-src/                              # Core ballistics library
-rl_training/
-├── environment.py
-├── agents/                       # DQN, SAC implementations
-├── curriculum/                   # Scenario generation
-├── train/                        # train_dqn_curriculum.py, train_sac_her.py
-└── infrastructure/               # Config management, monitoring
-scripts/
-├── parameter_sweep.py            # Optuna / grid hyperparameter search
-├── evaluate_dqn_trajectories.py  # Model evaluation (single & multi-run)
-├── generate_training_summary.py  # Markdown report
-├── generate_training_summary_tex.py  # LaTeX report
-├── hit_probability_scenarios.py  # Standalone ballistics scenario analysis
-└── battery_firing_solution.py    # Multi-gun firing solutions & hit probability
-config/                           # Saved best parameter sets
-results/                          # Evaluation CSVs and plots
-reports/                          # Generated reports
-docs/                             # LaTeX papers and documentation
-mc2/                              # Legacy MATLAB code (not maintained)
+pytest tests/
 ```

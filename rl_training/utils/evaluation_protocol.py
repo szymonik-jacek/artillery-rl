@@ -226,10 +226,10 @@ def make_baseline_decide(policy):
 
 
 # ---------------------------------------------------------------------------
-# Distribution shifts and the held-out scenario set (claim T3, TODO step 3a)
+# Distribution shifts and the random scenario sets
 # ---------------------------------------------------------------------------
 
-# Pre-registered: shifts applied to the nominal scenarios before the per-seed
+# Shifts are applied to the nominal scenarios before the per-seed
 # perturbation; neither the rules nor the agent are re-tuned or retrained.
 SHIFTS = {
     "none": {},
@@ -240,7 +240,7 @@ SHIFTS = {
 }
 HELDOUT_SEED = 20261014
 HELDOUT_COUNT = 30
-# Second held-out set (TODO stage 2e): fixed before any run; used for variant B'.
+# Second random set (random set 2 in the paper); the seed was fixed before any run.
 HELDOUT2_SEED = 20261015
 
 

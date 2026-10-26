@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """
-Monte Carlo validation of the analytical hit probability (TODO step 4b).
+Monte Carlo validation of the analytical hit probability (Sections 4.4 and 5.4 of the paper).
 
 Draws real shots from the evaluation results (stratified by scenario set and
 policy group), rebuilds each firing situation exactly, and compares the
 analytical (base) HP with (1) a nonlinear Monte Carlo of the same model and
 (2) the hit rate on the true target. Writes per-shot results and a summary to
-results/hp_validation/.
+results/hp_validation_4e/.
 
---source 2e (default) samples the step-2e runs; --source 4e samples the
-step-4e runs with the rules selected there. A scenario set may pool several
-runs; each shot is rebuilt with the scenario set its run used.
+Shots are sampled from the evaluation runs in results/stage4e_eval/ (random set 2,
+and the test and tuning sets pooled as "phase4"), for Ext-sec (S2_bp), Base (V0r)
+and the tuned Plateau and Decaying rules. Each shot is rebuilt with the scenario
+set its run used.
 """
 
 import argparse
@@ -28,15 +29,6 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 SOURCES = {  # source -> (sets, groups)
     # sets: scenario set -> list of (set the run used, raw results with all policy groups)
-    "2e": ({
-        "heldout2": [("heldout2", ROOT / "results/stage2e_eval2/heldout2/benchmark_traditional_vs_rl_raw.csv")],
-        "phase4": [("phase4", ROOT / "results/stage2e_eval2/phase4/benchmark_traditional_vs_rl_raw.csv")],
-    }, {
-        "Bprime": lambda p: p.str.startswith("S2_bp_s"),
-        "V0r": lambda p: p.str.startswith("V0r_s"),
-        "Plateau": lambda p: p == "Plateau_0.45_k3_e0.02",
-        "Decaying": lambda p: p == "Decaying_1.00_0.40",
-    }),
     "4e": ({
         "heldout2": [("heldout2", ROOT / "results/stage4e_eval/heldout2/benchmark_traditional_vs_rl_raw.csv")],
         "phase4": [("evaluation", ROOT / "results/stage4e_eval/evaluation_100/benchmark_traditional_vs_rl_raw.csv"),
@@ -48,7 +40,7 @@ SOURCES = {  # source -> (sets, groups)
         "Decaying": lambda p: p == "Decaying_1.00_0.40",
     }),
 }
-SETS, GROUPS = SOURCES["2e"]
+SETS, GROUPS = SOURCES["4e"]
 RANGE_BINS = (0, 1500, 2500, 3500, 5000)
 HP_BINS = (0.0, 0.2, 0.4, 0.6, 0.8, 1.0)
 
@@ -96,7 +88,6 @@ def _validate_shot(job):
     result = validate_situation(situation, n_samples, sample_seed,
                                 env.hit_calculator.error_propagation._calculate_projectile_position_advanced)
     # strict: the shot was recorded in the same environment, so the rebuilt HP must match it exactly.
-    # Otherwise (2e shots rebuilt with extrapolate) the HP legitimately differs from the recorded one.
     return {**shot, **result, "rebuilt_hp": situation["hp"], "estimate_lag_s": situation["estimate_lag_s"],
             "rebuild_ok": bool(not strict or abs(situation["hp"] - shot["hit_probability"]) < 1e-6)}
 
@@ -139,18 +130,18 @@ def main(argv=None):
     parser.add_argument("--n_samples", type=int, default=2000)
     parser.add_argument("--seed", type=int, default=20261017)
     parser.add_argument("--workers", type=int, default=None)
-    parser.add_argument("--output_dir", type=Path, default=ROOT / "results/hp_validation")
+    parser.add_argument("--output_dir", type=Path, default=ROOT / "results/hp_validation_4e")
     parser.add_argument("--extrapolate_estimate", action="store_true",
-                        help="Rebuild the same shots in the corrected environment (estimate predicted to decision time)")
-    parser.add_argument("--source", choices=tuple(SOURCES), default="2e",
-                        help="Evaluation runs to sample shots from (2e: step-2e runs; 4e: step-4e runs and rules)")
+                        help="Predict the filter estimate to the decision time, as in the evaluation runs")
+    parser.add_argument("--source", choices=tuple(SOURCES), default="4e",
+                        help="Evaluation runs to sample shots from")
     args = parser.parse_args(argv)
     sets, groups = SOURCES[args.source]
 
     shots = select_shots(args.per_group, args.seed, sets, groups)
     cols = ["scenario_set", "rebuild_set", "group", "policy", "scenario", "seed", "fired_at_step",
             "hit_probability"]
-    # 2e runs used the published environment, 4e runs the estimate prediction.
+    # The runs used the estimate prediction, so with it the rebuilt HP must equal the recorded one.
     strict = args.extrapolate_estimate == (args.source == "4e")
     jobs = [(row, args.n_samples, args.seed + i, args.extrapolate_estimate, strict)
             for i, row in enumerate(shots[cols].to_dict("records"))]

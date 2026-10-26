@@ -1,5 +1,5 @@
 """
-Warm start of the HP-free agent by imitating a threshold rule (TODO step 2c).
+Warm start of the HP-free agent by imitating a threshold rule.
 
 The teacher (by default the decaying threshold 0.90 -> 0.40) decides from
 the hit probability; the student network sees only the agent's 14 target
@@ -19,7 +19,7 @@ from rl_training.utils.trajectory_pool import install_pool
 
 
 def default_teacher():
-    """The pre-registered teacher: decaying threshold 0.90 -> 0.40."""
+    """The teacher: decaying threshold 0.90 -> 0.40."""
     return DecayingThresholdPolicy(0.90, 0.40)
 
 

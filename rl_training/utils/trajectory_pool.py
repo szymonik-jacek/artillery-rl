@@ -1,5 +1,5 @@
 """
-Pool of pre-computed, perturbed HP trajectories for training (TODO Phase 2c, item 5).
+Pool of pre-computed, perturbed HP trajectories for training the extended agents.
 
 Without a pool, every training episode of a scenario replays the same cached
 HP trajectory. The pool stores, per Phase-4 scenario, a number of perturbed

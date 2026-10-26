@@ -1,5 +1,5 @@
 """
-Tests for rl_training/utils/hp_validation.py (TODO step 4b).
+Tests for rl_training/utils/hp_validation.py and scripts/validate_hp_mc.py.
 
 With a linear "ballistic" model and diagonal covariances the hit probability
 is known in closed form (product of normal CDF differences), so the Monte
@@ -117,13 +117,13 @@ class TestHitRates:
         assert a == b and a["n_samples"] == 500
 
 
-RECORDED = os.path.join(os.path.dirname(__file__), "..", "results", "stage2e_eval2", "heldout2",
+RECORDED = os.path.join(os.path.dirname(__file__), "..", "results", "stage4e_eval", "heldout2",
                         "benchmark_traditional_vs_rl_raw.csv")
 
 
 @pytest.mark.skipif(not os.path.exists(RECORDED), reason="recorded evaluation results not available")
 def test_firing_situation_reproduces_a_recorded_shot():
-    """The rebuilt situation gives exactly the HP recorded in the evaluation."""
+    """The rebuilt situation gives exactly the HP recorded in the evaluation (estimate predicted, as in the runs)."""
     import sys
 
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
@@ -138,7 +138,7 @@ def test_firing_situation_reproduces_a_recorded_shot():
     rng = np.random.default_rng(int(row.seed))
     scenario = next(s for s in (perturb_scenario(n, rng) for n in scenarios_for("heldout2", CurriculumScenarios(phase=4)))
                     if s.name == row.scenario)
-    env = ArtilleryFiringEnv()
+    env = ArtilleryFiringEnv(extrapolate_estimate=True)
     s = firing_situation(env, scenario, int(row.seed), int(row.fired_at_step))
     assert s["hp"] == pytest.approx(row.hit_probability, abs=1e-9)
     assert s["hp"] == pytest.approx(s["base_hp"] * s["ramp"], abs=1e-9)
@@ -165,7 +165,7 @@ def _raw(path, policies, n_seeds=10):
 
 
 class TestSelectShots:
-    POLICIES = ["S2_bp_s0", "S2_bp_s1", "V0r_s0", "Plateau_0.45_k3_e0.02", "Decaying_1.00_0.40", "Threshold_0.45"]
+    POLICIES = ["S2_bp_s0", "S2_bp_s1", "V0r_s0", "Plateau_0.40_k3_e0.01", "Decaying_1.00_0.40", "Threshold_0.45"]
 
     def _patch(self, tmp_path, monkeypatch):
         sets = {}

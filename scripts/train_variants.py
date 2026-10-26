@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-Train pre-registered agent variants (all without hit probability in the state).
+Train the agent configurations (none has the hit probability in its state).
 
---set v0r (default): the published setup retrained with seeds 0-2
-(reproducibility control).
---set pool: the same setup trained on a pre-computed pool of perturbed
-trajectories (a random variant each episode).
---set stage2: the pre-registered stage-2 variants (TODO, commit ca6e1ac), seeds
-0-4: A0 (log covariance input, dueling, Double DQN, 3-step returns, aligned
-reward with lambda 0.15, pool), A (A0 + auxiliary HP head) and B (A started
-from an imitation pre-training of the decaying rule).
---set stage2e: variant B' (TODO stage 2e), seeds 0-4: B with the step-count
-input replaced by the elapsed tracking time in seconds, in pre-training and
-training.
+--set v0r (default): the baseline configuration with seeds 0-2 (Base in the paper).
+--set pool: the baseline configuration trained on the pool of perturbed
+trajectories (a random variant each episode); not reported in the paper.
+--set stage2: seeds 0-4 of three variants: A0 (log covariance input, dueling,
+Double DQN, 3-step returns, alternative ("aligned") reward with lambda 0.15,
+pool), A (A0 + auxiliary HP head) and B (A started from an imitation
+pre-training of the decaying rule; Ext-steps in the paper). A0 and A are not
+reported in the paper.
+--set stage2e: variant B' (Ext-sec in the paper), seeds 0-4: B with the
+step-count input replaced by the elapsed tracking time in seconds, in
+pre-training and training.
 
-Each variant is trained with seeds 0-2 through train_dqn_curriculum.py using
-the published agent's config. Runs whose phase-4 checkpoint already exists
-are skipped, so the script can be restarted after an interruption.
+Every run goes through train_dqn_curriculum.py with config/paper2_experiment.json.
+Runs whose phase-4 checkpoint already exists are skipped, so the script can be
+restarted after an interruption.
 """
 
 import argparse
@@ -42,18 +42,18 @@ FINAL_PHASE = 4
 
 
 def v0r_runs(seeds=SEEDS):
-    """Published setup retrained, as (checkpoint_prefix, extra CLI arguments)."""
+    """Baseline configuration (Base), as (checkpoint_prefix, extra CLI arguments)."""
     return [(f"dqn_v0r_seed{seed}", ["--seed", str(seed)]) for seed in seeds]
 
 
 def pool_runs(pool_dir=DEFAULT_POOL_DIR, seeds=SEEDS):
-    """Published setup trained on the trajectory pool, as (prefix, extra CLI arguments)."""
+    """Baseline configuration trained on the trajectory pool, as (prefix, extra CLI arguments)."""
     return [(f"dqn_pool_v0r_seed{seed}", ["--seed", str(seed), "--trajectory_pool", str(pool_dir)])
             for seed in seeds]
 
 
 def stage2_runs(pool_dir=DEFAULT_POOL_DIR, seeds=STAGE2_SEEDS, checkpoint_dir=CHECKPOINT_DIR):
-    """Pre-registered stage-2 runs as (prefix, training args, pre-training args or None)."""
+    """Stage-2 runs (A0, A, B) as (prefix, training args, pre-training args or None)."""
     runs = []
     for variant in ("a0", "a", "b"):
         for seed in seeds:
@@ -74,7 +74,7 @@ def stage2_runs(pool_dir=DEFAULT_POOL_DIR, seeds=STAGE2_SEEDS, checkpoint_dir=CH
 
 
 def stage2e_runs(pool_dir=DEFAULT_POOL_DIR, seeds=STAGE2_SEEDS, checkpoint_dir=CHECKPOINT_DIR):
-    """Variant B' (stage 2e): variant B with time_feature="seconds", prefix dqn_s2_bp_seed<s>."""
+    """Variant B' (Ext-sec): variant B with time_feature="seconds", prefix dqn_s2_bp_seed<s>."""
     runs = []
     for prefix, args, pretrain in stage2_runs(pool_dir, seeds, checkpoint_dir):
         if not prefix.startswith("dqn_s2_b_"):
@@ -92,7 +92,7 @@ def build_pretrain_command(pretrain_args, python=sys.executable):
 
 
 def build_command(prefix, extra_args, python=sys.executable):
-    """Command line for one training run (phases 1-4, published config)."""
+    """Command line for one training run (phases 1-4, config/paper2_experiment.json)."""
     return [python, "-u", str(TRAIN_SCRIPT),
             "--start_phase", "1", "--end_phase", str(FINAL_PHASE),
             "--timesteps", str(TIMESTEPS), "--config", str(CONFIG),

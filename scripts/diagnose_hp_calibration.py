@@ -1,8 +1,10 @@
-"""Exploratory diagnosis of the calibration gap (step 4b): estimate timing and filter consistency.
+"""Filter consistency at the validation shots: estimate error and NEES (Section 5.4 of the paper).
 
-With --extrapolate the shots are rebuilt with the estimate predicted to the
-decision time (as in the step-4e runs), and the estimate error and NEES refer to
-the true state at the decision time; otherwise to the time of the last measurement.
+Reads the shots written by validate_hp_mc.py and writes calibration_diagnosis.csv and
+calibration_diagnosis_summary.json to the same folder. With --extrapolate the shots are
+rebuilt with the estimate predicted to the decision time (as in the evaluation runs), and
+the estimate error and NEES refer to the true state at the decision time; otherwise to the
+time of the last measurement.
 """
 import argparse
 import json
@@ -45,7 +47,7 @@ def diag(row, extrapolate=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--shots_dir", default="results/hp_validation")
+    parser.add_argument("--shots_dir", default="results/hp_validation_4e")
     parser.add_argument("--extrapolate", action="store_true")
     args = parser.parse_args()
     shots = pd.read_csv(f"{args.shots_dir}/hp_validation_shots.csv")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pre-train the HP-free agent by imitating the decaying threshold rule (TODO 2c).
+Pre-train the HP-free agent by imitating the decaying threshold rule.
 
 Collects (14 target features, teacher action, HP) from every trajectory of
 the pool, pre-trains a dueling network with an auxiliary HP head using the

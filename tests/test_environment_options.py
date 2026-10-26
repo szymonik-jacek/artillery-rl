@@ -162,7 +162,7 @@ from rl_training.environment import COVARIANCE_FEATURE_INDEX, covariance_feature
 
 
 class TestCovarianceFeature:
-    def test_linear_is_published_scaling(self):
+    def test_linear_is_baseline_scaling(self):
         assert covariance_feature(7.0) == pytest.approx(0.007)
         assert covariance_feature(5000.0) == 1.0
 
@@ -228,7 +228,7 @@ def test_adapter_reproduces_training_observation_with_log_covariance():
 
 
 # ---------------------------------------------------------------------------
-# time_feature: step count or elapsed seconds (stage 2e, variant B')
+# time_feature: step count or elapsed seconds (Ext-sec)
 # ---------------------------------------------------------------------------
 
 from rl_training.environment import ELAPSED_SECONDS_SCALE, TIME_FEATURE_INDEX, time_feature
@@ -242,7 +242,7 @@ def _state(step, time_remaining, window=10.0):
 
 
 class TestTimeFeature:
-    def test_steps_is_the_published_feature(self):
+    def test_steps_is_the_baseline_feature(self):
         state = _state(step=7, time_remaining=6.0)
         assert TIME_FEATURE_INDEX == 10
         assert time_feature(state) == pytest.approx(0.07)
@@ -333,7 +333,7 @@ def test_adapter_rejects_unknown_time_input():
 
 
 # ---------------------------------------------------------------------------
-# extrapolate_estimate: filter estimate predicted to the decision time (step 4b)
+# extrapolate_estimate: filter estimate predicted to the decision time
 # ---------------------------------------------------------------------------
 
 from rl_training.environment import extrapolate_filter  # noqa: E402
@@ -369,14 +369,14 @@ class TestExtrapolateEstimate:
 
         with pytest.raises(ValueError, match="extrapolate_estimate"):
             install_pool(ArtilleryFiringEnv(extrapolate_estimate=True), {})
-        install_pool(ArtilleryFiringEnv(), {})  # published setting unaffected
+        install_pool(ArtilleryFiringEnv(), {})  # default setting unaffected
 
 
 def _rebuilt(extrapolate, scenario_set="heldout2", policy="Decaying_1.00_0.40", n=3):
-    """Rebuild n recorded shots with and without the extrapolation (skips if results are missing)."""
+    """Rebuild n recorded shots (runs made with the extrapolation) with and without it; skips if results are missing."""
     import sys
 
-    path = os.path.join(os.path.dirname(__file__), "..", "results", "stage2e_eval2", scenario_set,
+    path = os.path.join(os.path.dirname(__file__), "..", "results", "stage4e_eval", scenario_set,
                         "benchmark_traditional_vs_rl_raw.csv")
     if not os.path.exists(path):
         pytest.skip("recorded evaluation results not available")
@@ -397,7 +397,7 @@ def test_extrapolation_moves_the_aim_onto_the_true_target():
     """Off: the aim point misses the true target by the motion during the lag. On: it is much closer."""
     off, on = _rebuilt(False), _rebuilt(True)
     for (row, a), (_, b) in zip(off, on):
-        assert a["hp"] == pytest.approx(row.hit_probability, abs=1e-9)  # off reproduces the evaluation
+        assert b["hp"] == pytest.approx(row.hit_probability, abs=1e-9)  # on reproduces the evaluation
         assert a["estimate_lag_s"] == 0.0 and b["estimate_lag_s"] >= 0.0
         miss_off = np.linalg.norm(a["intersection_point"] - a["true_target_at_impact"])
         miss_on = np.linalg.norm(b["intersection_point"] - b["true_target_at_impact"])

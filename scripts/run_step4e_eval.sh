@@ -1,8 +1,10 @@
 #!/bin/bash
-# Step 4e (pre-registered in TODO): corrected environment (--extrapolate_estimate), no retraining.
-# Rule selection happens afterwards on tuning_run (re-export with --from_raw --select_on).
+# Evaluation runs on the tuning set, the test set and random set 2, with the filter estimate
+# predicted to the decision time (--extrapolate_estimate). The tuned rules are then selected on
+# tuning_run by scripts/analyse_step4e.py.
 # Re-running this script resumes each run from its last completed seed.
-cd /c/Users/szymo/Desktop/rl/mc2
+cd "$(dirname "$0")/.."
+PYTHON="${PYTHON:-.venv/Scripts/python}"  # override, e.g. PYTHON=python bash scripts/run_step4e_eval.sh
 export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2
 C=rl_training/models/checkpoints
 AG=""; for v in bp b; do for s in 0 1 2 3 4; do AG="$AG --extra_dqn S2_${v}_s$s=$C/dqn_s2_${v}_seed${s}_phase4.pth"; done; done
@@ -11,7 +13,7 @@ ENS="Ens_bp=$C/dqn_s2_bp_seed0_phase4.pth,$C/dqn_s2_bp_seed1_phase4.pth,$C/dqn_s
 OUT=results/stage4e_eval; mkdir -p $OUT/logs
 run() { # name, extra args
   local name=$1; shift
-  .venv/Scripts/python -u scripts/compare_traditional_vs_rl.py "$@" $AG --ensemble "$ENS" --extrapolate_estimate \
+  "$PYTHON" -u scripts/compare_traditional_vs_rl.py "$@" $AG --ensemble "$ENS" --extrapolate_estimate \
     --output_dir $OUT/$name --table $OUT/$name/table_comparison.tex --resume >> $OUT/logs/$name.log 2>&1
   echo "$name exit $? $(date +%H:%M)"
 }

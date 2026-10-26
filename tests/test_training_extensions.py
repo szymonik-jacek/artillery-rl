@@ -208,7 +208,7 @@ class TestCliOptions:
         assert model_options_from_args(parse_args([])) == {
             "model_config": None, "double_dqn": False, "n_step": 1, "aux_hp_weight": 0.0}
 
-    def test_preregistered_variant_a(self):
+    def test_variant_a(self):
         args = parse_args(["--architecture", "dueling", "--aux_hp_weight", "1.0", "--double_dqn",
                            "--n_step", "3", "--cov_feature", "log"])
         assert model_options_from_args(args) == {

@@ -297,7 +297,7 @@ def agent_group_difference(rows, agents_a, agents_b, n_boot=10000, seed=0, alpha
         "mean_diff": float(hp_a.mean() - hp_b.mean()),
         "lower_bound": float(np.percentile(boot, 100 * alpha)),
         "upper_bound": float(np.percentile(boot, 100 * (1 - alpha))),
-        # Two-sided (1 - alpha) interval, for comparisons without a pre-set direction (H15).
+        # Two-sided (1 - alpha) interval, for comparisons without a pre-set direction.
         "ci_two_sided": [float(np.percentile(boot, 50 * alpha)), float(np.percentile(boot, 100 - 50 * alpha))],
         "per_agent_mean_a": [float(x) for x in hp_a.mean(axis=1)],
         "per_agent_mean_b": [float(x) for x in hp_b.mean(axis=1)],

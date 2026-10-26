@@ -63,7 +63,7 @@ def fake_training(monkeypatch):
 # ---------------------------------------------------------------------------
 
 class TestCheckpointPath:
-    def test_default_matches_published_file_name(self):
+    def test_default_matches_base0_file_name(self):
         assert checkpoint_path(phase=4) == CHECKPOINT_DIR / "dqn_curriculum_phase4.pth"
         assert DEFAULT_CHECKPOINT_PREFIX == "dqn_curriculum"
 
@@ -135,16 +135,16 @@ class TestTrainCurriculumPhase:
 # ---------------------------------------------------------------------------
 
 class TestMain:
-    def test_refuses_to_touch_published_checkpoint(self, monkeypatch):
-        published = checkpoint_path(phase=4)
-        if not published.exists():
-            pytest.skip("published checkpoint not available")
-        before = published.read_bytes()
+    def test_refuses_to_touch_base0_checkpoint(self, monkeypatch):
+        base0 = checkpoint_path(phase=4)
+        if not base0.exists():
+            pytest.skip("Base-0 checkpoint not available")
+        before = base0.read_bytes()
         monkeypatch.setattr(train_mod, "train_curriculum_phase",
                             lambda **k: pytest.fail("training started"))
         with pytest.raises(FileExistsError):
             train_mod.main(["--start_phase", "4", "--end_phase", "4"])
-        assert published.read_bytes() == before
+        assert base0.read_bytes() == before
 
     def test_passes_options_and_chains_phases(self, monkeypatch):
         calls = []

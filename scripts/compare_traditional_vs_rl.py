@@ -91,7 +91,7 @@ def build_policies(q_network=None, device=None, thresholds=THRESHOLDS, tau_cov_v
 
     The DQN is included when q_network is given, followed by extra_dqns, a
     sequence of (name, q_network, cov_ablation[, cov_feature[, time_feature]]) for
-    additional agents (defaults "linear" and "steps", the published inputs). The
+    additional agents (defaults "linear" and "steps", the baseline inputs). The
     hindsight oracle is included when oracle_env (the env the benchmark runs
     on) is given; min_firing_range must match the one used by run_benchmark.
     The covariance-gated rule is built for every combination of threshold and
@@ -486,9 +486,9 @@ def scenarios_for(scenario_set, curriculum, shift="none"):
     """Scenarios of a named set with an optional distribution shift.
 
     Sets: "evaluation" (the 5 test scenarios), "tuning" (the other 10 Phase-4
-    scenarios), "phase4" (all 15), "heldout2" (30 random scenarios with the second
-    pre-registered seed, stage 2e) and "heldout" (30 random scenarios with the
-    pre-registered seed). The shift is applied to the nominal scenarios, before
+    scenarios), "phase4" (all 15), "heldout2" (random set 2: 30 random scenarios with the
+    second fixed seed) and "heldout" (random set 1: 30 random scenarios with the
+    first fixed seed). The shift is applied to the nominal scenarios, before
     the per-seed perturbation.
     """
     from rl_training.utils.evaluation_protocol import (
@@ -533,9 +533,9 @@ def main(argv=None):
     parser.add_argument("--scenario_set", choices=("evaluation", "tuning", "phase4", "heldout", "heldout2"),
                         default="evaluation",
                         help="5 evaluation, 10 tuning, all 15 Phase-4, or 30 held-out random scenarios "
-                             "(heldout2: second held-out set, stage 2e)")
+                             "(heldout: random set 1; heldout2: random set 2)")
     parser.add_argument("--shift", choices=("none", "noise1.5", "noise2", "size0.7", "range1.2"),
-                        default="none", help="Distribution shift applied to every scenario (claim T3)")
+                        default="none", help="Distribution shift applied to every scenario")
     parser.add_argument("--select_on", type=Path, default=None,
                         help="Raw per-episode CSV (e.g. a tuning run) on which the best rule of "
                              "each family is chosen; results are still reported on this run")
@@ -547,8 +547,8 @@ def main(argv=None):
     parser.add_argument("--ensemble", action="append", default=[], metavar="NAME=PATH1,PATH2,...",
                         help="Agent whose Q-values are averaged over several checkpoints (repeatable)")
     parser.add_argument("--extrapolate_estimate", action="store_true",
-                        help="Predict the filter estimate to the decision time (corrected physics, step 4b); "
-                             "off reproduces the published environment")
+                        help="Predict the filter estimate to the decision time (used in all evaluation runs "
+                             "of the paper); off aims with the estimate at the last measurement")
     parser.add_argument("--resume", action="store_true",
                         help="Continue an interrupted run from the per-seed checkpoints in "
                              "<output_dir>/partial (same arguments required)")

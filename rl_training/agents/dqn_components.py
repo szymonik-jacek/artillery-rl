@@ -92,7 +92,7 @@ def save_model_config(checkpoint_path, config):
 
 
 def load_model_config(checkpoint_path):
-    """Config of a checkpoint; DEFAULT_MODEL_CONFIG if it has no sidecar (e.g. the published model)."""
+    """Config of a checkpoint; DEFAULT_MODEL_CONFIG if it has no sidecar (e.g. the Base-0 model)."""
     import json
 
     path = model_config_path(checkpoint_path)

@@ -141,7 +141,7 @@
       "CovGated_0.90_4"
     ],
     "hp_definition": "unconditional; timeouts scored as 0",
-    "best_fixed_selected_on": "10 Phase-4 tuning scenarios x 30 seeds (corrected environment, step 4e)",
+    "best_fixed_selected_on": "10 Phase-4 tuning scenarios x 30 seeds (results/stage4e_eval/tuning_run)",
     "checkpoint": "rl_training\\models\\checkpoints\\dqn_curriculum_phase4.pth",
     "min_firing_range_m": 200.0,
     "extrapolate_estimate": true,

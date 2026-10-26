@@ -1,7 +1,0 @@
-{
-    "epsilon_decay_steps": 2000,
-    "firing_reward_high": 50,
-    "time_penalty_factor": -60,
-    "hold_penalty_high": -10,
-    "eval_interval": 100
-}

@@ -60,7 +60,7 @@ class TestDuelingDQN:
 
 
 class TestBuildQNetwork:
-    def test_default_is_published_dqn(self):
+    def test_default_is_baseline_dqn(self):
         assert type(build_q_network(14, 2)) is DQN
 
     def test_dueling_with_aux(self):
@@ -94,7 +94,7 @@ class TestModelConfigSidecar:
         assert load_model_config(ckpt)["time_feature"] == "seconds"
 
     def test_missing_sidecar_gives_default(self, tmp_path):
-        assert load_model_config(tmp_path / "published.pth") == DEFAULT_MODEL_CONFIG
+        assert load_model_config(tmp_path / "base0.pth") == DEFAULT_MODEL_CONFIG
 
     def test_load_q_network_uses_sidecar(self, tmp_path):
         ckpt = tmp_path / "m_phase4.pth"
@@ -106,11 +106,11 @@ class TestModelConfigSidecar:
         torch.testing.assert_close(loaded(x), net(x))
         assert config["cov_feature"] == "log" and not loaded.training
 
-    def test_published_checkpoint_loads_unchanged(self):
+    def test_base0_checkpoint_loads_unchanged(self):
         ckpt = os.path.join(os.path.dirname(__file__), "..", "rl_training", "models", "checkpoints",
                             "dqn_curriculum_phase4.pth")
         if not os.path.exists(ckpt):
-            pytest.skip("published checkpoint not available")
+            pytest.skip("Base-0 checkpoint not available")
         loaded, config = load_q_network(ckpt, 14, 2, torch.device("cpu"))
         assert type(loaded) is DQN and config == DEFAULT_MODEL_CONFIG
 

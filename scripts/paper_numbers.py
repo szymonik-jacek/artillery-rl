@@ -3,9 +3,9 @@
 Collect the numbers reported in the Results section of the manuscript.
 
 Every value in the Results text and tables comes from results/paper_numbers.json,
-which this script builds from the raw per-episode results of steps 4e and 4f
-with the tests of Section 4.3 (same functions, n_boot and bootstrap seed as the
-step-4e/4f analyses, so shared values are identical).
+which this script builds from the raw per-episode results in results/stage4e_eval
+and results/stage4f_eval with the tests of Section 4.3 (same functions, n_boot and
+bootstrap seed as scripts/analyse_step4e.py, so shared values are identical).
 
 Usage: python scripts/paper_numbers.py [--sections test ...]
 """
@@ -38,7 +38,7 @@ AGENTS = {
     "Ext-steps": [f"S2_b_s{s}" for s in range(5)],
     "Ext-sec": [f"S2_bp_s{s}" for s in range(5)],
 }
-# Tuned rules (Section 4.2), selected on the tuning set in step 4e.
+# Tuned rules (Section 4.2), selected on the tuning set by scripts/analyse_step4e.py.
 TUNED_RULES = {
     "Fixed": "Threshold_0.45",
     "Decaying": "Decaying_1.00_0.40",

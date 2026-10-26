@@ -142,7 +142,7 @@ COVARIANCE_FEATURE_INDEX = 11
 def covariance_feature(covariance_trace, mode="linear"):
     """Covariance-trace input of the agent (Kalman filter information, not HP).
 
-    "linear" is the published scaling min(1, Tr/1000), which maps the traces
+    "linear" is the baseline scaling min(1, Tr/1000), which maps the traces
     seen in practice (~0.1-7) to ~0.0001-0.007. "log" maps log10(Tr) from
     [-2, 3] to [0, 1] (clipped), so the same traces span ~0.2-0.57.
     """
@@ -163,7 +163,7 @@ ELAPSED_SECONDS_SCALE = 30.0
 def time_feature(env_state, mode="steps"):
     """Time input of the agent (no HP).
 
-    "steps" is the published step count episode_step / 100; a step lasts
+    "steps" is the baseline step count episode_step / 100; a step lasts
     window / max_episode_steps, which differs between scenarios. "seconds" is
     the time since tracking started, (window - time_remaining) / 30 s,
     clipped to [0, 1] -- known to any fire-control system.
@@ -284,13 +284,13 @@ class ArtilleryFiringEnv(gym.Env):
                 rewards FIRE with P_hit - time_cost * step / max_episode_steps,
                 HOLD with 0 and a timeout with -time_cost.
             time_cost: Cost of waiting the whole window under reward_mode="aligned".
-            cov_feature: "linear" keeps the published covariance input; "log"
+            cov_feature: "linear" keeps the baseline covariance input; "log"
                 uses covariance_feature(..., "log"). Neither involves HP.
-            time_feature: "steps" keeps the published step-count input;
+            time_feature: "steps" keeps the baseline step-count input;
                 "seconds" uses time_feature(..., "seconds"). Neither involves HP.
             extrapolate_estimate: the filter estimate refers to the last
                 measurement (every 0.5 s), but the decision is taken up to
-                0.5 s later. False (published) aims with the estimate as it
+                0.5 s later. False (as in training) aims with the estimate as it
                 is; True predicts it to the decision time with the filter's
                 own motion and noise model, as a fire-control system would.
         """
@@ -386,7 +386,7 @@ class ArtilleryFiringEnv(gym.Env):
             "proc_noise": scenario.process_noise_std.tolist(),
             "seed": seed,  # Include seed so different runs get different trajectories
         }
-        if self.extrapolate_estimate:  # keys of the published setting stay unchanged
+        if self.extrapolate_estimate:  # cache keys without the option stay unchanged
             key_data["extrapolate_estimate"] = True
         key = hashlib.md5(json.dumps(key_data, sort_keys=True).encode()).hexdigest()
         return key

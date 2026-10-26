@@ -1,5 +1,5 @@
 """
-Monte Carlo validation of the analytical hit probability (TODO step 4b).
+Monte Carlo validation of the analytical hit probability (Sections 4.4 and 5.4 of the paper).
 
 The environment scores a shot with HP = analytical HP x synthetic 5 s ramp.
 The ramp is not physics, so the analytical part ("base HP") is validated:

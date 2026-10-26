@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Time the computations behind one firing decision (TODO stage 1).
+Time the computations behind one firing decision (Sections 4.4 and 5.4 of the paper).
 
 A threshold rule needs, at every decision step, the full hit-probability
 chain: Kalman filter update, intercept point (ODE integration of the

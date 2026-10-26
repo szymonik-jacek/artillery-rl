@@ -402,7 +402,7 @@ def parse_args(argv=None):
     parser.add_argument("--cov_feature", choices=("linear", "log"), default="linear",
                         help="Scaling of the covariance-trace input (filter information, not HP)")
     parser.add_argument("--time_feature", choices=("steps", "seconds"), default="steps",
-                        help="Time input: step count (published) or elapsed tracking time in seconds")
+                        help="Time input: step count (baseline) or elapsed tracking time in seconds")
     parser.add_argument("--init_checkpoint", type=str, default=None,
                         help="Weights to start the first trained phase from (e.g. an imitation pre-training)")
     parser.add_argument("--architecture", choices=("dqn", "dueling"), default="dqn")

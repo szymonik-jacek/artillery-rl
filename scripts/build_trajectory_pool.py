@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build the pool of perturbed HP trajectories used for training (TODO item 1).
+Build the pool of perturbed HP trajectories used to train the extended agents.
 
 15 Phase-4 scenarios x 50 variants (seeds 1000-1749, disjoint from the
 benchmark's 0-29). One file per scenario is written when that scenario is
@@ -23,7 +23,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pool_dir", type=Path, default=DEFAULT_POOL_DIR)
     parser.add_argument("--variants", type=int, default=VARIANTS_PER_SCENARIO,
-                        help="Variants per scenario (pre-registered: 50)")
+                        help="Variants per scenario (50 in the paper)")
     args = parser.parse_args(argv)
     if args.variants < 1:
         parser.error("--variants must be at least 1")
