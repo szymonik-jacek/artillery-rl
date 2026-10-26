@@ -133,6 +133,62 @@ class EnvironmentState:
         ], dtype=np.float32)
 
 
+REWARD_MODES = ("legacy", "aligned")
+COV_FEATURES = ("linear", "log")
+# Position of the covariance feature in EnvironmentState.to_array().
+COVARIANCE_FEATURE_INDEX = 11
+
+
+def covariance_feature(covariance_trace, mode="linear"):
+    """Covariance-trace input of the agent (Kalman filter information, not HP).
+
+    "linear" is the published scaling min(1, Tr/1000), which maps the traces
+    seen in practice (~0.1-7) to ~0.0001-0.007. "log" maps log10(Tr) from
+    [-2, 3] to [0, 1] (clipped), so the same traces span ~0.2-0.57.
+    """
+    if mode == "linear":
+        return float(min(1.0, covariance_trace / 1000.0))
+    if mode == "log":
+        return float(np.clip((np.log10(max(covariance_trace, 1e-12)) + 2.0) / 5.0, 0.0, 1.0))
+    raise ValueError(f"cov_feature must be one of {COV_FEATURES}, got {mode!r}")
+
+
+TIME_FEATURES = ("steps", "seconds")
+# Position of the step-count feature in EnvironmentState.to_array().
+TIME_FEATURE_INDEX = 10
+# Longest tracking window of the scenario generators (s); scales the "seconds" feature.
+ELAPSED_SECONDS_SCALE = 30.0
+
+
+def time_feature(env_state, mode="steps"):
+    """Time input of the agent (no HP).
+
+    "steps" is the published step count episode_step / 100; a step lasts
+    window / max_episode_steps, which differs between scenarios. "seconds" is
+    the time since tracking started, (window - time_remaining) / 30 s,
+    clipped to [0, 1] -- known to any fire-control system.
+    """
+    if mode == "steps":
+        return float(env_state.episode_step / 100.0)
+    if mode == "seconds":
+        elapsed = env_state.scenario.tracking_duration - env_state.time_remaining
+        return float(np.clip(elapsed / ELAPSED_SECONDS_SCALE, 0.0, 1.0))
+    raise ValueError(f"time_feature must be one of {TIME_FEATURES}, got {mode!r}")
+
+
+def extrapolate_filter(kf, lag, scenario):
+    """Filter predicted by `lag` seconds with the same constant-velocity and noise model."""
+    predicted = TargetKalmanFilter(
+        initial_state=kf.state.copy(),
+        initial_covariance=kf.covariance.copy(),
+        process_noise_std=scenario.process_noise_std,
+        measurement_noise_std=scenario.measurement_noise_std,
+        dt=lag,
+    )
+    predicted.predict()
+    return predicted
+
+
 def get_static_scenario():
     """Return a static scenario for overfitting/debugging."""
     from rl_training.curriculum.scenario_generator import ScenarioParameters
@@ -209,6 +265,11 @@ class ArtilleryFiringEnv(gym.Env):
         opportunity_cost_excellent: float = -30.0,  # Opportunity cost for holding at excellent HP
         opportunity_cost_good: float = -15.0,       # Opportunity cost for holding at good HP
         opportunity_cost_minimum: float = -8.0,     # Opportunity cost for holding at minimum HP
+        reward_mode: str = "legacy",  # "legacy" or "aligned" (P_hit - time_cost * t/T)
+        time_cost: float = 0.0,      # lambda for reward_mode="aligned"
+        cov_feature: str = "linear",  # scaling of the covariance-trace input ("linear" or "log")
+        time_feature: str = "steps",  # time input: step count ("steps") or elapsed seconds ("seconds")
+        extrapolate_estimate: bool = False,  # predict the filter estimate to the decision time
     ):
         """
         Initialize the artillery firing environment.
@@ -219,8 +280,35 @@ class ArtilleryFiringEnv(gym.Env):
             hit_threshold: Minimum hit probability for successful engagement
             max_episode_steps: Maximum steps per episode
             reward_scale: Scaling factor for rewards
+            reward_mode: "legacy" keeps the original shaped reward. "aligned"
+                rewards FIRE with P_hit - time_cost * step / max_episode_steps,
+                HOLD with 0 and a timeout with -time_cost.
+            time_cost: Cost of waiting the whole window under reward_mode="aligned".
+            cov_feature: "linear" keeps the published covariance input; "log"
+                uses covariance_feature(..., "log"). Neither involves HP.
+            time_feature: "steps" keeps the published step-count input;
+                "seconds" uses time_feature(..., "seconds"). Neither involves HP.
+            extrapolate_estimate: the filter estimate refers to the last
+                measurement (every 0.5 s), but the decision is taken up to
+                0.5 s later. False (published) aims with the estimate as it
+                is; True predicts it to the decision time with the filter's
+                own motion and noise model, as a fire-control system would.
         """
         super().__init__()
+
+        if reward_mode not in REWARD_MODES:
+            raise ValueError(f"reward_mode must be one of {REWARD_MODES}, got {reward_mode!r}")
+        if time_cost < 0.0:
+            raise ValueError(f"time_cost must be non-negative, got {time_cost}")
+        self.reward_mode = reward_mode
+        self.time_cost = time_cost
+        if cov_feature not in COV_FEATURES:
+            raise ValueError(f"cov_feature must be one of {COV_FEATURES}, got {cov_feature!r}")
+        self.cov_feature = cov_feature
+        if time_feature not in TIME_FEATURES:
+            raise ValueError(f"time_feature must be one of {TIME_FEATURES}, got {time_feature!r}")
+        self.time_feature = time_feature
+        self.extrapolate_estimate = bool(extrapolate_estimate)
 
         # Initialize components
         self.scenario_generator = scenario_generator or ScenarioGenerator()
@@ -298,6 +386,8 @@ class ArtilleryFiringEnv(gym.Env):
             "proc_noise": scenario.process_noise_std.tolist(),
             "seed": seed,  # Include seed so different runs get different trajectories
         }
+        if self.extrapolate_estimate:  # keys of the published setting stay unchanged
+            key_data["extrapolate_estimate"] = True
         key = hashlib.md5(json.dumps(key_data, sort_keys=True).encode()).hexdigest()
         return key
 
@@ -426,7 +516,7 @@ class ArtilleryFiringEnv(gym.Env):
             for step in sorted(self.hp_trajectory.keys()):
                 print(f"  Step {step}: HP={self.hp_trajectory[step]:.3f}")
 
-        observation = self.current_state.to_array()
+        observation = self._observe()
         info = {
             "scenario": scenario,
             "initial_hit_probability": initial_hit_prob,
@@ -468,12 +558,14 @@ class ArtilleryFiringEnv(gym.Env):
             raise ValueError(f"Invalid action: {action}")
 
         self._prev_hp = self.current_state.current_hit_probability
-        self.episode_reward += reward
         self.episode_length += 1
         if self.episode_length >= self.max_episode_steps:
             truncated = True
+        if self.reward_mode == "aligned":
+            reward = self._aligned_reward(action, terminated or truncated)
+        self.episode_reward += reward
 
-        observation = self.current_state.to_array()
+        observation = self._observe()
         info = {
             "hit_probability": self.current_state.current_hit_probability,
             "time_remaining": self.current_state.time_remaining,
@@ -487,6 +579,27 @@ class ArtilleryFiringEnv(gym.Env):
             if terminated:
                 print(f"[DEBUG] Episode Summary: Step={self.current_state.episode_step}, HP={self.current_state.current_hit_probability:.3f}, Reward={reward:.2f}, Terminated={terminated}, Truncated={truncated}")
         return observation, reward, terminated, truncated, info
+
+    def _observe(self) -> np.ndarray:
+        """Agent observation: the 14 target features, with the chosen covariance and time inputs."""
+        observation = self.current_state.to_array()
+        if self.cov_feature != "linear":
+            observation[COVARIANCE_FEATURE_INDEX] = covariance_feature(
+                self.current_state.covariance_trace, self.cov_feature)
+        if self.time_feature != "steps":
+            observation[TIME_FEATURE_INDEX] = time_feature(self.current_state, self.time_feature)
+        return observation
+
+    def _aligned_reward(self, action: int, done: bool) -> float:
+        """Reward for reward_mode="aligned".
+
+        FIRE: P_hit at the firing step minus time_cost * step / max_episode_steps.
+        HOLD: 0, or -time_cost if the episode ends without firing (P_hit 0 at t = T).
+        """
+        if action == Action.FIRE:
+            elapsed = self.current_state.episode_step / self.max_episode_steps
+            return float(self.current_state.current_hit_probability - self.time_cost * elapsed)
+        return -self.time_cost if done else 0.0
 
     def _get_hp_for_step(self, step: int) -> float:
         """Get hit probability for given step using pre-calculated trajectory."""
@@ -637,6 +750,13 @@ class ArtilleryFiringEnv(gym.Env):
             kf.predict()
             kf.update(measurements[i])
 
+        # The estimate refers to the last measurement; optionally predict it to the decision time.
+        estimate_lag = 0.0
+        if self.extrapolate_estimate and len(self.measurement_history) >= 2:
+            estimate_lag = max(0.0, elapsed_time - self.measurement_history[-1][0])
+            if estimate_lag > 1e-9:
+                kf = extrapolate_filter(kf, estimate_lag, scenario)
+
         # Use Kalman-filtered estimates
         target_position = kf.state[:3].copy()
         target_velocity = kf.state[3:].copy()
@@ -667,6 +787,7 @@ class ArtilleryFiringEnv(gym.Env):
             "elapsed_time": elapsed_time,
             "num_measurements": len(measurements),
             "dt": dt,
+            "estimate_lag_s": estimate_lag,
         }
         
         # STEP 3: Find optimal firing angles with robust error handling

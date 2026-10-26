@@ -1,0 +1,290 @@
+\begin{table}[htbp]
+\centering
+\caption{Comparison of the DQN agent with classical threshold firing rules over 10 perturbed runs per scenario. Mean HP is unconditional (timeouts scored as 0); $p_{\mathrm{Holm}}$: paired Wilcoxon signed-rank test against the DQN, Holm-corrected (n/a: identical outcomes). $^{\dagger}$Best rule of its family (fixed, decaying, plateau or covariance-gated threshold), selected on the 10 Phase-4 tuning scenarios x 30 seeds (stage-2 tuning run). $^{\ddagger}$Upper bound: highest HP reachable in each episode, chosen in hindsight from the precomputed trajectory.}
+\label{tab:comparison-traditional-rl}
+\small
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Scenario} & \textbf{Policy} & \textbf{Mean HP ($\pm$95\% CI)} & \textbf{Fire rate (\%)} & \textbf{Time to fire (s)} & $p_{\mathrm{Holm}}$ \\
+\midrule
+\multirow{8}{*}{Heldout\_00} & DQN & 0.575 $\pm$ 0.033 & 100 & 5.0 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.462 $\pm$ 0.007 & 100 & 3.5 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.561 $\pm$ 0.005 & 100 & 4.6 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.603 $\pm$ 0.009 & 100 & 8.9 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.593 $\pm$ 0.010 & 100 & 5.8 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.462 $\pm$ 0.007 & 100 & 3.5 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.615 $\pm$ 0.010 & 100 & 12.5 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_01} & DQN & 0.228 $\pm$ 0.010 & 100 & 3.2 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.324 $\pm$ 0.015 & 100 & 10.0 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_02} & DQN & 0.213 $\pm$ 0.010 & 100 & 3.8 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.264 $\pm$ 0.013 & 100 & 13.6 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_03} & DQN & 0.291 $\pm$ 0.010 & 100 & 4.0 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.352 $\pm$ 0.012 & 100 & 14.1 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_04} & DQN & 0.204 $\pm$ 0.011 & 100 & 3.1 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.269 $\pm$ 0.016 & 100 & 5.0 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_05} & DQN & 0.441 $\pm$ 0.021 & 100 & 4.3 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.455 $\pm$ 0.003 & 100 & 4.4 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.509 $\pm$ 0.009 & 100 & 12.3 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.496 $\pm$ 0.009 & 100 & 5.4 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.455 $\pm$ 0.003 & 100 & 4.4 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.514 $\pm$ 0.009 & 100 & 14.4 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_06} & DQN & 0.437 $\pm$ 0.004 & 100 & 3.5 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.456 $\pm$ 0.002 & 100 & 3.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.443 $\pm$ 0.167 & 80 & 5.8 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.556 $\pm$ 0.006 & 100 & 9.8 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.554 $\pm$ 0.006 & 100 & 5.3 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.456 $\pm$ 0.002 & 100 & 3.7 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.557 $\pm$ 0.006 & 100 & 12.3 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_07} & DQN & 0.386 $\pm$ 0.030 & 100 & 3.7 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.455 $\pm$ 0.002 & 100 & 4.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.490 $\pm$ 0.011 & 100 & 10.0 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.478 $\pm$ 0.012 & 100 & 5.3 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.455 $\pm$ 0.002 & 100 & 4.7 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.494 $\pm$ 0.012 & 100 & 11.5 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_08} & DQN & 0.454 $\pm$ 0.016 & 100 & 5.7 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.458 $\pm$ 0.006 & 100 & 4.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.431 $\pm$ 0.010 & 100 & 14.1 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.472 $\pm$ 0.008 & 100 & 5.6 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.458 $\pm$ 0.006 & 100 & 4.7 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.473 $\pm$ 0.009 & 100 & 5.1 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_09} & DQN & 0.214 $\pm$ 0.014 & 100 & 3.9 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.267 $\pm$ 0.016 & 100 & 13.5 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_10} & DQN & 0.476 $\pm$ 0.013 & 100 & 5.5 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.456 $\pm$ 0.004 & 100 & 4.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.441 $\pm$ 0.014 & 100 & 12.0 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.429 $\pm$ 0.108 & 90 & 5.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.456 $\pm$ 0.004 & 100 & 4.7 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.477 $\pm$ 0.013 & 100 & 5.1 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_11} & DQN & 0.552 $\pm$ 0.011 & 100 & 5.9 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.460 $\pm$ 0.004 & 100 & 3.8 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.392 $\pm$ 0.194 & 70 & 5.1 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.543 $\pm$ 0.011 & 100 & 11.4 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.552 $\pm$ 0.011 & 100 & 5.9 & n/a \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.460 $\pm$ 0.004 & 100 & 3.8 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.552 $\pm$ 0.010 & 100 & 5.4 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_12} & DQN & 0.203 $\pm$ 0.009 & 100 & 3.9 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.239 $\pm$ 0.010 & 100 & 5.0 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_13} & DQN & 0.599 $\pm$ 0.011 & 100 & 5.6 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.461 $\pm$ 0.007 & 100 & 3.4 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.567 $\pm$ 0.007 & 100 & 4.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.610 $\pm$ 0.010 & 100 & 9.4 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.599 $\pm$ 0.011 & 100 & 6.0 & n/a \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.461 $\pm$ 0.007 & 100 & 3.4 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.624 $\pm$ 0.012 & 100 & 13.5 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_14} & DQN & 0.288 $\pm$ 0.007 & 100 & 3.2 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.380 $\pm$ 0.009 & 100 & 5.0 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_15} & DQN & 0.314 $\pm$ 0.005 & 100 & 3.9 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.041 $\pm$ 0.094 & 10 & 13.4 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.394 $\pm$ 0.007 & 100 & 13.5 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_16} & DQN & 0.354 $\pm$ 0.015 & 100 & 4.5 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.379 $\pm$ 0.017 & 100 & 5.1 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_17} & DQN & 0.718 $\pm$ 0.008 & 100 & 6.4 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.472 $\pm$ 0.007 & 100 & 2.5 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.574 $\pm$ 0.006 & 100 & 3.5 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.669 $\pm$ 0.009 & 100 & 4.4 & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.715 $\pm$ 0.010 & 100 & 6.9 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.718 $\pm$ 0.008 & 100 & 6.0 & n/a \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.472 $\pm$ 0.007 & 100 & 2.5 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.723 $\pm$ 0.009 & 100 & 5.2 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_18} & DQN & 0.313 $\pm$ 0.037 & 100 & 3.7 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.045 $\pm$ 0.102 & 10 & 7.5 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.259 $\pm$ 0.160 & 60 & 10.3 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.045 $\pm$ 0.102 & 10 & 7.5 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.045 $\pm$ 0.102 & 10 & 7.5 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.418 $\pm$ 0.019 & 100 & 10.5 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_19} & DQN & 0.681 $\pm$ 0.007 & 100 & 4.1 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.459 $\pm$ 0.005 & 100 & 2.1 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.570 $\pm$ 0.005 & 100 & 3.1 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.663 $\pm$ 0.007 & 100 & 3.9 & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.744 $\pm$ 0.007 & 100 & 4.6 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.792 $\pm$ 0.009 & 100 & 5.8 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.459 $\pm$ 0.005 & 100 & 2.1 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.809 $\pm$ 0.010 & 100 & 9.6 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_20} & DQN & 0.411 $\pm$ 0.018 & 100 & 4.4 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.273 $\pm$ 0.168 & 60 & 4.9 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.390 $\pm$ 0.098 & 90 & 12.2 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.277 $\pm$ 0.171 & 60 & 5.2 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.273 $\pm$ 0.168 & 60 & 4.9 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.453 $\pm$ 0.011 & 100 & 5.0 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_21} & DQN & 0.284 $\pm$ 0.007 & 100 & 2.9 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.041 $\pm$ 0.093 & 10 & 10.2 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.402 $\pm$ 0.009 & 100 & 5.0 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_22} & DQN & 0.193 $\pm$ 0.007 & 100 & 3.6 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.258 $\pm$ 0.009 & 100 & 12.0 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_23} & DQN & 0.498 $\pm$ 0.013 & 100 & 6.4 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.464 $\pm$ 0.004 & 100 & 4.4 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.479 $\pm$ 0.014 & 100 & 11.8 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.499 $\pm$ 0.012 & 100 & 5.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.464 $\pm$ 0.004 & 100 & 4.4 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.501 $\pm$ 0.013 & 100 & 5.1 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_24} & DQN & 0.708 $\pm$ 0.011 & 100 & 5.9 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.465 $\pm$ 0.007 & 100 & 2.6 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.571 $\pm$ 0.009 & 100 & 3.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.670 $\pm$ 0.008 & 100 & 4.7 & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.712 $\pm$ 0.010 & 100 & 7.1 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.710 $\pm$ 0.011 & 100 & 6.2 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.465 $\pm$ 0.007 & 100 & 2.6 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.732 $\pm$ 0.010 & 100 & 14.2 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_25} & DQN & 0.580 $\pm$ 0.011 & 100 & 5.7 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.463 $\pm$ 0.004 & 100 & 3.5 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.562 $\pm$ 0.006 & 100 & 4.8 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.561 $\pm$ 0.012 & 100 & 10.1 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.580 $\pm$ 0.010 & 100 & 5.8 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.463 $\pm$ 0.004 & 100 & 3.5 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.582 $\pm$ 0.011 & 100 & 5.1 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_26} & DQN & 0.773 $\pm$ 0.009 & 100 & 4.0 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.466 $\pm$ 0.004 & 100 & 1.5 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.560 $\pm$ 0.005 & 100 & 2.3 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.665 $\pm$ 0.006 & 100 & 3.1 & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.779 $\pm$ 0.007 & 100 & 4.0 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.893 $\pm$ 0.008 & 100 & 5.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.466 $\pm$ 0.004 & 100 & 1.5 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.897 $\pm$ 0.009 & 100 & 5.3 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_27} & DQN & 0.568 $\pm$ 0.008 & 100 & 6.6 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.468 $\pm$ 0.006 & 100 & 3.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.559 $\pm$ 0.006 & 100 & 4.9 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.566 $\pm$ 0.008 & 100 & 10.9 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.569 $\pm$ 0.008 & 100 & 5.9 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.468 $\pm$ 0.006 & 100 & 3.7 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.569 $\pm$ 0.008 & 100 & 5.4 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_28} & DQN & 0.557 $\pm$ 0.012 & 100 & 4.6 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.458 $\pm$ 0.004 & 100 & 3.5 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.559 $\pm$ 0.005 & 100 & 4.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.596 $\pm$ 0.012 & 100 & 7.5 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.590 $\pm$ 0.013 & 100 & 5.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.458 $\pm$ 0.004 & 100 & 3.5 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.609 $\pm$ 0.013 & 100 & 10.5 & 1.000 \\
+\midrule
+\multirow{8}{*}{Heldout\_29} & DQN & 0.439 $\pm$ 0.013 & 100 & 4.5 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.409 $\pm$ 0.103 & 90 & 4.7 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.436 $\pm$ 0.015 & 100 & 13.4 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.427 $\pm$ 0.108 & 90 & 5.2 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.409 $\pm$ 0.103 & 90 & 4.7 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.471 $\pm$ 0.013 & 100 & 5.0 & 1.000 \\
+\midrule
+\multirow{8}{*}{All scenarios} & DQN & 0.432 $\pm$ 0.019 & 100 & 4.5 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.270 $\pm$ 0.026 & 59 & 3.7 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.197 $\pm$ 0.031 & 35 & 4.2 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.089 $\pm$ 0.026 & 13 & 4.0 & $<0.001$ \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.350 $\pm$ 0.033 & 62 & 9.8 & $<0.001$ \\
+ & Plateau $P_{\mathrm{hit}}\geq0.45$, $k=3$, $\varepsilon=0.02$$^{\dagger}$ & 0.342 $\pm$ 0.035 & 58 & 5.7 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.270 $\pm$ 0.026 & 59 & 3.7 & $<0.001$ \\
+ & Hindsight oracle$^{\ddagger}$ & 0.487 $\pm$ 0.019 & 100 & 8.8 & $<0.001$ \\
+\bottomrule
+\end{tabular}
+\end{table}

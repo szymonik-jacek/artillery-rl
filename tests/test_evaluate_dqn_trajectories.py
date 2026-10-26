@@ -313,8 +313,11 @@ class TestMain:
                 result = evaluate_dqn_trajectories.main()
         assert result is None
 
-    def test_main_happy(self, monkeypatch):
+    def test_main_happy(self, monkeypatch, tmp_path):
         monkeypatch.setattr(sys, "argv", ["prog", "--num_runs", "1"])
+        # main() writes under Path(__file__).parent.parent; point it at tmp_path so the
+        # test never overwrites the published results/evaluation_details.json.
+        monkeypatch.setattr(evaluate_dqn_trajectories, "__file__", str(tmp_path / "scripts" / "x.py"))
         with patch("evaluate_dqn_trajectories.load_dqn_model", return_value=MagicMock()), \
              patch("evaluate_dqn_trajectories.evaluate_trajectory",
                    side_effect=lambda env, q, sc, dev, seed=None, **k: _canned(sc.name, sc.range_m)) as ev, \
@@ -324,3 +327,4 @@ class TestMain:
             with contextlib.redirect_stdout(io.StringIO()):
                 evaluate_dqn_trajectories.main()
         assert ev.call_count == 5
+        assert (tmp_path / "results" / "evaluation_details.json").exists()

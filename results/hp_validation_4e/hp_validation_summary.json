@@ -1,0 +1,187 @@
+{
+  "config": {
+    "per_group": 25,
+    "n_samples": 2000,
+    "seed": 20261017,
+    "extrapolate_estimate": true,
+    "source": "4e",
+    "sets": {
+      "heldout2": {
+        "heldout2": "results\\stage4e_eval\\heldout2\\benchmark_traditional_vs_rl_raw.csv"
+      },
+      "phase4": {
+        "evaluation": "results\\stage4e_eval\\evaluation_100\\benchmark_traditional_vs_rl_raw.csv",
+        "tuning": "results\\stage4e_eval\\tuning_run\\benchmark_traditional_vs_rl_raw.csv"
+      }
+    }
+  },
+  "n_shots": 200,
+  "rebuild_ok": 200,
+  "mc_model_hp_minus_base": {
+    "mean": 0.00821771377812287,
+    "mean_abs": 0.01159692592560996,
+    "max_abs": 0.048899504992409915,
+    "sd": 0.012266082638778568
+  },
+  "full_cov_hp_minus_base": {
+    "mean": 0.006942213778122874,
+    "mean_abs": 0.007366200348904789,
+    "max_abs": 0.031049504992409882,
+    "sd": 0.0065268264071179135
+  },
+  "true_hit_rate_minus_base": {
+    "mean": 0.07438021377812287,
+    "mean_abs": 0.08091192954342595,
+    "max_abs": 0.2686502478800742,
+    "sd": 0.0672325292759273
+  },
+  "by_range": [
+    {
+      "range": "(0, 1500]",
+      "n": 38,
+      "mc_minus_base": 0.0014642282428037334,
+      "true_minus_base": 0.017424754558593204
+    },
+    {
+      "range": "(1500, 2500]",
+      "n": 85,
+      "mc_minus_base": 0.008119076501768175,
+      "true_minus_base": 0.07851907650176818
+    },
+    {
+      "range": "(2500, 3500]",
+      "n": 69,
+      "mc_minus_base": 0.01158220755681778,
+      "true_minus_base": 0.09102423654232503
+    },
+    {
+      "range": "(3500, 5000]",
+      "n": 8,
+      "mc_minus_base": 0.012326032290913797,
+      "true_minus_base": 0.1573885322909138
+    }
+  ],
+  "calibration": [
+    {
+      "hp_bin": "(0.0, 0.2]",
+      "n": 2,
+      "mean_base_hp": 0.1776945778790544,
+      "mean_mc_model_hp": 0.177,
+      "mean_true_hit_rate": 0.38525
+    },
+    {
+      "hp_bin": "(0.2, 0.4]",
+      "n": 15,
+      "mean_base_hp": 0.3025952986729018,
+      "mean_mc_model_hp": 0.3152666666666667,
+      "mean_true_hit_rate": 0.47866666666666663
+    },
+    {
+      "hp_bin": "(0.4, 0.6]",
+      "n": 111,
+      "mean_base_hp": 0.49930407300937557,
+      "mean_mc_model_hp": 0.5111351351351351,
+      "mean_true_hit_rate": 0.5873423423423424
+    },
+    {
+      "hp_bin": "(0.6, 0.8]",
+      "n": 39,
+      "mean_base_hp": 0.6833311772905634,
+      "mean_mc_model_hp": 0.6863333333333334,
+      "mean_true_hit_rate": 0.7249871794871793
+    },
+    {
+      "hp_bin": "(0.8, 1.0]",
+      "n": 33,
+      "mean_base_hp": 0.8893930481863974,
+      "mean_mc_model_hp": 0.8901363636363637,
+      "mean_true_hit_rate": 0.9022121212121212
+    }
+  ],
+  "ranking": {
+    "heldout2": {
+      "means": {
+        "Bprime": {
+          "scored_hp": 0.4491,
+          "mc_model": 0.459,
+          "true_hits": 0.5246
+        },
+        "Decaying": {
+          "scored_hp": 0.5884,
+          "mc_model": 0.5942,
+          "true_hits": 0.6319
+        },
+        "Plateau": {
+          "scored_hp": 0.5139,
+          "mc_model": 0.5234,
+          "true_hits": 0.6183
+        },
+        "V0r": {
+          "scored_hp": 0.4399,
+          "mc_model": 0.4476,
+          "true_hits": 0.5554
+        }
+      },
+      "order_scored": [
+        "Decaying",
+        "Plateau",
+        "Bprime",
+        "V0r"
+      ],
+      "order_mc_model": [
+        "Decaying",
+        "Plateau",
+        "Bprime",
+        "V0r"
+      ],
+      "order_true_hits": [
+        "Decaying",
+        "Plateau",
+        "V0r",
+        "Bprime"
+      ]
+    },
+    "phase4": {
+      "means": {
+        "Bprime": {
+          "scored_hp": 0.6479,
+          "mc_model": 0.6571,
+          "true_hits": 0.7049
+        },
+        "Decaying": {
+          "scored_hp": 0.6104,
+          "mc_model": 0.6183,
+          "true_hits": 0.6767
+        },
+        "Plateau": {
+          "scored_hp": 0.6206,
+          "mc_model": 0.6278,
+          "true_hits": 0.6701
+        },
+        "V0r": {
+          "scored_hp": 0.5968,
+          "mc_model": 0.6039,
+          "true_hits": 0.6668
+        }
+      },
+      "order_scored": [
+        "Bprime",
+        "Plateau",
+        "Decaying",
+        "V0r"
+      ],
+      "order_mc_model": [
+        "Bprime",
+        "Plateau",
+        "Decaying",
+        "V0r"
+      ],
+      "order_true_hits": [
+        "Bprime",
+        "Decaying",
+        "Plateau",
+        "V0r"
+      ]
+    }
+  }
+}

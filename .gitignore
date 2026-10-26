@@ -68,3 +68,22 @@ reports/
 *.swp
 *.swo
 *~
+
+# Pre-computed training trajectory pool (regenerate with scripts/build_trajectory_pool.py)
+rl_training/models/trajectory_pool/
+
+# Per-seed resume files of benchmark runs (merged into the run's results when it finishes)
+results/**/partial/
+
+# Model configuration files of intermediate training phases (the models themselves are not committed)
+rl_training/models/checkpoints/*_phase[123].pth.json
+rl_training/models/checkpoints/*_pretrain.pth.json
+
+# Track-changes PDF build files (docs/paper2_rl_methodology/make_changes_pdf.sh)
+docs/paper2_rl_methodology/diff_build/
+
+# Local project instructions for Claude Code (kept out of the repository)
+CLAUDE.md
+
+# Scratch files in the submission folder
+docs/paper2_rl_methodology/submission_eaai/test_h.*

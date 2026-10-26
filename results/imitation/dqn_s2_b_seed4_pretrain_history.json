@@ -1,0 +1,191 @@
+{
+  "seed": 4,
+  "samples": 25189,
+  "fire_samples": 750,
+  "epochs": 30,
+  "margin": 0.1,
+  "aux_weight": 1.0,
+  "teacher": "Decaying_0.90_0.40",
+  "history": [
+    {
+      "loss": 0.07896666615394493,
+      "agreement": 0.8033665488903886,
+      "agreement_fire": 0.992,
+      "agreement_hold": 0.7975776422930562
+    },
+    {
+      "loss": 0.03646923554449311,
+      "agreement": 0.7853031084997419,
+      "agreement_fire": 1.0,
+      "agreement_hold": 0.7787143500143213
+    },
+    {
+      "loss": 0.02719692264796794,
+      "agreement": 0.8385406328159117,
+      "agreement_fire": 0.9986666666666667,
+      "agreement_hold": 0.8336265804656492
+    },
+    {
+      "loss": 0.021424239170297395,
+      "agreement": 0.8309579578387392,
+      "agreement_fire": 1.0,
+      "agreement_hold": 0.8257702851998854
+    },
+    {
+      "loss": 0.02011520126331304,
+      "agreement": 0.9408471952042559,
+      "agreement_fire": 0.936,
+      "agreement_hold": 0.9409959490977536
+    },
+    {
+      "loss": 0.016489227437288336,
+      "agreement": 0.9082139028941204,
+      "agreement_fire": 0.9973333333333333,
+      "agreement_hold": 0.90547894758378
+    },
+    {
+      "loss": 0.01626731297967357,
+      "agreement": 0.904958513636905,
+      "agreement_fire": 0.9986666666666667,
+      "agreement_hold": 0.9020827366095175
+    },
+    {
+      "loss": 0.014559102334631403,
+      "agreement": 0.9096033983087856,
+      "agreement_fire": 0.9906666666666667,
+      "agreement_hold": 0.9071156757641474
+    },
+    {
+      "loss": 0.01490616381962258,
+      "agreement": 0.9343761165588154,
+      "agreement_fire": 0.9946666666666667,
+      "agreement_hold": 0.932525880764352
+    },
+    {
+      "loss": 0.012964645163976716,
+      "agreement": 0.9321132240263608,
+      "agreement_fire": 0.9933333333333333,
+      "agreement_hold": 0.9302344613118376
+    },
+    {
+      "loss": 0.01652453641254011,
+      "agreement": 0.9153598793123983,
+      "agreement_fire": 0.996,
+      "agreement_hold": 0.9128851425999427
+    },
+    {
+      "loss": 0.013874834842602483,
+      "agreement": 0.9354877128905474,
+      "agreement_fire": 0.9786666666666667,
+      "agreement_hold": 0.9341626089447195
+    },
+    {
+      "loss": 0.013863142135299905,
+      "agreement": 0.8995990313231966,
+      "agreement_fire": 0.996,
+      "agreement_hold": 0.8966406154097958
+    },
+    {
+      "loss": 0.014089737848067661,
+      "agreement": 0.8982492357775219,
+      "agreement_fire": 1.0,
+      "agreement_hold": 0.895126641842956
+    },
+    {
+      "loss": 0.014726734658498893,
+      "agreement": 0.8740323156933583,
+      "agreement_fire": 1.0,
+      "agreement_hold": 0.8701665370923524
+    },
+    {
+      "loss": 0.01190869462337633,
+      "agreement": 0.9034499186152686,
+      "agreement_fire": 1.0,
+      "agreement_hold": 0.9004869266336594
+    },
+    {
+      "loss": 0.014404508555573823,
+      "agreement": 0.9737980864663147,
+      "agreement_fire": 0.7933333333333333,
+      "agreement_hold": 0.979336306722861
+    },
+    {
+      "loss": 0.012823394013593087,
+      "agreement": 0.9528365556393664,
+      "agreement_fire": 0.9653333333333334,
+      "agreement_hold": 0.9524530463603257
+    },
+    {
+      "loss": 0.012379078857542714,
+      "agreement": 0.9391401008376672,
+      "agreement_fire": 0.9866666666666667,
+      "agreement_hold": 0.9376815745325096
+    },
+    {
+      "loss": 0.010955995230833208,
+      "agreement": 0.9500178649410457,
+      "agreement_fire": 0.9733333333333334,
+      "agreement_hold": 0.9493023446131184
+    },
+    {
+      "loss": 0.013181971786200983,
+      "agreement": 0.8635912501488745,
+      "agreement_fire": 1.0,
+      "agreement_hold": 0.8594050493064365
+    },
+    {
+      "loss": 0.012708669747839144,
+      "agreement": 0.9423160903569018,
+      "agreement_fire": 0.9933333333333333,
+      "agreement_hold": 0.9407504398706985
+    },
+    {
+      "loss": 0.011670983111627595,
+      "agreement": 0.9348128151177101,
+      "agreement_fire": 0.9933333333333333,
+      "agreement_hold": 0.9330168992184623
+    },
+    {
+      "loss": 0.010939606649563692,
+      "agreement": 0.9132557862559053,
+      "agreement_fire": 1.0,
+      "agreement_hold": 0.9105937231474283
+    },
+    {
+      "loss": 0.012217317392527608,
+      "agreement": 0.8784390011512963,
+      "agreement_fire": 1.0,
+      "agreement_hold": 0.8747084577928721
+    },
+    {
+      "loss": 0.014194465236373546,
+      "agreement": 0.9655802135852952,
+      "agreement_fire": 0.9146666666666666,
+      "agreement_hold": 0.9671426817791235
+    },
+    {
+      "loss": 0.01211138324002855,
+      "agreement": 0.9401325975624281,
+      "agreement_fire": 1.0,
+      "agreement_hold": 0.9382953476001473
+    },
+    {
+      "loss": 0.01324476554553233,
+      "agreement": 0.9346540156417484,
+      "agreement_fire": 0.9986666666666667,
+      "agreement_hold": 0.9326895535823888
+    },
+    {
+      "loss": 0.011866213867179861,
+      "agreement": 0.9398943983484854,
+      "agreement_fire": 0.9866666666666667,
+      "agreement_hold": 0.9384590204181841
+    },
+    {
+      "loss": 0.0112315139028838,
+      "agreement": 0.9421572908809401,
+      "agreement_fire": 0.988,
+      "agreement_hold": 0.9407504398706985
+    }
+  ]
+}

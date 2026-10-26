@@ -21,6 +21,7 @@ from rl_training.environment import ArtilleryFiringEnv
 from rl_training.curriculum.curriculum_scenarios import CurriculumScenarios
 from rl_training.agents.dqn_components import DQN
 from rl_training.utils.evaluation_utils import evaluate_curriculum
+from rl_training.utils.evaluation_protocol import get_evaluation_scenarios, perturb_scenario
 
 
 def load_dqn_model(model_path, state_dim, action_dim, device):
@@ -360,28 +361,7 @@ def main(num_runs: int = 1):
                 print(f"  {f.name}")
         return
 
-    scenarios_to_test = [
-        curriculum.get_scenario_by_index(0),   # Static_Close (800m)
-        curriculum.get_scenario_by_index(4),   # Fast_Approach_Long (3000m)
-        curriculum.get_scenario_by_index(6),   # Medium_Approach (2000m)
-        curriculum.get_scenario_by_index(11),  # Complex_3D_Motion (1800m)
-        curriculum.get_scenario_by_index(13),  # ExtremeLong_Large_Lateral (3000m)
-    ]
-
-    def perturb_scenario(scenario, rng):
-        """Return a copy of scenario with small random perturbations.
-
-        Perturbations (±5–10 %) simulate real-world uncertainty in initial
-        conditions, giving each run a genuinely different physics trajectory.
-        """
-        import copy
-        s = copy.copy(scenario)
-        s.range_m           = scenario.range_m           * rng.uniform(0.95, 1.05)
-        s.target_vx         = scenario.target_vx         * rng.uniform(0.90, 1.10) if scenario.target_vx != 0 else 0.0
-        s.target_vy         = scenario.target_vy         * rng.uniform(0.90, 1.10) if scenario.target_vy != 0 else 0.0
-        s.target_vz         = scenario.target_vz         * rng.uniform(0.90, 1.10) if scenario.target_vz != 0 else 0.0
-        s.measurement_noise_std = scenario.measurement_noise_std * rng.uniform(0.80, 1.20)
-        return s
+    scenarios_to_test = get_evaluation_scenarios(curriculum)
 
     all_results = []  # collects results from every run
     for run_idx in range(num_runs):

@@ -1,0 +1,9 @@
+{
+  "extrapolate": true,
+  "n": 200,
+  "nees_mean": 3.0922355040321943,
+  "nees_median": 2.6776893263501247,
+  "nees_expected_if_consistent": 6.0,
+  "pos_err_median_m": 0.2332833852578543,
+  "vel_err_median_m_s": 0.18529052340878682
+}

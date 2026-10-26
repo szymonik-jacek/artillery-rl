@@ -1,0 +1,180 @@
+{
+  "config": {
+    "per_group": 25,
+    "n_samples": 2000,
+    "seed": 20261017,
+    "sets": {
+      "heldout2": "results\\stage2e_eval2\\heldout2\\benchmark_traditional_vs_rl_raw.csv",
+      "phase4": "results\\stage2e_eval2\\phase4\\benchmark_traditional_vs_rl_raw.csv"
+    }
+  },
+  "n_shots": 200,
+  "rebuild_ok": 200,
+  "mc_model_hp_minus_base": {
+    "mean": 0.008327498716284876,
+    "mean_abs": 0.010785035577663096,
+    "max_abs": 0.04241774347108063,
+    "sd": 0.01087447478532573
+  },
+  "full_cov_hp_minus_base": {
+    "mean": 0.006437748716284882,
+    "mean_abs": 0.006906278144424648,
+    "max_abs": 0.023882748876119464,
+    "sd": 0.006195490768833809
+  },
+  "true_hit_rate_minus_base": {
+    "mean": -0.21900750128371513,
+    "mean_abs": 0.2540459916206324,
+    "max_abs": 0.7478521343590401,
+    "sd": 0.26445883400564224
+  },
+  "by_range": [
+    {
+      "range": "(0, 1500]",
+      "n": 44,
+      "mc_minus_base": 0.0002927220318732972,
+      "true_minus_base": -0.1523663688772176
+    },
+    {
+      "range": "(1500, 2500]",
+      "n": 86,
+      "mc_minus_base": 0.008501911140329754,
+      "true_minus_base": -0.2665213446736237
+    },
+    {
+      "range": "(2500, 3500]",
+      "n": 58,
+      "mc_minus_base": 0.01374991212968398,
+      "true_minus_base": -0.21649146718066084
+    },
+    {
+      "range": "(3500, 5000]",
+      "n": 12,
+      "mc_minus_base": 0.010330059355376694,
+      "true_minus_base": -0.1350032739779566
+    }
+  ],
+  "calibration": [
+    {
+      "hp_bin": "(0.0, 0.2]",
+      "n": 1,
+      "mean_base_hp": 0.17347192776374196,
+      "mean_mc_model_hp": 0.1935,
+      "mean_true_hit_rate": 0.0005
+    },
+    {
+      "hp_bin": "(0.2, 0.4]",
+      "n": 16,
+      "mean_base_hp": 0.31835147146443743,
+      "mean_mc_model_hp": 0.33115625,
+      "mean_true_hit_rate": 0.22862499999999997
+    },
+    {
+      "hp_bin": "(0.4, 0.6]",
+      "n": 94,
+      "mean_base_hp": 0.4960449457179023,
+      "mean_mc_model_hp": 0.5086436170212765,
+      "mean_true_hit_rate": 0.2880851063829787
+    },
+    {
+      "hp_bin": "(0.6, 0.8]",
+      "n": 50,
+      "mean_base_hp": 0.6814094927040746,
+      "mean_mc_model_hp": 0.6860300000000001,
+      "mean_true_hit_rate": 0.33816
+    },
+    {
+      "hp_bin": "(0.8, 1.0]",
+      "n": 39,
+      "mean_base_hp": 0.8868898782785061,
+      "mean_mc_model_hp": 0.8875384615384616,
+      "mean_true_hit_rate": 0.7463205128205128
+    }
+  ],
+  "ranking": {
+    "heldout2": {
+      "means": {
+        "Bprime": {
+          "scored_hp": 0.4522,
+          "mc_model": 0.4631,
+          "true_hits": 0.3335
+        },
+        "Decaying": {
+          "scored_hp": 0.5703,
+          "mc_model": 0.5799,
+          "true_hits": 0.3044
+        },
+        "Plateau": {
+          "scored_hp": 0.586,
+          "mc_model": 0.5955,
+          "true_hits": 0.3314
+        },
+        "V0r": {
+          "scored_hp": 0.4527,
+          "mc_model": 0.4593,
+          "true_hits": 0.2824
+        }
+      },
+      "order_scored": [
+        "Plateau",
+        "Decaying",
+        "V0r",
+        "Bprime"
+      ],
+      "order_mc_model": [
+        "Plateau",
+        "Decaying",
+        "Bprime",
+        "V0r"
+      ],
+      "order_true_hits": [
+        "Bprime",
+        "Plateau",
+        "Decaying",
+        "V0r"
+      ]
+    },
+    "phase4": {
+      "means": {
+        "Bprime": {
+          "scored_hp": 0.6007,
+          "mc_model": 0.6085,
+          "true_hits": 0.3921
+        },
+        "Decaying": {
+          "scored_hp": 0.668,
+          "mc_model": 0.6746,
+          "true_hits": 0.4678
+        },
+        "Plateau": {
+          "scored_hp": 0.6777,
+          "mc_model": 0.6838,
+          "true_hits": 0.4566
+        },
+        "V0r": {
+          "scored_hp": 0.6178,
+          "mc_model": 0.6259,
+          "true_hits": 0.3399
+        }
+      },
+      "order_scored": [
+        "Plateau",
+        "Decaying",
+        "V0r",
+        "Bprime"
+      ],
+      "order_mc_model": [
+        "Plateau",
+        "Decaying",
+        "V0r",
+        "Bprime"
+      ],
+      "order_true_hits": [
+        "Decaying",
+        "Plateau",
+        "Bprime",
+        "V0r"
+      ]
+    }
+  }
+}

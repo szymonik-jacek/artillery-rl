@@ -1,0 +1,415 @@
+{
+  "description": "Per-decision computation cost; medians in microseconds",
+  "hardware": {
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "machine": "AMD64",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "python": "3.11.9",
+    "torch": "2.12.0+cpu",
+    "torch_threads": 1
+  },
+  "config": {
+    "track_time_s": 5.0,
+    "measurement_dt_s": 0.5,
+    "projectile_speed_m_s": 800.0,
+    "seed": 0,
+    "repeats": {
+      "fast": 5000,
+      "slow": 50,
+      "mc": 10
+    },
+    "hp_configuration_used_in_environment": "diagonal approximation, no Monte Carlo"
+  },
+  "per_scenario": {
+    "Static_Close": {
+      "components": {
+        "kalman_update": {
+          "n": 5000,
+          "median_us": 19.5,
+          "mean_us": 23.51224,
+          "p95_us": 32.20500000000002,
+          "p99_us": 98.30200000000004,
+          "min_us": 16.5,
+          "max_us": 572.2
+        },
+        "intercept_ode": {
+          "n": 50,
+          "median_us": 758507.1,
+          "mean_us": 766805.286,
+          "p95_us": 813895.76,
+          "p99_us": 921092.3699999996,
+          "min_us": 718675.4,
+          "max_us": 1006831.1
+        },
+        "projectile_error_propagation_ode": {
+          "n": 50,
+          "median_us": 3284.65,
+          "mean_us": 4587.7,
+          "p95_us": 13780.045,
+          "p99_us": 14477.023999999998,
+          "min_us": 3052.5,
+          "max_us": 14953.5
+        },
+        "hp_propagation_diagonal": {
+          "n": 50,
+          "median_us": 3421.3,
+          "mean_us": 3619.684,
+          "p95_us": 4473.289999999998,
+          "p99_us": 6671.970999999996,
+          "min_us": 3241.6,
+          "max_us": 7716.7
+        },
+        "hp_propagation_full_covariance": {
+          "n": 50,
+          "median_us": 3824.2,
+          "mean_us": 3843.548,
+          "p95_us": 4084.4149999999995,
+          "p99_us": 4613.212999999999,
+          "min_us": 3595.0,
+          "max_us": 4974.0
+        },
+        "hp_propagation_mc1000": {
+          "n": 10,
+          "median_us": 3538.95,
+          "mean_us": 3562.85,
+          "p95_us": 3692.39,
+          "p99_us": 3752.078,
+          "min_us": 3509.6,
+          "max_us": 3767.0
+        },
+        "dqn_forward": {
+          "n": 5000,
+          "median_us": 21.1,
+          "mean_us": 21.46552,
+          "p95_us": 22.5,
+          "p99_us": 24.9,
+          "min_us": 19.5,
+          "max_us": 241.8
+        },
+        "_inputs": {
+          "impact_time_s": 1.137,
+          "elevation_rad": 0.06979589685836089,
+          "hp_diagonal": 0.9533810613741607
+        }
+      },
+      "per_decision": {
+        "rule_full_chain_us": 761947.9,
+        "rule_hp_only_us": 3421.3,
+        "dqn_decision_us": 40.6,
+        "dqn_forward_us": 21.1
+      }
+    },
+    "Fast_Approach_Long": {
+      "components": {
+        "kalman_update": {
+          "n": 5000,
+          "median_us": 19.4,
+          "mean_us": 20.23612,
+          "p95_us": 22.1,
+          "p99_us": 36.00100000000002,
+          "min_us": 15.499999999999998,
+          "max_us": 534.7
+        },
+        "intercept_ode": {
+          "n": 50,
+          "median_us": 1318635.45,
+          "mean_us": 1326522.5799999998,
+          "p95_us": 1391876.23,
+          "p99_us": 1415912.642,
+          "min_us": 1279550.5,
+          "max_us": 1419344.7
+        },
+        "projectile_error_propagation_ode": {
+          "n": 50,
+          "median_us": 6890.35,
+          "mean_us": 6909.606000000001,
+          "p95_us": 7896.304999999999,
+          "p99_us": 8273.943,
+          "min_us": 6330.3,
+          "max_us": 8425.5
+        },
+        "hp_propagation_diagonal": {
+          "n": 50,
+          "median_us": 7129.8,
+          "mean_us": 7295.778,
+          "p95_us": 8442.615,
+          "p99_us": 9141.591999999997,
+          "min_us": 6420.7,
+          "max_us": 9675.3
+        },
+        "hp_propagation_full_covariance": {
+          "n": 50,
+          "median_us": 7382.2,
+          "mean_us": 7616.844,
+          "p95_us": 8859.59,
+          "p99_us": 11219.381999999992,
+          "min_us": 6848.4,
+          "max_us": 13100.1
+        },
+        "hp_propagation_mc1000": {
+          "n": 10,
+          "median_us": 7160.0,
+          "mean_us": 7833.270000000001,
+          "p95_us": 10740.394999999999,
+          "p99_us": 11142.479,
+          "min_us": 6799.8,
+          "max_us": 11243.0
+        },
+        "dqn_forward": {
+          "n": 5000,
+          "median_us": 21.8,
+          "mean_us": 22.22406,
+          "p95_us": 23.4,
+          "p99_us": 31.801000000000023,
+          "min_us": 19.2,
+          "max_us": 358.5
+        },
+        "_inputs": {
+          "impact_time_s": 4.884,
+          "elevation_rad": 0.05608060677041742,
+          "hp_diagonal": 0.4828798252372052
+        }
+      },
+      "per_decision": {
+        "rule_full_chain_us": 1325784.65,
+        "rule_hp_only_us": 7129.8,
+        "dqn_decision_us": 41.2,
+        "dqn_forward_us": 21.8
+      }
+    },
+    "Medium_Approach": {
+      "components": {
+        "kalman_update": {
+          "n": 5000,
+          "median_us": 18.7,
+          "mean_us": 20.36482,
+          "p95_us": 23.7,
+          "p99_us": 61.2230000000005,
+          "min_us": 15.2,
+          "max_us": 411.6
+        },
+        "intercept_ode": {
+          "n": 50,
+          "median_us": 1011258.05,
+          "mean_us": 1015899.05,
+          "p95_us": 1036824.38,
+          "p99_us": 1082467.9929999998,
+          "min_us": 991505.7,
+          "max_us": 1102442.5
+        },
+        "projectile_error_propagation_ode": {
+          "n": 50,
+          "median_us": 4789.45,
+          "mean_us": 4980.392,
+          "p95_us": 6393.759999999999,
+          "p99_us": 8041.326,
+          "min_us": 4558.6,
+          "max_us": 8057.3
+        },
+        "hp_propagation_diagonal": {
+          "n": 50,
+          "median_us": 4894.05,
+          "mean_us": 5030.07,
+          "p95_us": 6413.8,
+          "p99_us": 7000.332999999999,
+          "min_us": 4683.1,
+          "max_us": 7244.5
+        },
+        "hp_propagation_full_covariance": {
+          "n": 50,
+          "median_us": 5278.200000000001,
+          "mean_us": 5398.644,
+          "p95_us": 6511.779999999998,
+          "p99_us": 6916.994,
+          "min_us": 5067.1,
+          "max_us": 6965.7
+        },
+        "hp_propagation_mc1000": {
+          "n": 10,
+          "median_us": 5078.25,
+          "mean_us": 5028.24,
+          "p95_us": 5207.005,
+          "p99_us": 5270.7609999999995,
+          "min_us": 4852.2,
+          "max_us": 5286.7
+        },
+        "dqn_forward": {
+          "n": 5000,
+          "median_us": 21.0,
+          "mean_us": 21.60988,
+          "p95_us": 22.3,
+          "p99_us": 25.501000000000023,
+          "min_us": 19.4,
+          "max_us": 379.5
+        },
+        "_inputs": {
+          "impact_time_s": 2.967,
+          "elevation_rad": 0.049156370509571924,
+          "hp_diagonal": 0.6193878823043834
+        }
+      },
+      "per_decision": {
+        "rule_full_chain_us": 1016170.8,
+        "rule_hp_only_us": 4894.05,
+        "dqn_decision_us": 39.7,
+        "dqn_forward_us": 21.0
+      }
+    },
+    "Complex_3D_Motion": {
+      "components": {
+        "kalman_update": {
+          "n": 5000,
+          "median_us": 18.599999999999998,
+          "mean_us": 19.07736,
+          "p95_us": 20.7,
+          "p99_us": 27.400000000000002,
+          "min_us": 15.599999999999998,
+          "max_us": 312.5
+        },
+        "intercept_ode": {
+          "n": 50,
+          "median_us": 1580273.7,
+          "mean_us": 1585010.0399999998,
+          "p95_us": 1625932.845,
+          "p99_us": 1632600.4400000002,
+          "min_us": 1552714.8,
+          "max_us": 1637541.6
+        },
+        "projectile_error_propagation_ode": {
+          "n": 50,
+          "median_us": 5327.65,
+          "mean_us": 5438.642,
+          "p95_us": 6588.144999999999,
+          "p99_us": 6938.811,
+          "min_us": 4908.4,
+          "max_us": 7098.6
+        },
+        "hp_propagation_diagonal": {
+          "n": 50,
+          "median_us": 5312.450000000001,
+          "mean_us": 5657.034000000001,
+          "p95_us": 7214.614999999998,
+          "p99_us": 8091.995999999999,
+          "min_us": 4902.1,
+          "max_us": 8297.6
+        },
+        "hp_propagation_full_covariance": {
+          "n": 50,
+          "median_us": 5790.950000000001,
+          "mean_us": 5933.732,
+          "p95_us": 7222.71,
+          "p99_us": 8028.641,
+          "min_us": 5397.7,
+          "max_us": 8052.7
+        },
+        "hp_propagation_mc1000": {
+          "n": 10,
+          "median_us": 5357.200000000001,
+          "mean_us": 5454.32,
+          "p95_us": 5777.51,
+          "p99_us": 5783.342000000001,
+          "min_us": 5164.4,
+          "max_us": 5784.8
+        },
+        "dqn_forward": {
+          "n": 5000,
+          "median_us": 21.2,
+          "mean_us": 22.22134,
+          "p95_us": 23.2,
+          "p99_us": 40.50100000000002,
+          "min_us": 19.0,
+          "max_us": 423.3
+        },
+        "_inputs": {
+          "impact_time_s": 3.384,
+          "elevation_rad": 0.08432517355843686,
+          "hp_diagonal": 0.5545728470818158
+        }
+      },
+      "per_decision": {
+        "rule_full_chain_us": 1585604.75,
+        "rule_hp_only_us": 5312.450000000001,
+        "dqn_decision_us": 39.8,
+        "dqn_forward_us": 21.2
+      }
+    },
+    "ExtremeLong_Large_Lateral": {
+      "components": {
+        "kalman_update": {
+          "n": 5000,
+          "median_us": 18.2,
+          "mean_us": 19.35304,
+          "p95_us": 20.7,
+          "p99_us": 36.0,
+          "min_us": 15.5,
+          "max_us": 413.2
+        },
+        "intercept_ode": {
+          "n": 50,
+          "median_us": 2866651.8,
+          "mean_us": 2931817.6459999997,
+          "p95_us": 3212636.4549999996,
+          "p99_us": 3886286.584999998,
+          "min_us": 2806140.2,
+          "max_us": 4355051.7
+        },
+        "projectile_error_propagation_ode": {
+          "n": 50,
+          "median_us": 8626.75,
+          "mean_us": 9215.774,
+          "p95_us": 11507.484999999999,
+          "p99_us": 14880.301999999998,
+          "min_us": 8131.4,
+          "max_us": 15179.3
+        },
+        "hp_propagation_diagonal": {
+          "n": 50,
+          "median_us": 8397.2,
+          "mean_us": 8369.176,
+          "p95_us": 8777.625,
+          "p99_us": 8841.577,
+          "min_us": 7956.8,
+          "max_us": 8857.6
+        },
+        "hp_propagation_full_covariance": {
+          "n": 50,
+          "median_us": 8606.75,
+          "mean_us": 8756.09,
+          "p95_us": 9890.975,
+          "p99_us": 10187.609,
+          "min_us": 8264.1,
+          "max_us": 10283.6
+        },
+        "hp_propagation_mc1000": {
+          "n": 10,
+          "median_us": 8457.5,
+          "mean_us": 8780.390000000001,
+          "p95_us": 10256.24,
+          "p99_us": 10386.128,
+          "min_us": 8174.0,
+          "max_us": 10418.6
+        },
+        "dqn_forward": {
+          "n": 5000,
+          "median_us": 21.2,
+          "mean_us": 21.31646,
+          "p95_us": 22.3,
+          "p99_us": 23.90100000000002,
+          "min_us": 20.0,
+          "max_us": 77.0
+        },
+        "_inputs": {
+          "impact_time_s": 6.441,
+          "elevation_rad": 0.06653812357773423,
+          "hp_diagonal": 0.5533369072232427
+        }
+      },
+      "per_decision": {
+        "rule_full_chain_us": 2875067.2,
+        "rule_hp_only_us": 8397.2,
+        "dqn_decision_us": 39.4,
+        "dqn_forward_us": 21.2
+      }
+    }
+  }
+}

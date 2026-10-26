@@ -93,6 +93,25 @@ def main():
     for p in sorted(checkpoints_dir.glob("*.pth")):
         all_phases[p.name] = inspect_model(p)
 
+    # Agents of the manuscript (Section 3.7) -> phase-4 checkpoints.
+    agents = {
+        "Base-0": ["dqn_curriculum_phase4.pth"],
+        "Base": [f"dqn_v0r_seed{s}_phase4.pth" for s in range(3)],
+        "Ext-steps": [f"dqn_s2_b_seed{s}_phase4.pth" for s in range(5)],
+        "Ext-sec": [f"dqn_s2_bp_seed{s}_phase4.pth" for s in range(5)],
+    }
+    missing = [f for files in agents.values() for f in files if not (checkpoints_dir / f).exists()]
+    if missing:
+        raise FileNotFoundError(f"Agent checkpoints not found: {missing}")
+
+    # Files the numbers, tables and figures of the manuscript are computed from.
+    result_patterns = ("results/stage4e_eval/*/benchmark_traditional_vs_rl_raw.csv",
+                       "results/stage4f_eval/*/benchmark_traditional_vs_rl_raw.csv",
+                       "results/hp_validation_4e/*", "results/decision_cost_benchmark.json",
+                       "results/paper_numbers.json", "results/discussion_analysis.json")
+    result_files = {str(p.relative_to(ROOT)).replace("\\", "/"): compute_sha256(p)
+                    for pattern in result_patterns for p in sorted(ROOT.glob(pattern)) if p.is_file()}
+
     git_info = get_git_info()
 
     from datetime import datetime, timezone
@@ -100,7 +119,7 @@ def main():
     manifest = {
         "manifest_version": "1.0",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "paper_title": "Reinforcement Learning for Optimal Firing Timing Decisions in Anti-Aircraft Fire Control Systems",
+        "paper_title": "Reinforcement Learning for Firing Timing Decisions in Anti-Aircraft Fire Control Systems",
         "release_tag": git_info["tag"],
         "git": git_info,
         "environment": {
@@ -118,7 +137,9 @@ def main():
             "parameters": config_data
         },
         "published_model_phase4": phase4_info,
-        "all_curriculum_checkpoints": all_phases
+        "all_curriculum_checkpoints": all_phases,
+        "agents": agents,
+        "result_files": result_files
     }
 
     results_dir = ROOT / "results"

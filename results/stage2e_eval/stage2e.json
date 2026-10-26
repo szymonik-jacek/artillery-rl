@@ -1,0 +1,677 @@
+{
+  "heldout2": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.41535470110975925,
+        "sd_hp_over_seeds": 0.0343905856391013,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 4.7020832829886485,
+        "n_blocked_episodes": 0
+      },
+      "compare_agent": {
+        "mean_hp": 0.3738681733315963,
+        "sd_hp_over_seeds": 0.02899459253596557,
+        "min_firing_rate_pct": 89.33333333333333,
+        "mean_fire_time_s": 3.7028124273740333,
+        "n_blocked_episodes": 0
+      },
+      "DQN": {
+        "mean_hp": 0.4333191838005328,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 4.449894837440854,
+        "n_blocked_episodes": 0.0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.34173228530821687,
+        "firing_rate_pct": 56.666666666666664,
+        "mean_fire_time_s": 5.731123005677606,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.3534405340324041,
+        "firing_rate_pct": 60.666666666666664,
+        "mean_fire_time_s": 8.700833028715689,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.48202057850885655,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 7.76300953552949,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.2629791268512222,
+        "firing_rate_pct": 57.0,
+        "mean_fire_time_s": 3.6041384812763266,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "DQN",
+        "delta": 0.02,
+        "mean_diff": -0.017964482690773532,
+        "lower_bound": -0.042505163162445236,
+        "per_agent_mean_diff": [
+          -0.030887802977376737,
+          -0.007039569246898131,
+          0.022024017751274782,
+          -0.004372877253905356,
+          -0.06954618172696221
+        ],
+        "non_inferior": false,
+        "n_agents": 5,
+        "n_episodes": 300
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.07362241580154244,
+        "lower_bound": 0.04409966566285121,
+        "per_agent_mean_diff": [
+          0.06069909551493924,
+          0.08454732924541784,
+          0.11361091624359076,
+          0.08721402123841061,
+          0.022040716765353748
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 300
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": 0.061914167077355156,
+        "lower_bound": 0.033353294376566776,
+        "per_agent_mean_diff": [
+          0.04899084679075195,
+          0.07283908052123055,
+          0.10190266751940347,
+          0.07550577251422334,
+          0.010332468041166472
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 300
+      }
+    ],
+    "group_difference": {
+      "agents_a": [
+        "S2_bp_s0",
+        "S2_bp_s1",
+        "S2_bp_s2",
+        "S2_bp_s3",
+        "S2_bp_s4"
+      ],
+      "agents_b": [
+        "S2_b_s0",
+        "S2_b_s1",
+        "S2_b_s2",
+        "S2_b_s3",
+        "S2_b_s4"
+      ],
+      "alpha": 0.05,
+      "n_episodes": 300,
+      "mean_a": 0.41535470110975925,
+      "mean_b": 0.3738681733315962,
+      "mean_diff": 0.04148652777816303,
+      "lower_bound": 0.00999983862783488,
+      "per_agent_mean_a": [
+        0.40243138082315605,
+        0.42627961455363467,
+        0.4553432015518075,
+        0.4289463065466274,
+        0.36377300207357055
+      ],
+      "per_agent_mean_b": [
+        0.3895176185057393,
+        0.3524410902634306,
+        0.4175954350231583,
+        0.3512491760637506,
+        0.35853754680190225
+      ],
+      "a_better": true
+    }
+  },
+  "evaluation_100": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.5978061846424737,
+        "sd_hp_over_seeds": 0.04590621680122426,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.696954444444445,
+        "n_blocked_episodes": 0
+      },
+      "compare_agent": {
+        "mean_hp": 0.6155038057131212,
+        "sd_hp_over_seeds": 0.024574801741037936,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.860704444444445,
+        "n_blocked_episodes": 0
+      },
+      "DQN": {
+        "mean_hp": 0.5879173536063571,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.7815,
+        "n_blocked_episodes": 0.0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.5667240402487446,
+        "firing_rate_pct": 85.6,
+        "mean_fire_time_s": 6.229789719626169,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.6167776779481543,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.753127777777777,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.6841568591271278,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.548166666666667,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.46745002263439756,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 3.581566666666667,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "DQN",
+        "delta": 0.02,
+        "mean_diff": 0.009888831036116588,
+        "lower_bound": -0.02206156627467119,
+        "per_agent_mean_diff": [
+          0.014363371253885236,
+          -0.011825225852812536,
+          0.05959500424110975,
+          0.04335588324732249,
+          -0.056044877708922
+        ],
+        "non_inferior": false,
+        "n_agents": 5,
+        "n_episodes": 500
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.031082144393729243,
+        "lower_bound": -0.004625703819069462,
+        "per_agent_mean_diff": [
+          0.035556684611497885,
+          0.009368087504800116,
+          0.08078831759872239,
+          0.06454919660493513,
+          -0.03485156435130934
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 500
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": -0.018971493305680622,
+        "lower_bound": -0.050895182762696334,
+        "per_agent_mean_diff": [
+          -0.014496953087911973,
+          -0.040685550194609746,
+          0.030734679899312542,
+          0.014495558905525289,
+          -0.08490520205071919
+        ],
+        "non_inferior": false,
+        "n_agents": 5,
+        "n_episodes": 500
+      }
+    ],
+    "group_difference": {
+      "agents_a": [
+        "S2_bp_s0",
+        "S2_bp_s1",
+        "S2_bp_s2",
+        "S2_bp_s3",
+        "S2_bp_s4"
+      ],
+      "agents_b": [
+        "S2_b_s0",
+        "S2_b_s1",
+        "S2_b_s2",
+        "S2_b_s3",
+        "S2_b_s4"
+      ],
+      "alpha": 0.05,
+      "n_episodes": 500,
+      "mean_a": 0.5978061846424737,
+      "mean_b": 0.6155038057131214,
+      "mean_diff": -0.01769762107064765,
+      "lower_bound": -0.05321846133312098,
+      "per_agent_mean_a": [
+        0.6022807248602423,
+        0.5760921277535446,
+        0.6475123578474669,
+        0.6312732368536796,
+        0.5318724758974351
+      ],
+      "per_agent_mean_b": [
+        0.6238713327562181,
+        0.6209252609179872,
+        0.6496357060886934,
+        0.5903016482234955,
+        0.5927850805792129
+      ],
+      "a_better": false
+    }
+  },
+  "heldout": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.42543409562634266,
+        "sd_hp_over_seeds": 0.029151269809483234,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 4.896407200299169,
+        "n_blocked_episodes": 0
+      },
+      "compare_agent": {
+        "mean_hp": 0.37397148391857304,
+        "sd_hp_over_seeds": 0.02732444150448995,
+        "min_firing_rate_pct": 91.33333333333333,
+        "mean_fire_time_s": 3.5699688450048725,
+        "n_blocked_episodes": 0
+      },
+      "DQN": {
+        "mean_hp": 0.4318058423890385,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 4.51682208836604,
+        "n_blocked_episodes": 0.0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.34236878513174607,
+        "firing_rate_pct": 58.333333333333336,
+        "mean_fire_time_s": 5.70793624644877,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.350112305410114,
+        "firing_rate_pct": 62.333333333333336,
+        "mean_fire_time_s": 9.834676617644265,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.4866815655974451,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 8.75879926719558,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.2701575777935084,
+        "firing_rate_pct": 58.666666666666664,
+        "mean_fire_time_s": 3.6718891992912006,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "DQN",
+        "delta": 0.02,
+        "mean_diff": -0.006371746762695899,
+        "lower_bound": -0.025623550306230435,
+        "per_agent_mean_diff": [
+          -0.020134015808821917,
+          -0.014840822676099102,
+          0.03757698034837019,
+          0.004800765844667657,
+          -0.03926164152159632
+        ],
+        "non_inferior": false,
+        "n_agents": 5,
+        "n_episodes": 300
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.0830653104945966,
+        "lower_bound": 0.05703168798463059,
+        "per_agent_mean_diff": [
+          0.06930304144847056,
+          0.07459623458119338,
+          0.12701403760566268,
+          0.09423782310196015,
+          0.050175415735696165
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 300
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": 0.07532179021622862,
+        "lower_bound": 0.050235175716239984,
+        "per_agent_mean_diff": [
+          0.06155952117010261,
+          0.06685271430282541,
+          0.11927051732729471,
+          0.08649430282359218,
+          0.04243189545732819
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 300
+      }
+    ],
+    "group_difference": {
+      "agents_a": [
+        "S2_bp_s0",
+        "S2_bp_s1",
+        "S2_bp_s2",
+        "S2_bp_s3",
+        "S2_bp_s4"
+      ],
+      "agents_b": [
+        "S2_b_s0",
+        "S2_b_s1",
+        "S2_b_s2",
+        "S2_b_s3",
+        "S2_b_s4"
+      ],
+      "alpha": 0.05,
+      "n_episodes": 300,
+      "mean_a": 0.4254340956263427,
+      "mean_b": 0.3739714839185731,
+      "mean_diff": 0.05146261170776961,
+      "lower_bound": 0.023893142514070546,
+      "per_agent_mean_a": [
+        0.4116718265802166,
+        0.4169650197129395,
+        0.46938282273740867,
+        0.4366066082337062,
+        0.3925442008674422
+      ],
+      "per_agent_mean_b": [
+        0.3732117818003045,
+        0.36561811054636945,
+        0.41966896678774146,
+        0.34677211884295556,
+        0.36458644161549403
+      ],
+      "a_better": true
+    }
+  },
+  "shift_noise2": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.5464769276865821,
+        "sd_hp_over_seeds": 0.036356696565950496,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.40257037037037,
+        "n_blocked_episodes": 0
+      },
+      "compare_agent": {
+        "mean_hp": 0.5565181865440735,
+        "sd_hp_over_seeds": 0.02874127406053467,
+        "min_firing_rate_pct": 96.66666666666667,
+        "mean_fire_time_s": 6.835332439335888,
+        "n_blocked_episodes": 0
+      },
+      "DQN": {
+        "mean_hp": 0.5098661142140535,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.777833333333334,
+        "n_blocked_episodes": 0.0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.4498899871267275,
+        "firing_rate_pct": 72.66666666666667,
+        "mean_fire_time_s": 6.0311162079510705,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.5066752562715048,
+        "firing_rate_pct": 86.0,
+        "mean_fire_time_s": 11.926184323858742,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.6190517722872618,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.730907407407406,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.4218569727888529,
+        "firing_rate_pct": 91.33333333333333,
+        "mean_fire_time_s": 4.860624493106245,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "DQN",
+        "delta": 0.02,
+        "mean_diff": 0.03661081347252868,
+        "lower_bound": 0.01098289046807502,
+        "per_agent_mean_diff": [
+          0.04067518423250311,
+          0.01313246105521446,
+          0.07239734031460524,
+          0.06907413975589628,
+          -0.012225057995575689
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.09658694055985467,
+        "lower_bound": 0.05809588788165883,
+        "per_agent_mean_diff": [
+          0.10065131131982909,
+          0.07310858814254044,
+          0.13237346740193123,
+          0.12905026684322227,
+          0.047751069091750295
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": 0.03980167141507729,
+        "lower_bound": 0.006543266529137239,
+        "per_agent_mean_diff": [
+          0.04386604217505172,
+          0.016323318997763073,
+          0.07558819825715386,
+          0.07226499769844488,
+          -0.009034200053027065
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      }
+    ],
+    "group_difference": {
+      "agents_a": [
+        "S2_bp_s0",
+        "S2_bp_s1",
+        "S2_bp_s2",
+        "S2_bp_s3",
+        "S2_bp_s4"
+      ],
+      "agents_b": [
+        "S2_b_s0",
+        "S2_b_s1",
+        "S2_b_s2",
+        "S2_b_s3",
+        "S2_b_s4"
+      ],
+      "alpha": 0.05,
+      "n_episodes": 150,
+      "mean_a": 0.5464769276865821,
+      "mean_b": 0.5565181865440735,
+      "mean_diff": -0.010041258857491409,
+      "lower_bound": -0.04301669668168427,
+      "per_agent_mean_a": [
+        0.5505412984465565,
+        0.522998575269268,
+        0.5822634545286587,
+        0.5789402539699499,
+        0.4976410562184777
+      ],
+      "per_agent_mean_b": [
+        0.5742412985917567,
+        0.5675028521164429,
+        0.588379175407547,
+        0.529400932291883,
+        0.5230666743127382
+      ],
+      "a_better": false
+    }
+  },
+  "shift_size0.7": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.4171154969423336,
+        "sd_hp_over_seeds": 0.020739771454707272,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.59792962962963,
+        "n_blocked_episodes": 0
+      },
+      "compare_agent": {
+        "mean_hp": 0.40609440458722723,
+        "sd_hp_over_seeds": 0.03133396117385139,
+        "min_firing_rate_pct": 90.66666666666667,
+        "mean_fire_time_s": 6.528983278867102,
+        "n_blocked_episodes": 0
+      },
+      "DQN": {
+        "mean_hp": 0.39490272487067346,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.477981481481481,
+        "n_blocked_episodes": 0.0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.23714814681838078,
+        "firing_rate_pct": 36.666666666666664,
+        "mean_fire_time_s": 8.35,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.26990535008534206,
+        "firing_rate_pct": 46.0,
+        "mean_fire_time_s": 10.310144927536232,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.47275997365116684,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.348574074074074,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.18508526424392055,
+        "firing_rate_pct": 40.0,
+        "mean_fire_time_s": 7.524583333333334,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "DQN",
+        "delta": 0.02,
+        "mean_diff": 0.02221277207166011,
+        "lower_bound": 0.00734638046348344,
+        "per_agent_mean_diff": [
+          0.009502447236180317,
+          0.02426912526020257,
+          0.04206949205319255,
+          0.041256026440613464,
+          -0.006033230631888324
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.17996735012395282,
+        "lower_bound": 0.15074338599682435,
+        "per_agent_mean_diff": [
+          0.16725702528847303,
+          0.18202370331249526,
+          0.19982407010548522,
+          0.19901060449290617,
+          0.15172134742040436
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": 0.14721014685699152,
+        "lower_bound": 0.11851006716245865,
+        "per_agent_mean_diff": [
+          0.13449982202151173,
+          0.14926650004553402,
+          0.16706686683852395,
+          0.1662534012259449,
+          0.1189641441534431
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      }
+    ],
+    "group_difference": {
+      "agents_a": [
+        "S2_bp_s0",
+        "S2_bp_s1",
+        "S2_bp_s2",
+        "S2_bp_s3",
+        "S2_bp_s4"
+      ],
+      "agents_b": [
+        "S2_b_s0",
+        "S2_b_s1",
+        "S2_b_s2",
+        "S2_b_s3",
+        "S2_b_s4"
+      ],
+      "alpha": 0.05,
+      "n_episodes": 150,
+      "mean_a": 0.4171154969423336,
+      "mean_b": 0.40609440458722723,
+      "mean_diff": 0.011021092355106343,
+      "lower_bound": -0.01347015219839401,
+      "per_agent_mean_a": [
+        0.4044051721068538,
+        0.4191718501308761,
+        0.436972216923866,
+        0.436158751311287,
+        0.38886949423878514
+      ],
+      "per_agent_mean_b": [
+        0.4164079315101127,
+        0.42172198814912454,
+        0.4386163164923962,
+        0.3969880149863319,
+        0.3567377717981715
+      ],
+      "a_better": false
+    }
+  }
+}

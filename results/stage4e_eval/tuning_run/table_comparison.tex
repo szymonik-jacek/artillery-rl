@@ -1,0 +1,110 @@
+\begin{table}[htbp]
+\centering
+\caption{Comparison of the DQN agent with classical threshold firing rules over 30 perturbed runs per scenario. Mean HP is unconditional (timeouts scored as 0); $p_{\mathrm{Holm}}$: paired Wilcoxon signed-rank test against the DQN, Holm-corrected (n/a: identical outcomes). $^{\dagger}$Best rule of its family (fixed, decaying, plateau or covariance-gated threshold), selected on the evaluation scenarios (oracle tuning). $^{\ddagger}$Upper bound: highest HP reachable in each episode, chosen in hindsight from the precomputed trajectory.}
+\label{tab:comparison-traditional-rl}
+\small
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Scenario} & \textbf{Policy} & \textbf{Mean HP ($\pm$95\% CI)} & \textbf{Fire rate (\%)} & \textbf{Time to fire (s)} & $p_{\mathrm{Holm}}$ \\
+\midrule
+\multirow{8}{*}{Static\_Medium} & DQN & 0.570 $\pm$ 0.023 & 100 & 3.8 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.479 $\pm$ 0.006 & 100 & 2.9 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.578 $\pm$ 0.007 & 100 & 3.8 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.669 $\pm$ 0.005 & 100 & 4.7 & 0.002 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.704 $\pm$ 0.007 & 100 & 6.2 & $<0.001$ \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.704 $\pm$ 0.009 & 100 & 6.0 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.483 $\pm$ 0.007 & 100 & 2.9 & $<0.001$ \\
+ & Hindsight oracle$^{\ddagger}$ & 0.711 $\pm$ 0.007 & 100 & 8.2 & $<0.001$ \\
+\midrule
+\multirow{8}{*}{Slow\_Approach} & DQN & 0.792 $\pm$ 0.006 & 100 & 4.1 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.496 $\pm$ 0.005 & 100 & 2.0 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.575 $\pm$ 0.004 & 100 & 2.5 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.661 $\pm$ 0.003 & 100 & 3.1 & $<0.001$ \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.782 $\pm$ 0.003 & 100 & 4.0 & 0.555 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.907 $\pm$ 0.004 & 100 & 5.8 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.563 $\pm$ 0.019 & 100 & 2.4 & $<0.001$ \\
+ & Hindsight oracle$^{\ddagger}$ & 0.929 $\pm$ 0.003 & 100 & 9.0 & $<0.001$ \\
+\midrule
+\multirow{8}{*}{Slow\_Recede} & DQN & 0.676 $\pm$ 0.008 & 100 & 3.4 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.484 $\pm$ 0.007 & 100 & 2.0 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.566 $\pm$ 0.006 & 100 & 2.6 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.676 $\pm$ 0.005 & 100 & 3.4 & 1.000 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.770 $\pm$ 0.004 & 100 & 4.2 & $<0.001$ \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.856 $\pm$ 0.005 & 100 & 5.8 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.546 $\pm$ 0.019 & 100 & 2.4 & $<0.001$ \\
+ & Hindsight oracle$^{\ddagger}$ & 0.871 $\pm$ 0.004 & 100 & 5.4 & $<0.001$ \\
+\midrule
+\multirow{8}{*}{Faster\_Approach\_Mid} & DQN & 0.398 $\pm$ 0.012 & 100 & 6.0 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.454 $\pm$ 0.001 & 100 & 8.2 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.332 $\pm$ 0.103 & 60 & 14.4 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & $<0.001$ \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.526 $\pm$ 0.008 & 100 & 13.8 & $<0.001$ \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.417 $\pm$ 0.005 & 100 & 5.7 & 0.138 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.454 $\pm$ 0.001 & 100 & 8.2 & $<0.001$ \\
+ & Hindsight oracle$^{\ddagger}$ & 0.565 $\pm$ 0.011 & 100 & 16.7 & $<0.001$ \\
+\midrule
+\multirow{8}{*}{Very\_Fast\_Approach} & DQN & 0.385 $\pm$ 0.015 & 100 & 8.3 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.380 $\pm$ 0.065 & 83 & 11.6 & 1.000 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.018 $\pm$ 0.038 & 3 & 13.5 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & $<0.001$ \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.473 $\pm$ 0.009 & 100 & 13.6 & $<0.001$ \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.407 $\pm$ 0.002 & 100 & 9.4 & 0.720 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.380 $\pm$ 0.065 & 83 & 11.6 & 1.000 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.489 $\pm$ 0.013 & 100 & 14.6 & $<0.001$ \\
+\midrule
+\multirow{8}{*}{Fast\_Crossing} & DQN & 0.692 $\pm$ 0.008 & 100 & 5.8 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.482 $\pm$ 0.007 & 100 & 3.0 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.574 $\pm$ 0.006 & 100 & 3.8 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.669 $\pm$ 0.004 & 100 & 4.8 & 0.042 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.694 $\pm$ 0.009 & 100 & 6.4 & 1.000 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.677 $\pm$ 0.013 & 100 & 5.7 & 0.081 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.482 $\pm$ 0.007 & 100 & 3.0 & $<0.001$ \\
+ & Hindsight oracle$^{\ddagger}$ & 0.700 $\pm$ 0.007 & 100 & 5.9 & 0.016 \\
+\midrule
+\multirow{8}{*}{Diagonal\_Approach} & DQN & 0.618 $\pm$ 0.007 & 100 & 5.6 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.482 $\pm$ 0.006 & 100 & 3.8 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.573 $\pm$ 0.005 & 100 & 4.6 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.634 $\pm$ 0.045 & 97 & 8.9 & 0.013 \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.652 $\pm$ 0.007 & 100 & 9.0 & $<0.001$ \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.598 $\pm$ 0.008 & 100 & 6.4 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.487 $\pm$ 0.006 & 100 & 3.8 & $<0.001$ \\
+ & Hindsight oracle$^{\ddagger}$ & 0.703 $\pm$ 0.009 & 100 & 14.4 & $<0.001$ \\
+\midrule
+\multirow{8}{*}{Maneuvering\_Target} & DQN & 0.827 $\pm$ 0.007 & 100 & 4.8 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.496 $\pm$ 0.011 & 100 & 2.4 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.582 $\pm$ 0.007 & 100 & 2.9 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.677 $\pm$ 0.005 & 100 & 3.6 & $<0.001$ \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.802 $\pm$ 0.005 & 100 & 4.5 & $<0.001$ \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.866 $\pm$ 0.008 & 100 & 6.3 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.571 $\pm$ 0.018 & 100 & 2.8 & $<0.001$ \\
+ & Hindsight oracle$^{\ddagger}$ & 0.908 $\pm$ 0.005 & 100 & 11.2 & $<0.001$ \\
+\midrule
+\multirow{8}{*}{ExtremeLong\_Medium\_Slow} & DQN & 0.493 $\pm$ 0.011 & 100 & 5.5 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.469 $\pm$ 0.004 & 100 & 4.4 & 0.449 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.018 $\pm$ 0.038 & 3 & 5.0 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & $<0.001$ \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.500 $\pm$ 0.007 & 100 & 16.9 & 0.081 \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.490 $\pm$ 0.014 & 100 & 5.7 & 0.853 \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.469 $\pm$ 0.004 & 100 & 4.4 & 0.449 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.514 $\pm$ 0.006 & 100 & 5.7 & $<0.001$ \\
+\midrule
+\multirow{8}{*}{ExtremeLong\_Medium\_Approaching} & DQN & 0.431 $\pm$ 0.013 & 100 & 8.5 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.410 $\pm$ 0.052 & 90 & 11.4 & 0.376 \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.000 $\pm$ 0.000 & 0 & -- & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.000 $\pm$ 0.000 & 0 & -- & $<0.001$ \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.473 $\pm$ 0.007 & 100 & 26.7 & $<0.001$ \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.445 $\pm$ 0.007 & 100 & 6.0 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.410 $\pm$ 0.052 & 90 & 11.4 & 0.376 \\
+ & Hindsight oracle$^{\ddagger}$ & 0.480 $\pm$ 0.007 & 100 & 28.8 & $<0.001$ \\
+\midrule
+\multirow{8}{*}{All scenarios} & DQN & 0.588 $\pm$ 0.018 & 100 & 5.6 & -- \\
+ & $P_{\mathrm{thr}}=0.45$$^{\dagger}$ & 0.463 $\pm$ 0.009 & 97 & 5.0 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.55$ & 0.382 $\pm$ 0.031 & 67 & 4.4 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.65$ & 0.399 $\pm$ 0.037 & 60 & 4.7 & $<0.001$ \\
+ & $P_{\mathrm{thr}}: 1.00 \to 0.40$$^{\dagger}$ & 0.638 $\pm$ 0.014 & 100 & 10.5 & $<0.001$ \\
+ & Plateau $P_{\mathrm{hit}}\geq0.40$, $k=3$, $\varepsilon=0.01$$^{\dagger}$ & 0.637 $\pm$ 0.021 & 100 & 6.3 & $<0.001$ \\
+ & $P_{\mathrm{thr}}=0.45$, $\tau_{\mathrm{cov}}=1$$^{\dagger}$ & 0.484 $\pm$ 0.011 & 97 & 5.1 & $<0.001$ \\
+ & Hindsight oracle$^{\ddagger}$ & 0.687 $\pm$ 0.019 & 100 & 12.0 & $<0.001$ \\
+\bottomrule
+\end{tabular}
+\end{table}

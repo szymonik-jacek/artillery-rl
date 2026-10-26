@@ -1,0 +1,751 @@
+{
+  "evaluation_100": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.6155038057131212,
+        "sd_hp_over_seeds": 0.024574801741037936,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.860704444444445,
+        "n_blocked_episodes": 0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.5667240402487446,
+        "firing_rate_pct": 85.6,
+        "mean_fire_time_s": 6.229789719626169,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.6167776779481543,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.753127777777777,
+        "n_blocked_episodes": 0.0
+      },
+      "DQN": {
+        "mean_hp": 0.5879173536063571,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.7815,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.6841568591271278,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.548166666666667,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.46745002263439756,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 3.581566666666667,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.04877976546437687,
+        "lower_bound": 0.026688930218223945,
+        "per_agent_mean_diff": [
+          0.05714729250747354,
+          0.05420122066924199,
+          0.08291166583994924,
+          0.02357760797475119,
+          0.026061040330468372
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 500
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.01,
+        "mean_diff": 0.04877976546437687,
+        "lower_bound": 0.026688930218223945,
+        "per_agent_mean_diff": [
+          0.05714729250747354,
+          0.05420122066924199,
+          0.08291166583994924,
+          0.02357760797475119,
+          0.026061040330468372
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 500
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": -0.0012738722350329873,
+        "lower_bound": -0.01898300272786888,
+        "per_agent_mean_diff": [
+          0.007093654808063681,
+          0.004147582969832136,
+          0.032858028140539404,
+          -0.02647602972465867,
+          -0.02399259736894147
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 500
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.01,
+        "mean_diff": -0.0012738722350329873,
+        "lower_bound": -0.01898300272786888,
+        "per_agent_mean_diff": [
+          0.007093654808063681,
+          0.004147582969832136,
+          0.032858028140539404,
+          -0.02647602972465867,
+          -0.02399259736894147
+        ],
+        "non_inferior": false,
+        "n_agents": 5,
+        "n_episodes": 500
+      }
+    ]
+  },
+  "phase4": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.6179494115939677,
+        "sd_hp_over_seeds": 0.021210942221958597,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.502353086419753,
+        "n_blocked_episodes": 0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.6234843792506297,
+        "firing_rate_pct": 94.22222222222223,
+        "mean_fire_time_s": 7.087142295597485,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.6319311364945304,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.525323456790124,
+        "n_blocked_episodes": 0.0
+      },
+      "DQN": {
+        "mean_hp": 0.5947769519489713,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.674818518518518,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.6870158794937195,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 11.592932098765433,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.4611838073155228,
+        "firing_rate_pct": 98.66666666666667,
+        "mean_fire_time_s": 4.618387137137137,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": -0.005534967656662075,
+        "lower_bound": -0.02255882125031004,
+        "per_agent_mean_diff": [
+          -0.006432016006179862,
+          -0.004576710904559421,
+          0.026662446718787428,
+          -0.03263948892514351,
+          -0.010689069166215016
+        ],
+        "non_inferior": false,
+        "n_agents": 5,
+        "n_episodes": 450
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.01,
+        "mean_diff": -0.005534967656662075,
+        "lower_bound": -0.02255882125031004,
+        "per_agent_mean_diff": [
+          -0.006432016006179862,
+          -0.004576710904559421,
+          0.026662446718787428,
+          -0.03263948892514351,
+          -0.010689069166215016
+        ],
+        "non_inferior": false,
+        "n_agents": 5,
+        "n_episodes": 450
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": -0.01398172490056279,
+        "lower_bound": -0.029252299462444058,
+        "per_agent_mean_diff": [
+          -0.014878773250080574,
+          -0.013023468148460131,
+          0.018215689474886713,
+          -0.04108624616904422,
+          -0.019135826410115735
+        ],
+        "non_inferior": false,
+        "n_agents": 5,
+        "n_episodes": 450
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.01,
+        "mean_diff": -0.01398172490056279,
+        "lower_bound": -0.029252299462444058,
+        "per_agent_mean_diff": [
+          -0.014878773250080574,
+          -0.013023468148460131,
+          0.018215689474886713,
+          -0.04108624616904422,
+          -0.019135826410115735
+        ],
+        "non_inferior": false,
+        "n_agents": 5,
+        "n_episodes": 450
+      }
+    ]
+  },
+  "heldout": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.37397148391857304,
+        "sd_hp_over_seeds": 0.02732444150448995,
+        "min_firing_rate_pct": 91.33333333333333,
+        "mean_fire_time_s": 3.5699688450048725,
+        "n_blocked_episodes": 0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.34236878513174607,
+        "firing_rate_pct": 58.333333333333336,
+        "mean_fire_time_s": 5.70793624644877,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.350112305410114,
+        "firing_rate_pct": 62.333333333333336,
+        "mean_fire_time_s": 9.834676617644265,
+        "n_blocked_episodes": 0.0
+      },
+      "DQN": {
+        "mean_hp": 0.4318058423890385,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 4.51682208836604,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.4866815655974451,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 8.75879926719558,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.2701575777935084,
+        "firing_rate_pct": 58.666666666666664,
+        "mean_fire_time_s": 3.6718891992912006,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.031602698786827026,
+        "lower_bound": 0.00943324070699585,
+        "per_agent_mean_diff": [
+          0.03084299666855856,
+          0.02324932541462368,
+          0.0773001816559953,
+          0.004403333711209578,
+          0.022217656483747992
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 300
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.01,
+        "mean_diff": 0.031602698786827026,
+        "lower_bound": 0.00943324070699585,
+        "per_agent_mean_diff": [
+          0.03084299666855856,
+          0.02324932541462368,
+          0.0773001816559953,
+          0.004403333711209578,
+          0.022217656483747992
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 300
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": 0.023859178508459044,
+        "lower_bound": 0.002448865876039553,
+        "per_agent_mean_diff": [
+          0.023099476390190585,
+          0.015505805136255706,
+          0.06955666137762734,
+          -0.0033401865671583994,
+          0.014474136205380015
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 300
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.01,
+        "mean_diff": 0.023859178508459044,
+        "lower_bound": 0.002448865876039553,
+        "per_agent_mean_diff": [
+          0.023099476390190585,
+          0.015505805136255706,
+          0.06955666137762734,
+          -0.0033401865671583994,
+          0.014474136205380015
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 300
+      }
+    ]
+  },
+  "shift_noise1.5": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.5904823961061172,
+        "sd_hp_over_seeds": 0.021445660372283234,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.403255555555556,
+        "n_blocked_episodes": 0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.5247181852475289,
+        "firing_rate_pct": 83.33333333333333,
+        "mean_fire_time_s": 6.100533333333334,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.5747652858519501,
+        "firing_rate_pct": 96.66666666666667,
+        "mean_fire_time_s": 11.530249042145595,
+        "n_blocked_episodes": 0.0
+      },
+      "DQN": {
+        "mean_hp": 0.5474709291096161,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.776833333333333,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.6506340020779872,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.520425925925926,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.4631603996121985,
+        "firing_rate_pct": 99.33333333333333,
+        "mean_fire_time_s": 4.155499627143922,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.06576421085858836,
+        "lower_bound": 0.03641696986992718,
+        "per_agent_mean_diff": [
+          0.07638908604422989,
+          0.06866017546001708,
+          0.09275885399797461,
+          0.03631604299270394,
+          0.05469689579801623
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.01,
+        "mean_diff": 0.06576421085858836,
+        "lower_bound": 0.03641696986992718,
+        "per_agent_mean_diff": [
+          0.07638908604422989,
+          0.06866017546001708,
+          0.09275885399797461,
+          0.03631604299270394,
+          0.05469689579801623
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": 0.015717110254166975,
+        "lower_bound": -0.0056441221938549465,
+        "per_agent_mean_diff": [
+          0.026341985439808518,
+          0.018613074855595702,
+          0.04271175339355324,
+          -0.01373105761171744,
+          0.004649795193594849
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.01,
+        "mean_diff": 0.015717110254166975,
+        "lower_bound": -0.0056441221938549465,
+        "per_agent_mean_diff": [
+          0.026341985439808518,
+          0.018613074855595702,
+          0.04271175339355324,
+          -0.01373105761171744,
+          0.004649795193594849
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      }
+    ]
+  },
+  "shift_noise2": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.5565181865440735,
+        "sd_hp_over_seeds": 0.02874127406053467,
+        "min_firing_rate_pct": 96.66666666666667,
+        "mean_fire_time_s": 6.835332439335888,
+        "n_blocked_episodes": 0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.4498899871267275,
+        "firing_rate_pct": 72.66666666666667,
+        "mean_fire_time_s": 6.0311162079510705,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.5066752562715048,
+        "firing_rate_pct": 86.0,
+        "mean_fire_time_s": 11.926184323858742,
+        "n_blocked_episodes": 0.0
+      },
+      "DQN": {
+        "mean_hp": 0.5098661142140535,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.777833333333334,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.6190517722872618,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.730907407407406,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.4218569727888529,
+        "firing_rate_pct": 91.33333333333333,
+        "mean_fire_time_s": 4.860624493106245,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.10662819941734604,
+        "lower_bound": 0.07147408955456154,
+        "per_agent_mean_diff": [
+          0.1243513114650294,
+          0.1176128649897154,
+          0.13848918828081938,
+          0.07951094516515549,
+          0.07317668718601053
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.01,
+        "mean_diff": 0.10662819941734604,
+        "lower_bound": 0.07147408955456154,
+        "per_agent_mean_diff": [
+          0.1243513114650294,
+          0.1176128649897154,
+          0.13848918828081938,
+          0.07951094516515549,
+          0.07317668718601053
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": 0.04984293027256866,
+        "lower_bound": 0.018852027648403734,
+        "per_agent_mean_diff": [
+          0.06756604232025201,
+          0.06082759584493804,
+          0.08170391913604198,
+          0.02272567602037811,
+          0.016391418041233154
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.01,
+        "mean_diff": 0.04984293027256866,
+        "lower_bound": 0.018852027648403734,
+        "per_agent_mean_diff": [
+          0.06756604232025201,
+          0.06082759584493804,
+          0.08170391913604198,
+          0.02272567602037811,
+          0.016391418041233154
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      }
+    ]
+  },
+  "shift_size0.7": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.40609440458722723,
+        "sd_hp_over_seeds": 0.03133396117385139,
+        "min_firing_rate_pct": 90.66666666666667,
+        "mean_fire_time_s": 6.528983278867102,
+        "n_blocked_episodes": 0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.23714814681838078,
+        "firing_rate_pct": 36.666666666666664,
+        "mean_fire_time_s": 8.35,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.26990535008534206,
+        "firing_rate_pct": 46.0,
+        "mean_fire_time_s": 10.310144927536232,
+        "n_blocked_episodes": 0.0
+      },
+      "DQN": {
+        "mean_hp": 0.39490272487067346,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.477981481481481,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.47275997365116684,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.348574074074074,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.18508526424392055,
+        "firing_rate_pct": 40.0,
+        "mean_fire_time_s": 7.524583333333334,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.16894625776884648,
+        "lower_bound": 0.13402094263750355,
+        "per_agent_mean_diff": [
+          0.1792597846917319,
+          0.1845738413307435,
+          0.20146816967401524,
+          0.15983986816795107,
+          0.11958962497979063
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.01,
+        "mean_diff": 0.16894625776884648,
+        "lower_bound": 0.13402094263750355,
+        "per_agent_mean_diff": [
+          0.1792597846917319,
+          0.1845738413307435,
+          0.20146816967401524,
+          0.15983986816795107,
+          0.11958962497979063
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": 0.1361890545018852,
+        "lower_bound": 0.10200052252968853,
+        "per_agent_mean_diff": [
+          0.14650258142477063,
+          0.15181663806378226,
+          0.16871096640705396,
+          0.12708266490098982,
+          0.08683242171282939
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.01,
+        "mean_diff": 0.1361890545018852,
+        "lower_bound": 0.10200052252968853,
+        "per_agent_mean_diff": [
+          0.14650258142477063,
+          0.15181663806378226,
+          0.16871096640705396,
+          0.12708266490098982,
+          0.08683242171282939
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      }
+    ]
+  },
+  "shift_range1.2": {
+    "summary": {
+      "agent": {
+        "mean_hp": 0.49112244560816365,
+        "sd_hp_over_seeds": 0.029235007405760353,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.0667333333333335,
+        "n_blocked_episodes": 0
+      },
+      "Plateau_0.45_k3_e0.02": {
+        "mean_hp": 0.4200816945363197,
+        "firing_rate_pct": 70.0,
+        "mean_fire_time_s": 8.179126984126984,
+        "n_blocked_episodes": 0.0
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.4438349280306613,
+        "firing_rate_pct": 78.66666666666667,
+        "mean_fire_time_s": 12.659110169491527,
+        "n_blocked_episodes": 0.0
+      },
+      "DQN": {
+        "mean_hp": 0.479387670613847,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.338277777777778,
+        "n_blocked_episodes": 0.0
+      },
+      "Oracle": {
+        "mean_hp": 0.5752805838402181,
+        "firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.493666666666666,
+        "n_blocked_episodes": 0.0
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.3298018223089281,
+        "firing_rate_pct": 70.66666666666667,
+        "mean_fire_time_s": 6.480738993710691,
+        "n_blocked_episodes": 0.0
+      }
+    },
+    "tests": [
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.02,
+        "mean_diff": 0.07104075107184389,
+        "lower_bound": 0.03781670075848043,
+        "per_agent_mean_diff": [
+          0.08366555001518552,
+          0.06490312455708522,
+          0.1128404040799235,
+          0.034474237341813305,
+          0.05932043936521187
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Plateau_0.45_k3_e0.02",
+        "delta": 0.01,
+        "mean_diff": 0.07104075107184389,
+        "lower_bound": 0.03781670075848043,
+        "per_agent_mean_diff": [
+          0.08366555001518552,
+          0.06490312455708522,
+          0.1128404040799235,
+          0.034474237341813305,
+          0.05932043936521187
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.02,
+        "mean_diff": 0.04728751757750221,
+        "lower_bound": 0.012406249179805512,
+        "per_agent_mean_diff": [
+          0.05991231652084385,
+          0.04114989106274355,
+          0.08908717058558185,
+          0.010721003847471622,
+          0.035567205870870214
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      },
+      {
+        "rule": "Decaying_1.00_0.40",
+        "delta": 0.01,
+        "mean_diff": 0.04728751757750221,
+        "lower_bound": 0.012406249179805512,
+        "per_agent_mean_diff": [
+          0.05991231652084385,
+          0.04114989106274355,
+          0.08908717058558185,
+          0.010721003847471622,
+          0.035567205870870214
+        ],
+        "non_inferior": true,
+        "n_agents": 5,
+        "n_episodes": 150
+      }
+    ]
+  }
+}

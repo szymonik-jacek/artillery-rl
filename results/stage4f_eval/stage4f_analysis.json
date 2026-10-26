@@ -1,0 +1,628 @@
+{
+  "shift_noise1.5": {
+    "summaries": {
+      "Bp": {
+        "mean_hp": 0.5665192192964559,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.173174074074074
+      },
+      "B": {
+        "mean_hp": 0.5834512875085925,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.575140740740741
+      },
+      "V0r": {
+        "mean_hp": 0.5394399339191095,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 7.182456790123456
+      },
+      "DQN": {
+        "mean_hp": 0.5371145174989721,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.776833333333333
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.467423613918034,
+        "min_firing_rate_pct": 98.66666666666667,
+        "mean_fire_time_s": 4.358633633633634
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_hp": 0.5746977364820611,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.772
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.5570171373501167,
+        "min_firing_rate_pct": 93.33333333333333,
+        "mean_fire_time_s": 11.676825396825398
+      },
+      "CovGated_0.45_1": {
+        "mean_hp": 0.40351176167432534,
+        "min_firing_rate_pct": 75.33333333333333,
+        "mean_fire_time_s": 5.128121927236971
+      },
+      "Oracle": {
+        "mean_hp": 0.645553968460708,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.651499999999999
+      }
+    },
+    "vs_rules": {
+      "Bp": {
+        "Threshold_0.45": {
+          "mean_diff": 0.099095605378422,
+          "lower_bound": 0.07032112288092603
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.008178517185605225,
+          "lower_bound": -0.03547069960967083
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.0095020819463392,
+          "lower_bound": -0.020993278094986446
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.16300745762213045,
+          "lower_bound": 0.12012032694334344
+        }
+      },
+      "B": {
+        "Threshold_0.45": {
+          "mean_diff": 0.11602767359055864,
+          "lower_bound": 0.0883222517363609
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.008753551026531426,
+          "lower_bound": -0.007929342374600369
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.02643415015847585,
+          "lower_bound": 0.0021314467205198052
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.17993952583426714,
+          "lower_bound": 0.13904558530983135
+        }
+      },
+      "V0r": {
+        "Threshold_0.45": {
+          "mean_diff": 0.07201632000107563,
+          "lower_bound": 0.054260380672205406
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.03525780256295159,
+          "lower_bound": -0.059814466475209986
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": -0.017577203431007164,
+          "lower_bound": -0.04243394743145148
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.13592817224478412,
+          "lower_bound": 0.09966343418605064
+        }
+      },
+      "DQN": {
+        "Threshold_0.45": {
+          "mean_diff": 0.06969090358093818,
+          "lower_bound": 0.058876836618146064
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.03758321898308905,
+          "lower_bound": -0.05451648648709243
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": -0.019902619851144627,
+          "lower_bound": -0.038505670204117555
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.13360275582464667,
+          "lower_bound": 0.09992591692594882
+        }
+      }
+    }
+  },
+  "shift_noise2": {
+    "summaries": {
+      "Bp": {
+        "mean_hp": 0.536130795532805,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.520129629629629
+      },
+      "B": {
+        "mean_hp": 0.5495653139780607,
+        "min_firing_rate_pct": 96.66666666666667,
+        "mean_fire_time_s": 7.022664240102171
+      },
+      "V0r": {
+        "mean_hp": 0.5022834183491948,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 7.2161790123456795
+      },
+      "DQN": {
+        "mean_hp": 0.49751272474948194,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.777833333333334
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.4163566766011189,
+        "min_firing_rate_pct": 88.0,
+        "mean_fire_time_s": 5.099200336700337
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_hp": 0.5381378873450596,
+        "min_firing_rate_pct": 98.66666666666667,
+        "mean_fire_time_s": 6.870777027027025
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.48925150176005217,
+        "min_firing_rate_pct": 82.0,
+        "mean_fire_time_s": 12.043834688346882
+      },
+      "CovGated_0.45_1": {
+        "mean_hp": 0.18526347862897505,
+        "min_firing_rate_pct": 40.0,
+        "mean_fire_time_s": 6.627407407407408
+      },
+      "Oracle": {
+        "mean_hp": 0.614136237692681,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.835833333333333
+      }
+    },
+    "vs_rules": {
+      "Bp": {
+        "Threshold_0.45": {
+          "mean_diff": 0.11977411893168612,
+          "lower_bound": 0.08793226643036749
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.002007091812254582,
+          "lower_bound": -0.02950156976886821
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.04687929377275269,
+          "lower_bound": 0.011886760149975167
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.35086731690383,
+          "lower_bound": 0.30307459518271546
+        }
+      },
+      "B": {
+        "Threshold_0.45": {
+          "mean_diff": 0.13320863737694189,
+          "lower_bound": 0.10181249307846604
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.011427426633001208,
+          "lower_bound": -0.01014552369683909
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.06031381221800848,
+          "lower_bound": 0.028327528650203822
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.3643018353490858,
+          "lower_bound": 0.31451864282778386
+        }
+      },
+      "V0r": {
+        "Threshold_0.45": {
+          "mean_diff": 0.08592674174807581,
+          "lower_bound": 0.06229662458286359
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.03585446899586487,
+          "lower_bound": -0.06196973214480061
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.013031916589142399,
+          "lower_bound": -0.019250830659580144
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.3170199397202197,
+          "lower_bound": 0.28039749811280784
+        }
+      },
+      "DQN": {
+        "Threshold_0.45": {
+          "mean_diff": 0.081156048148363,
+          "lower_bound": 0.06343408362478406
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.04062516259557768,
+          "lower_bound": -0.05968032143416772
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.008261222989429603,
+          "lower_bound": -0.019524751749893134
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.31224924612050686,
+          "lower_bound": 0.2769923600408581
+        }
+      }
+    }
+  },
+  "shift_size0.7": {
+    "summaries": {
+      "Bp": {
+        "mean_hp": 0.4097534119282372,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.748162962962963
+      },
+      "B": {
+        "mean_hp": 0.39928426759640273,
+        "min_firing_rate_pct": 90.66666666666667,
+        "mean_fire_time_s": 6.66300642701525
+      },
+      "V0r": {
+        "mean_hp": 0.3900663057931453,
+        "min_firing_rate_pct": 99.33333333333333,
+        "mean_fire_time_s": 8.057445645869583
+      },
+      "DQN": {
+        "mean_hp": 0.3828519625663877,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.4499814814814815
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.17403687765898657,
+        "min_firing_rate_pct": 36.666666666666664,
+        "mean_fire_time_s": 6.906818181818182
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_hp": 0.2530410038135154,
+        "min_firing_rate_pct": 43.333333333333336,
+        "mean_fire_time_s": 8.159615384615385
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.2635170679231928,
+        "min_firing_rate_pct": 44.666666666666664,
+        "mean_fire_time_s": 10.234701492537313
+      },
+      "CovGated_0.45_1": {
+        "mean_hp": 0.17872101971933005,
+        "min_firing_rate_pct": 36.666666666666664,
+        "mean_fire_time_s": 6.993181818181818
+      },
+      "Oracle": {
+        "mean_hp": 0.4671970848118402,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.411666666666667
+      }
+    },
+    "vs_rules": {
+      "Bp": {
+        "Threshold_0.45": {
+          "mean_diff": 0.23571653426925065,
+          "lower_bound": 0.21205844103364244
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.1567124081147218,
+          "lower_bound": 0.12880366045970332
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.1462363440050445,
+          "lower_bound": 0.11715868088048706
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.23103239220890714,
+          "lower_bound": 0.2071193478438294
+        }
+      },
+      "B": {
+        "Threshold_0.45": {
+          "mean_diff": 0.22524738993741614,
+          "lower_bound": 0.19582804195856143
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.14624326378288732,
+          "lower_bound": 0.11376623373341117
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.13576719967321002,
+          "lower_bound": 0.10235789663299472
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.22056324787707265,
+          "lower_bound": 0.1912096414842083
+        }
+      },
+      "V0r": {
+        "Threshold_0.45": {
+          "mean_diff": 0.21602942813415868,
+          "lower_bound": 0.19463389033216563
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.1370253019796298,
+          "lower_bound": 0.10742499031665192
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.1265492378699525,
+          "lower_bound": 0.09713790813169325
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.2113452860738152,
+          "lower_bound": 0.18936392615305905
+        }
+      },
+      "DQN": {
+        "Threshold_0.45": {
+          "mean_diff": 0.2088150849074011,
+          "lower_bound": 0.18909322182073002
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.1298109587528723,
+          "lower_bound": 0.10292093708780042
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.11933489464319498,
+          "lower_bound": 0.09204705655562914
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.20413094284705763,
+          "lower_bound": 0.1839952721932994
+        }
+      }
+    }
+  },
+  "shift_range1.2": {
+    "summaries": {
+      "Bp": {
+        "mean_hp": 0.4956563197207059,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.961122222222222
+      },
+      "B": {
+        "mean_hp": 0.48772258120697953,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.183144444444444
+      },
+      "V0r": {
+        "mean_hp": 0.4554577607163341,
+        "min_firing_rate_pct": 80.0,
+        "mean_fire_time_s": 7.3591805555555565
+      },
+      "DQN": {
+        "mean_hp": 0.4690002890167028,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.327611111111111
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.31915203165395434,
+        "min_firing_rate_pct": 68.0,
+        "mean_fire_time_s": 6.639297385620914
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_hp": 0.5022541712931629,
+        "min_firing_rate_pct": 95.33333333333333,
+        "mean_fire_time_s": 6.69102564102564
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.4314015781655892,
+        "min_firing_rate_pct": 76.0,
+        "mean_fire_time_s": 12.667105263157895
+      },
+      "CovGated_0.45_1": {
+        "mean_hp": 0.3345450044514347,
+        "min_firing_rate_pct": 68.0,
+        "mean_fire_time_s": 6.781454248366012
+      },
+      "Oracle": {
+        "mean_hp": 0.571516137479432,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.501666666666667
+      }
+    },
+    "vs_rules": {
+      "Bp": {
+        "Threshold_0.45": {
+          "mean_diff": 0.17650428806675153,
+          "lower_bound": 0.13972553075792385
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.006597851572457038,
+          "lower_bound": -0.03840320104344064
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.06425474155511673,
+          "lower_bound": 0.02604328250547403
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.16111131526927114,
+          "lower_bound": 0.12412765109219107
+        }
+      },
+      "B": {
+        "Threshold_0.45": {
+          "mean_diff": 0.16857054955302522,
+          "lower_bound": 0.13223615340297679
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.014531590086183405,
+          "lower_bound": -0.0373701943655301
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.056321003041390365,
+          "lower_bound": 0.021235445197090433
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.15317757675554478,
+          "lower_bound": 0.118472029879052
+        }
+      },
+      "V0r": {
+        "Threshold_0.45": {
+          "mean_diff": 0.13630572906237973,
+          "lower_bound": 0.07430922764549133
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.04679641057682887,
+          "lower_bound": -0.10255304461102684
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.02405618255074489,
+          "lower_bound": -0.03813903424647353
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.12091275626489933,
+          "lower_bound": 0.05883404948960036
+        }
+      },
+      "DQN": {
+        "Threshold_0.45": {
+          "mean_diff": 0.1498482573627485,
+          "lower_bound": 0.12313053322942707
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": -0.033253882276460124,
+          "lower_bound": -0.05225893676883588
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.03759871085111365,
+          "lower_bound": 0.009266478770057283
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.1344552845652681,
+          "lower_bound": 0.10724754785657444
+        }
+      }
+    }
+  },
+  "heldout": {
+    "summaries": {
+      "Bp": {
+        "mean_hp": 0.422057199190654,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.0222451861686075
+      },
+      "B": {
+        "mean_hp": 0.37620759178320823,
+        "min_firing_rate_pct": 92.33333333333333,
+        "mean_fire_time_s": 3.7244904156115988
+      },
+      "V0r": {
+        "mean_hp": 0.43609352377367544,
+        "min_firing_rate_pct": 95.66666666666667,
+        "mean_fire_time_s": 5.8236937084718585
+      },
+      "DQN": {
+        "mean_hp": 0.41793499928655575,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 4.536912191340979
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.2658623066736739,
+        "min_firing_rate_pct": 57.0,
+        "mean_fire_time_s": 3.7993776478712102
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_hp": 0.35079304552222046,
+        "min_firing_rate_pct": 64.33333333333333,
+        "mean_fire_time_s": 5.8193996302561475
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.3302777664506497,
+        "min_firing_rate_pct": 58.333333333333336,
+        "mean_fire_time_s": 9.871944245653792
+      },
+      "CovGated_0.45_1": {
+        "mean_hp": 0.2658623066736739,
+        "min_firing_rate_pct": 57.0,
+        "mean_fire_time_s": 3.7993776478712102
+      },
+      "Oracle": {
+        "mean_hp": 0.48450663611135686,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 8.73408423673698
+      }
+    },
+    "vs_rules": {
+      "Bp": {
+        "Threshold_0.45": {
+          "mean_diff": 0.1561948925169801,
+          "lower_bound": 0.1347399000391832
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.07126415366843351,
+          "lower_bound": 0.0479322901319788
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.09177943274000427,
+          "lower_bound": 0.06812280125162132
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.1561948925169801,
+          "lower_bound": 0.1347399000391832
+        }
+      },
+      "B": {
+        "Threshold_0.45": {
+          "mean_diff": 0.1103452851095343,
+          "lower_bound": 0.08997761892767604
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.02541454626098775,
+          "lower_bound": 0.005172185362252379
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.045929825332558474,
+          "lower_bound": 0.02443465027851063
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.1103452851095343,
+          "lower_bound": 0.08997761892767604
+        }
+      },
+      "V0r": {
+        "Threshold_0.45": {
+          "mean_diff": 0.17023121710000158,
+          "lower_bound": 0.1553971388954674
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.08530047825145504,
+          "lower_bound": 0.06960315073311274
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.10581575732302576,
+          "lower_bound": 0.08898934287853708
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.17023121710000158,
+          "lower_bound": 0.1553971388954674
+        }
+      },
+      "DQN": {
+        "Threshold_0.45": {
+          "mean_diff": 0.15207269261288184,
+          "lower_bound": 0.1398059081138534
+        },
+        "Plateau_0.40_k3_e0.01": {
+          "mean_diff": 0.06714195376433528,
+          "lower_bound": 0.054142918352119075
+        },
+        "Decaying_1.00_0.40": {
+          "mean_diff": 0.087657232835906,
+          "lower_bound": 0.0733210187617791
+        },
+        "CovGated_0.45_1": {
+          "mean_diff": 0.15207269261288184,
+          "lower_bound": 0.1398059081138534
+        }
+      }
+    },
+    "V0r_minus_Bp": {
+      "mean_diff": 0.014036324583021564,
+      "lower_bound": -0.004973357928992912,
+      "upper_bound": 0.033166383799043485,
+      "ci_two_sided": [
+        -0.008382969933007104,
+        0.03637355627176871
+      ],
+      "a_better": false,
+      "b_better": false
+    }
+  }
+}

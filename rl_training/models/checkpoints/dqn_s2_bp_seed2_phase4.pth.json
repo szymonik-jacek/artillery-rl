@@ -1,0 +1,6 @@
+{
+  "architecture": "dueling",
+  "aux_head": true,
+  "cov_feature": "log",
+  "time_feature": "seconds"
+}

@@ -1,0 +1,390 @@
+{
+  "selected_rules": {
+    "threshold": {
+      "policy": "Threshold_0.45",
+      "tuning_hp": 0.46305811824173854
+    },
+    "plateau": {
+      "policy": "Plateau_0.40_k3_e0.01",
+      "tuning_hp": 0.6368308963958099
+    },
+    "decaying": {
+      "policy": "Decaying_1.00_0.40",
+      "tuning_hp": 0.6375912062269825
+    },
+    "covgated": {
+      "policy": "CovGated_0.45_1",
+      "tuning_hp": 0.4843465220741952
+    }
+  },
+  "summaries": {
+    "tuning_run": {
+      "Bp": {
+        "mean_hp": 0.5950939029543828,
+        "min_firing_rate_pct": 95.33333333333333,
+        "mean_fire_time_s": 6.178476293706294
+      },
+      "B": {
+        "mean_hp": 0.6178631151898604,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.432671851851852
+      },
+      "V0r": {
+        "mean_hp": 0.5133946616985807,
+        "min_firing_rate_pct": 80.0,
+        "mean_fire_time_s": 5.983306012839326
+      },
+      "Ens_bp": {
+        "mean_hp": 0.6114721426347381,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.019533333333333
+      },
+      "DQN": {
+        "mean_hp": 0.5881739338920551,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.584631481481481
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.46305811824173854,
+        "min_firing_rate_pct": 97.33333333333333,
+        "mean_fire_time_s": 5.002939497716895
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_hp": 0.6368308963958099,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.279622222222223
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.6375912062269825,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.521046296296296
+      },
+      "CovGated_0.45_1": {
+        "mean_hp": 0.4843465220741952,
+        "min_firing_rate_pct": 97.33333333333333,
+        "mean_fire_time_s": 5.131792237442922
+      },
+      "Oracle": {
+        "mean_hp": 0.6869688356258824,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 11.99875
+      }
+    },
+    "heldout2": {
+      "Bp": {
+        "mean_hp": 0.41103456274556976,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 4.8173101512193215
+      },
+      "B": {
+        "mean_hp": 0.377409598457494,
+        "min_firing_rate_pct": 89.33333333333333,
+        "mean_fire_time_s": 3.835046080993312
+      },
+      "V0r": {
+        "mean_hp": 0.4378889194471649,
+        "min_firing_rate_pct": 95.33333333333333,
+        "mean_fire_time_s": 5.650378484432138
+      },
+      "Ens_bp": {
+        "mean_hp": 0.4263623453873278,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 4.6438077356927305
+      },
+      "DQN": {
+        "mean_hp": 0.4188158773708477,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 4.46603100069444
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.26371872106636457,
+        "min_firing_rate_pct": 56.666666666666664,
+        "mean_fire_time_s": 3.7267569773342113
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_hp": 0.34061326792303326,
+        "min_firing_rate_pct": 62.0,
+        "mean_fire_time_s": 5.589616713263006
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.34197506422706314,
+        "min_firing_rate_pct": 58.666666666666664,
+        "mean_fire_time_s": 8.740695548757873
+      },
+      "CovGated_0.45_1": {
+        "mean_hp": 0.26371872106636457,
+        "min_firing_rate_pct": 56.666666666666664,
+        "mean_fire_time_s": 3.7267569773342113
+      },
+      "Oracle": {
+        "mean_hp": 0.4794921595474036,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 7.845202413400793
+      }
+    },
+    "evaluation_100": {
+      "Bp": {
+        "mean_hp": 0.5914758065853863,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.778145555555556
+      },
+      "B": {
+        "mean_hp": 0.6119169017835036,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.030733333333333
+      },
+      "V0r": {
+        "mean_hp": 0.580163303339914,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 7.214624074074074
+      },
+      "Ens_bp": {
+        "mean_hp": 0.6003870827638016,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.7226944444444445
+      },
+      "DQN": {
+        "mean_hp": 0.5789177318025527,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 5.7815
+      },
+      "Threshold_0.45": {
+        "mean_hp": 0.4759921739848642,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 3.7496444444444443
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_hp": 0.6128927057425965,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 6.7678
+      },
+      "Decaying_1.00_0.40": {
+        "mean_hp": 0.6138856777031821,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 11.009366666666665
+      },
+      "CovGated_0.45_1": {
+        "mean_hp": 0.49978598348014625,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 3.8946444444444444
+      },
+      "Oracle": {
+        "mean_hp": 0.679678911976778,
+        "min_firing_rate_pct": 100.0,
+        "mean_fire_time_s": 10.62675
+      }
+    }
+  },
+  "H17_tuning": {
+    "mean_a": 0.6114721426347381,
+    "mean_b": 0.5950939029543826,
+    "mean_diff": 0.016378239680355566,
+    "lower_bound": -0.018350663031154662,
+    "upper_bound": 0.053344923123090464,
+    "ci_two_sided": [
+      -0.023692829924261204,
+      0.05752316093555622
+    ],
+    "a_better": false,
+    "b_better": false
+  },
+  "H16a_heldout2_V0r_minus_Bp": {
+    "mean_a": 0.43788891944716485,
+    "mean_b": 0.4110345627455699,
+    "mean_diff": 0.026854356701594972,
+    "lower_bound": 0.005108859568509114,
+    "upper_bound": 0.050247813632285386,
+    "ci_two_sided": [
+      0.0014730341318194412,
+      0.05459433343819134
+    ],
+    "a_better": true,
+    "b_better": false
+  },
+  "H16b_heldout2": {
+    "Bp": {
+      "Threshold_0.45": {
+        "mean_diff": 0.14731584167920517,
+        "lower_bound": 0.12312039461478813,
+        "non_inferior": true
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_diff": 0.07042129482253659,
+        "lower_bound": 0.044992099835501356,
+        "non_inferior": true
+      },
+      "Decaying_1.00_0.40": {
+        "mean_diff": 0.0690594985185067,
+        "lower_bound": 0.04247861476659444,
+        "non_inferior": true
+      },
+      "CovGated_0.45_1": {
+        "mean_diff": 0.14731584167920517,
+        "lower_bound": 0.12312039461478813,
+        "non_inferior": true
+      }
+    },
+    "V0r": {
+      "Threshold_0.45": {
+        "mean_diff": 0.1741701983808003,
+        "lower_bound": 0.15952248196788743,
+        "non_inferior": true
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_diff": 0.0972756515241317,
+        "lower_bound": 0.0822392517283376,
+        "non_inferior": true
+      },
+      "Decaying_1.00_0.40": {
+        "mean_diff": 0.09591385522010182,
+        "lower_bound": 0.07937494005505849,
+        "non_inferior": true
+      },
+      "CovGated_0.45_1": {
+        "mean_diff": 0.1741701983808003,
+        "lower_bound": 0.15952248196788743,
+        "non_inferior": true
+      }
+    },
+    "Ens_bp": {
+      "Threshold_0.45": {
+        "mean_diff": 0.16264362432096321,
+        "lower_bound": 0.14973538599827763,
+        "non_inferior": true
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_diff": 0.08574907746429465,
+        "lower_bound": 0.07042869985093543,
+        "non_inferior": true
+      },
+      "Decaying_1.00_0.40": {
+        "mean_diff": 0.08438728116026475,
+        "lower_bound": 0.06763946402969098,
+        "non_inferior": true
+      },
+      "CovGated_0.45_1": {
+        "mean_diff": 0.16264362432096321,
+        "lower_bound": 0.14973538599827763,
+        "non_inferior": true
+      }
+    }
+  },
+  "H16c_test": {
+    "Bp": {
+      "Threshold_0.45": {
+        "mean_diff": 0.11548363260052211,
+        "lower_bound": 0.08522647356287574,
+        "non_inferior": true
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_diff": -0.021416899157210196,
+        "lower_bound": -0.05124628836501887,
+        "non_inferior": false
+      },
+      "Decaying_1.00_0.40": {
+        "mean_diff": -0.02240987111779597,
+        "lower_bound": -0.05179076661622099,
+        "non_inferior": false
+      },
+      "CovGated_0.45_1": {
+        "mean_diff": 0.09168982310524003,
+        "lower_bound": 0.06179983330022162,
+        "non_inferior": true
+      }
+    },
+    "B": {
+      "Threshold_0.45": {
+        "mean_diff": 0.13592472779863932,
+        "lower_bound": 0.11560212445415412,
+        "non_inferior": true
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_diff": -0.0009758039590929947,
+        "lower_bound": -0.017044221073435093,
+        "non_inferior": true
+      },
+      "Decaying_1.00_0.40": {
+        "mean_diff": -0.00196877591967876,
+        "lower_bound": -0.019448801589987026,
+        "non_inferior": true
+      },
+      "CovGated_0.45_1": {
+        "mean_diff": 0.11213091830335725,
+        "lower_bound": 0.09339282099038189,
+        "non_inferior": true
+      }
+    },
+    "V0r": {
+      "Threshold_0.45": {
+        "mean_diff": 0.10417112935504974,
+        "lower_bound": 0.08860065494546605,
+        "non_inferior": true
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_diff": -0.03272940240268255,
+        "lower_bound": -0.05179435072104492,
+        "non_inferior": false
+      },
+      "Decaying_1.00_0.40": {
+        "mean_diff": -0.03372237436326832,
+        "lower_bound": -0.050391547440462696,
+        "non_inferior": false
+      },
+      "CovGated_0.45_1": {
+        "mean_diff": 0.08037731985976768,
+        "lower_bound": 0.0646041620955484,
+        "non_inferior": true
+      }
+    },
+    "Ens_bp": {
+      "Threshold_0.45": {
+        "mean_diff": 0.12439490877893725,
+        "lower_bound": 0.11724461506330275,
+        "non_inferior": true
+      },
+      "Plateau_0.40_k3_e0.01": {
+        "mean_diff": -0.012505622978795039,
+        "lower_bound": -0.017824665578992784,
+        "non_inferior": true
+      },
+      "Decaying_1.00_0.40": {
+        "mean_diff": -0.013498594939380801,
+        "lower_bound": -0.0165376740444138,
+        "non_inferior": true
+      },
+      "CovGated_0.45_1": {
+        "mean_diff": 0.1006010992836552,
+        "lower_bound": 0.09612315264170301,
+        "non_inferior": true
+      }
+    }
+  },
+  "ensemble_vs_Bp": {
+    "heldout2": {
+      "mean_a": 0.4263623453873278,
+      "mean_b": 0.4110345627455699,
+      "mean_diff": 0.015327782641757937,
+      "lower_bound": -0.004968028826443923,
+      "upper_bound": 0.03660404271353682,
+      "ci_two_sided": [
+        -0.007782512254870674,
+        0.039523581018563535
+      ],
+      "a_better": false,
+      "b_better": false
+    },
+    "evaluation_100": {
+      "mean_a": 0.6003870827638016,
+      "mean_b": 0.5914758065853863,
+      "mean_diff": 0.00891127617841525,
+      "lower_bound": -0.019445280704906368,
+      "upper_bound": 0.0371555403829429,
+      "ci_two_sided": [
+        -0.024809139216560704,
+        0.04223399934741469
+      ],
+      "a_better": false,
+      "b_better": false
+    }
+  }
+}

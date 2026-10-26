@@ -1,18 +1,18 @@
 {
   "manifest_version": "1.0",
-  "timestamp_utc": "2026-09-29T15:46:50.447438+00:00",
-  "paper_title": "Reinforcement Learning for Optimal Firing Timing Decisions in Anti-Aircraft Fire Control Systems",
+  "timestamp_utc": "2026-10-23T13:40:35.214446+00:00",
+  "paper_title": "Reinforcement Learning for Firing Timing Decisions in Anti-Aircraft Fire Control Systems",
   "release_tag": null,
   "git": {
-    "commit": "4e57d990f75ab01684082101371ef379c8577658",
-    "branch": "master",
+    "commit": "d26cbae62cdd196086321fb50a9bea8979f9ca11",
+    "branch": "paper-update",
     "tag": null,
     "remote": "https://github.com/szymonik-jacek/mc2",
-    "is_dirty": true
+    "is_dirty": false
   },
   "environment": {
     "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
-    "platform": "Windows-10-10.0.26200-SP0",
+    "platform": "Windows-10-10.0.26300-SP0",
     "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
     "pytorch_version": "2.12.0+cpu",
     "cuda_available": false,
@@ -508,6 +508,6300 @@
           2
         ]
       }
+    },
+    "dqn_hp_v1_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v1_seed0_phase1.pth",
+      "sha256": "b7e66e6e24889ebd4f20ec02ec134c39e7194bb239166e924a0463c88d346667",
+      "size_bytes": 79177,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v1_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v1_seed0_phase2.pth",
+      "sha256": "033b0e998e06837d796e5a71e7dfc15c96324f0f6124f08ecab1df950ebe50ef",
+      "size_bytes": 79177,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v1_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v1_seed0_phase3.pth",
+      "sha256": "fe8a80d547d9af5e1ee6ab07ddf1619ca6d0da0f536b1b31230cc9b5cd20a6a9",
+      "size_bytes": 79177,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v1_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v1_seed1_phase1.pth",
+      "sha256": "61db41fc7306f3dd8af9bf442f7cc5ac45e58fba59a392b36309e3f780f2dd93",
+      "size_bytes": 79177,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v1_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v1_seed1_phase2.pth",
+      "sha256": "82b7dd1034f2f40b189eb8f86e6c49841bbc9122039e7336622cb2e3c6aa5b1a",
+      "size_bytes": 79177,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v1_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v1_seed1_phase3.pth",
+      "sha256": "0fbf281a76504668664e723c58c9bb8f48746d2adff58d522b9e7628fd597d6c",
+      "size_bytes": 79177,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v1_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v1_seed2_phase1.pth",
+      "sha256": "3c7d1f9a3929f7ac205e1e82ec985c78a0246e47c9c3265ad62d22f9379eb29c",
+      "size_bytes": 79177,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v1_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v1_seed2_phase2.pth",
+      "sha256": "026ed1a0fba167cbed5b73cb10e956f4a746291faf5cd9fb826e9e3f1b705b01",
+      "size_bytes": 79177,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v1_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v1_seed2_phase3.pth",
+      "sha256": "0378aa4d50e57c10050a524fb9895c08f8e0d31951c6b6c3703a1e84ab9bb974",
+      "size_bytes": 79177,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.05_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.05_seed0_phase1.pth",
+      "sha256": "97d9b885185ce8c928d6bbd0dcfcbce5e27d69ad07755fb0736059b4f3189feb",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.05_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.05_seed0_phase2.pth",
+      "sha256": "38e0ccb28f4b7347ace95f06abe32d3cd159bd3b81279675dd4d86cd2d09e2dc",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.05_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.05_seed0_phase3.pth",
+      "sha256": "e4cf211567a23fc9fa3f86f118d45e4e5a3ba38e2aa8bc2e5e95bebb19d8b2de",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.05_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.05_seed1_phase1.pth",
+      "sha256": "39cd85bdb214ba75566356590fbff6d215bc13939fd7b89f67a42350683d10ac",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.05_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.05_seed1_phase2.pth",
+      "sha256": "7b10a37883522f4bf9a4cb7c6e1f09d659b1b8750ac3fcb4877ac044f4d2e073",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.05_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.05_seed1_phase3.pth",
+      "sha256": "b749d4172b833e06342ba627434fb4f31f811d86b4e7de3fb74b58f087421407",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.05_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.05_seed2_phase1.pth",
+      "sha256": "dfd126c180c51ff04ac2aa1a6deddb64fe0eb77fdd5a6f25ff1969a4bf89fbea",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.05_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.05_seed2_phase2.pth",
+      "sha256": "2df814efc0b68965d1891b5d46e5ffa134c3e77ce8b7995a726874476a41f7a0",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.05_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.05_seed2_phase3.pth",
+      "sha256": "dec04ada80d828f2a02f1349871be883f51fe2715f05a482d81a04ecaf6416fe",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.15_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.15_seed0_phase1.pth",
+      "sha256": "33fa40a1e3e8ebf28384431bb1a6aacac8e6e8facaaf4ed1a95a4a9a9e26cb24",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.15_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.15_seed0_phase2.pth",
+      "sha256": "45ed204f19169de5817a9f8e7e74dcd3726694956af666f46f25b71bf4e0bcdf",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.15_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.15_seed0_phase3.pth",
+      "sha256": "b19b29186f5d9af9f5f648f14abd9cfbba6bc9ff07c561cc2547c167b3797dda",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.15_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.15_seed1_phase1.pth",
+      "sha256": "efe2e9dd21859a918e01d61e2863fa6d6203891279001576704958b94d07ef1a",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.15_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.15_seed1_phase2.pth",
+      "sha256": "0a666ed2fb25890e9191119a236c7d6d8138b2f94c6b62742c078e6a0b4fd7c6",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.15_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.15_seed1_phase3.pth",
+      "sha256": "7f5724e7c2e60a6f7e7c4523cf4d5bce13638f2352057fc739741df5f7dc67c0",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.15_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.15_seed2_phase1.pth",
+      "sha256": "e09d5e2ca20ba54ede588d62f9c8201e53a50e4c4b343b9409f193d453fcce90",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.15_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.15_seed2_phase2.pth",
+      "sha256": "ecf62acbef77bdcabb42dad8d63be81e4be5ca36fdad8a6c16185f9157e52efe",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.15_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.15_seed2_phase3.pth",
+      "sha256": "c75b3f8a12a2f93f1d1bff981229b59d13301047b90667f0f64dda0ede60c8f7",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.30_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.30_seed0_phase1.pth",
+      "sha256": "0b4f4b7bdf4c5495d883dc48d92201e2095d8724b2c41b5723452e17ec4021ee",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.30_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.30_seed0_phase2.pth",
+      "sha256": "6258262d1ec9831c0e09c67cfa5315b5e219193c4de073107512c705978dcf5f",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.30_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.30_seed0_phase3.pth",
+      "sha256": "1c6b9a1b5197c2805979a30e8cb1dea097090488109eef4a8b1227d3adc83857",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.30_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.30_seed1_phase1.pth",
+      "sha256": "f672deac319a25326e96ca7175f3ceb261b0973691fda155fff7199f761b80d6",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.30_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.30_seed1_phase2.pth",
+      "sha256": "52fcd2d913c734402b077316de3f89b05e71676da61daa74b19117f8ff9b96e9",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.30_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.30_seed1_phase3.pth",
+      "sha256": "841577dc722b316d07c4a54815334bab183ea71ec64a5f1c82d0f817e83c2927",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.30_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.30_seed2_phase1.pth",
+      "sha256": "22db8fb961f5bf113667aa6f8c384c237e149e7f165def1d2e58c2820a8ed519",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.30_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.30_seed2_phase2.pth",
+      "sha256": "786f181fcd33afed382ce27b9940e197e6bfb3a4387965df7680e938d0f515cf",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_hp_v2_l0.30_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_hp_v2_l0.30_seed2_phase3.pth",
+      "sha256": "5f4efe0c254e08d979ec26292d66289f26384d7437c1198ab8d33fcb99569aeb",
+      "size_bytes": 79249,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.05_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.05_seed0_phase1.pth",
+      "sha256": "033eaa926d61a2e9c69ca5e4c92e08d217ac28d3d94ccfd0b9a12f2733ea6eb4",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.05_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.05_seed0_phase2.pth",
+      "sha256": "fe8056dddc12dd9811b09da4cf0ade0d616759c011f679375afcc0a90636d3d2",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.05_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.05_seed0_phase3.pth",
+      "sha256": "e0eb1eab217ca572cebc454c19dfd467e98d90974b1be2be92afe145cee851ad",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.05_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.05_seed1_phase1.pth",
+      "sha256": "a664ed57fd1b535a39344930211b9925c8e36462b46974a1180703535b13aefe",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.05_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.05_seed1_phase2.pth",
+      "sha256": "c058ad0544a102ac34b2bf49b5b9d45d78e7a313090cea9b0e5a5efc664379fb",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.05_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.05_seed1_phase3.pth",
+      "sha256": "471f30554f4ad906ad697a9e50c04ed1c21291d51a62c876b80c162ff96458ff",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.05_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.05_seed2_phase1.pth",
+      "sha256": "0e642b379baebafc77847650f81277d844e12256db6154a1cf304199110b9379",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.05_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.05_seed2_phase2.pth",
+      "sha256": "274531f912628ac7f39d9016f1cb5fef135dcaa0a5f3655dbcfd6ae01eee0cf5",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.05_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.05_seed2_phase3.pth",
+      "sha256": "63d9b993f755c78c52c88c20cb79eea74337bba830581029bfa73d661ca0673c",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.15_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.15_seed0_phase1.pth",
+      "sha256": "db884678576cf4333a3bcde823f8aa3c59c8a66fbf30bb36a15abb797db2bf91",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.15_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.15_seed0_phase2.pth",
+      "sha256": "8f231c9e7f89e3a3a39afb20b5a1364f812cf9fec05af643b785416b1b7f3c8c",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.15_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.15_seed0_phase3.pth",
+      "sha256": "a1bfed3a09463dd613a08e2bc459c99331cdb2edde123340b5d0bb9468708a17",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.15_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.15_seed1_phase1.pth",
+      "sha256": "3fa41e3b00094205782ca6b4ef071e29e55c39203e7ace0b168dd432d20c4664",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.15_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.15_seed1_phase2.pth",
+      "sha256": "5fbeca225d04cf66b2c73d8fd754853524a0cd1caee0299d87728c2de16db085",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.15_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.15_seed1_phase3.pth",
+      "sha256": "ab1bc473b9ce138ccfe7ccd3e2d33d7ae39df05b0fbcf55b5f0d9103f5c9f1dc",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.15_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.15_seed2_phase1.pth",
+      "sha256": "b57ec71e9e580e98f96dc9e3b713cd0d6c484b64a41e862317603c3f73710697",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.15_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.15_seed2_phase2.pth",
+      "sha256": "40e126ea4115772a50445c6107f653435d495b60078fcbef0f40a13941fc80cf",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.15_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.15_seed2_phase3.pth",
+      "sha256": "26d6fda27bd737dd1fb8447ce66541addf60c7f7ebc26dbf11c433bd2427a9da",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.30_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.30_seed0_phase1.pth",
+      "sha256": "b624ffb6abf38bbbde463fcd6882a280c55ad520d328ce09d5f1666dbb2a701c",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.30_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.30_seed0_phase2.pth",
+      "sha256": "b8d2a32b687dbed91d2ed919c554713342ecbc082fc51b2b184bfdbae65ecd86",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.30_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.30_seed0_phase3.pth",
+      "sha256": "bdeed088955100f00185ec36bed9077cefc5bb20566cf52dde80d69058c9fd34",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.30_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.30_seed1_phase1.pth",
+      "sha256": "bfe70e2961bed43e25539b590e70da93b0ff0955d366a0b10f89d8895fa62acf",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.30_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.30_seed1_phase2.pth",
+      "sha256": "279349a9594f3435714355ba694e7b599d628b65214fc31f2df895655a59d6d6",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.30_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.30_seed1_phase3.pth",
+      "sha256": "524c310cb47e1a99f2165000895bc4882082a27ed4966288ac441005d714ded4",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.30_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.30_seed2_phase1.pth",
+      "sha256": "10a8c59d64afb9e282a10b55471a09b0cc35b4ca30b85f76f6d8717adda20475",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.30_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.30_seed2_phase2.pth",
+      "sha256": "7079e97821ee46a7f0081c3e9b884fd95a731346f0262184df3a25a8a5cb65d5",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_hp_v2_l0.30_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_hp_v2_l0.30_seed2_phase3.pth",
+      "sha256": "fb24cbb872a9ccfd45579519575c6f6179e1ae0c6d5ac33933910930d2f29950",
+      "size_bytes": 79309,
+      "total_parameters": 18946,
+      "layers": {
+        "network.0.weight": [
+          128,
+          16
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed0_phase1.pth",
+      "sha256": "57b5c20d2e99b145d6b735180d6915ec11a7eff2f24ab067d19897eb0d52a03d",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed0_phase2.pth",
+      "sha256": "7d7a2332a4487ad8fa2425f73c82e0071decfa4ed1cf5a2761a8ff8afdc9119a",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed0_phase3.pth",
+      "sha256": "a042aee7ad51649a8f3b70937cf6c964d71231dc1cc45ed6859a1b64c405f1cf",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed0_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed0_phase4.pth",
+      "sha256": "ae63a26788098853946aca0a366eec31e4c4634b58909a81e4b4452918d64977",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed1_phase1.pth",
+      "sha256": "7ba46b533192be0b93e468cc28c281546e55eda9343771f42e8f0d1d471c3484",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed1_phase2.pth",
+      "sha256": "d252511b73b60a7bb7b2f064e00d5f84c8a7d9e1351392c4906695a40c59f7a7",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed1_phase3.pth",
+      "sha256": "d2f8eb8bff48cb52f795a304cdb9636368682bfff98718e727c1b23e6cfcd3ee",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed1_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed1_phase4.pth",
+      "sha256": "b64181bf12110b9c434e0da5b61b0057bf0975a1c5ab6b1ad5d4b05e47423906",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed2_phase1.pth",
+      "sha256": "fab095ff235a16f2dd3529f9aea5ddc79ea068087e18ad335ccdff2197ca294a",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed2_phase2.pth",
+      "sha256": "c13944abdff3d7da4f8f0ef22e9ba2de2ab1d973954482afbbbf72d3bafc4b19",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed2_phase3.pth",
+      "sha256": "bb61a3c527d77b0d2f3cffbb3073177f680c508c071a4f4ae9ba8bd6abc2f1f9",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_pool_v0r_seed2_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_pool_v0r_seed2_phase4.pth",
+      "sha256": "c1b85d969bd4f1329a9a643f97378057baec9615055d68605111f60b67e96330",
+      "size_bytes": 78189,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed0_phase1.pth",
+      "sha256": "24a4c6b3c6c29e75639badf9e0bb6e4a96b9e10078434a7714bf68c078486eaa",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed0_phase2.pth",
+      "sha256": "93b1eeae0e140a4339c93a6ef78af219813b713a2be110616d0cb573c7331b85",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed0_phase3.pth",
+      "sha256": "f6b1a7122f5712b6ca047e7be35e1f4d804274433226c3e7f311dd93a2a39fe5",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed0_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed0_phase4.pth",
+      "sha256": "90a3ac869f23d76b57753e3ef6b56bafceadd2025639204eb704e1a92ea4ad8e",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed1_phase1.pth",
+      "sha256": "f56e083e000d3a8e2dbd537567cb0e04ec15b2667ecc2f89cba96c20f2d9e65e",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed1_phase2.pth",
+      "sha256": "eecde4c8043672a3db5afc1e4ed3e79b297447c648c5705c6ac857d59ade6b1f",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed1_phase3.pth",
+      "sha256": "dae6ae9aae6c9ece0edbbd48b26808128da146676e1c7ec1f1d2ad1077b1590d",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed1_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed1_phase4.pth",
+      "sha256": "34e17c8288078f2f78adf0ad8b4c6d8fb716ae414135fb151c6aba9f779eb3e0",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed2_phase1.pth",
+      "sha256": "32d50736932f0322a5e22e150a22eda3216473db0ca6ecea2490318767d734ef",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed2_phase2.pth",
+      "sha256": "00a096082c9f72c9bfbe52ac805c859c3fe2857d0f97162b83d84ec241a4e36f",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed2_phase3.pth",
+      "sha256": "d804ab5b1c62033be09756ab52e16a40f800676f7e9c269787dbc5a371f11241",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed2_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed2_phase4.pth",
+      "sha256": "6175d843b0b8a25b9918c2083264d52b95c9a6514a52c68fd8912f9bb9657129",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed3_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed3_phase1.pth",
+      "sha256": "d0f855bf7b713ec1ce6c14eab90df2a9ebe76eb3aac20e9347a3c10aae37f523",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed3_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed3_phase2.pth",
+      "sha256": "6d93abdef51e33ddfd4ce12245e705fe0a7e1caa4f5545e621e27068250e49de",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed3_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed3_phase3.pth",
+      "sha256": "e3b466bb9ac0c7315d8311572ae94a64e9a00ee7f092f3bc297877ca5e2a5c12",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed3_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed3_phase4.pth",
+      "sha256": "36e706902c8adeddc2b02cba6978b38fb2e27100953d42034955ac50184e8399",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed4_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed4_phase1.pth",
+      "sha256": "437d1887d98e348d2dfead0c75aa25e6ab5054d41689748ae47d960ff1f9cf01",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed4_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed4_phase2.pth",
+      "sha256": "cd66246642519f3cb611e44d98e8e0937038cadd16cf25c30a5f5358ab0c3707",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed4_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed4_phase3.pth",
+      "sha256": "5c7ca7af03dc9d18a139eaff7583e05deaa3a1df96ca4ad007252898ccb7d6ef",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a0_seed4_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a0_seed4_phase4.pth",
+      "sha256": "ee5dcbe14bb39418e5bf24f022e23d27fb3ba1b5073793dc82c178e5008855f8",
+      "size_bytes": 79199,
+      "total_parameters": 18819,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_s2_a_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed0_phase1.pth",
+      "sha256": "5f4061eb47f3b35a117e1382fb887ba92dd1cc17e93b0799614503ce3a91003e",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed0_phase2.pth",
+      "sha256": "5e3339a3fb5097842c57892259863df468d79a22e2ad388ed8a13cb8a6a429aa",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed0_phase3.pth",
+      "sha256": "c50dd1a1ab461e0d8ce455b1b17ec37f1eddd5489577502f29f12f37397c443d",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed0_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed0_phase4.pth",
+      "sha256": "0ad7fe648d793faf97f5500727508e1ed993b4ea092cb98b647ecde05cbcc3fd",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed1_phase1.pth",
+      "sha256": "4e67315d76209610598f0143f8a43870db3b3b739fee1addde62e3480389ae5b",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed1_phase2.pth",
+      "sha256": "10363758cd2d1569a0d25c100ea11aaf0dddf8fb74b26fd960f76ed89356e1a5",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed1_phase3.pth",
+      "sha256": "d5fb41e85afc6be9296cb8ab3b2c544c2e90f46a1b7c6f7738fddfbc1ec4a53f",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed1_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed1_phase4.pth",
+      "sha256": "d6f6ba481115eb7589da91f2f2eeffd54f0ce39f319217bb2a88afdda43bfdd6",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed2_phase1.pth",
+      "sha256": "e0deb5d986800817c81b07c9dce8200bb0cba8b8d04d6c23086a9baf5bb51a26",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed2_phase2.pth",
+      "sha256": "b42d1959c0a076c0fb7fe9f250c93c70a7676895650367dd3208e1fd9aa4ef1b",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed2_phase3.pth",
+      "sha256": "3f5e3604e83147905094f88d0d1be2e38a404c2665177ac3add4b6668f0b5de9",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed2_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed2_phase4.pth",
+      "sha256": "63805e9138bbe8aedd3326c5e8dc992cb4a5519118014c2c334b8120288b1fba",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed3_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed3_phase1.pth",
+      "sha256": "1cc611ee51f2d7ad08722efd56e9d167bb1bf0df730f5fb594e127c23a2240aa",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed3_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed3_phase2.pth",
+      "sha256": "b402abcd00d934acc7b19ff7de45424202c6660ea66d0366e14ed2461c664d27",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed3_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed3_phase3.pth",
+      "sha256": "79567be0fb674038449b07978b7d0085e3e88435d0da63bc0fd0294b53e94880",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed3_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed3_phase4.pth",
+      "sha256": "2186df2a1756cfb8f40d370deec426fff4558ba4394ce38e1a4a2b6c851695c2",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed4_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed4_phase1.pth",
+      "sha256": "6e5f470519eb63ccbe2e37f411072ec284df9c09dc7935df1630b7393ff8b3f4",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed4_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed4_phase2.pth",
+      "sha256": "e0dd46539e8341bd882e9f6f0cce39c7c189ae7b7d3c50269704312e94b82484",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed4_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed4_phase3.pth",
+      "sha256": "d8822368251a898b149c0e745afeb96bd23977ae49b2c522609202240b03455f",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_a_seed4_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_a_seed4_phase4.pth",
+      "sha256": "0b3d84dfb824bc05c0e449931de11e871be6be0f505063fdddd189ff84449b21",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed0_phase1.pth",
+      "sha256": "92721cf9b0e3b503a7d6baf9a8fb6d85252d4aa088cae9f283f28cb2e43caa22",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed0_phase2.pth",
+      "sha256": "d0c15e68a6c6adab48cf0e3d005b3e52b54c38ee3d891fe89d8fbd8d41cef658",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed0_phase3.pth",
+      "sha256": "35ee4fd2732d66bcd466f66a2193ec70f01753fce38050e9a0370eacda3a6d35",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed0_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed0_phase4.pth",
+      "sha256": "498d2ccd38c3e9f942e735352138f0e68fc266fe2c71f9d36bcde33455fa9830",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed0_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed0_pretrain.pth",
+      "sha256": "abd3e1ccf9887026b9818bfb518ef755212b2e7d061f8ad258a941cdf0a75996",
+      "size_bytes": 80261,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed1_phase1.pth",
+      "sha256": "d593e2419574a4cf7e42cfa4ea0a97abc23f3c100bd0622866fafb50b00b0fc9",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed1_phase2.pth",
+      "sha256": "4bd9050780a945d9eb7ccd446b6a33a1b6526446401c536bbf96c9b8c65348f9",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed1_phase3.pth",
+      "sha256": "dc17c153e569a8a517480d065a20938b5fa644ba5add4d6e30d50c7724303763",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed1_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed1_phase4.pth",
+      "sha256": "401d72f1a9109cde227a92a2b70386695747a1eed5e2c502347856d477fd17ce",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed1_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed1_pretrain.pth",
+      "sha256": "89585022bf7168d7cb09497af22120f79ce738e6868b8d5d410d46f2bd3b30fc",
+      "size_bytes": 80261,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed2_phase1.pth",
+      "sha256": "ac38d9080e801c9a785427d22c947300d654d7f93fffe6dd69b2d62ff4921a8e",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed2_phase2.pth",
+      "sha256": "c5897bd558db455114c4d470fc06a8406db66f6279f19e2e202a777b1b6f9e3e",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed2_phase3.pth",
+      "sha256": "24887130d9d78d28e54073c661a14382d933cf1de4c48e5dec8c63c61821efc1",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed2_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed2_phase4.pth",
+      "sha256": "82441d63c1a89b0eac62e7102ea8c1eacf3c8899497a25180af117c39a93828d",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed2_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed2_pretrain.pth",
+      "sha256": "4fe1cd5592b376f4402888eae7c119199f2a70d4ead69e25d37b5ec30e89162a",
+      "size_bytes": 80261,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed3_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed3_phase1.pth",
+      "sha256": "733b8652020873fdd9a3da5b88741fabaac132310fa3f6360d0622f3e149c0cf",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed3_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed3_phase2.pth",
+      "sha256": "fda952862351cb995214becba8942c5730283ed32559040066f89348ad0f086d",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed3_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed3_phase3.pth",
+      "sha256": "98b5623d26aa8229c91c181d4f395457beb5ba0629777135a00a4c7f7d7f3dc2",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed3_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed3_phase4.pth",
+      "sha256": "f547e7aba281dcbb00622c1197fceb193a5d52ed37d23c1226a8b9c7095582ce",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed3_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed3_pretrain.pth",
+      "sha256": "cbc06fe395453beb45f8bb9206b196485a883e3a4b8fb2c45dc8ef06543e0490",
+      "size_bytes": 80261,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed4_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed4_phase1.pth",
+      "sha256": "c665158736e0e0fcccf7d3dd8d8b2ce2c04ebaba2ddd731016f5338044241f0f",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed4_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed4_phase2.pth",
+      "sha256": "b7b0b76d90034699b4d26a2d8a1c5cf7601642ae57848469d913d6d0fd85b394",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed4_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed4_phase3.pth",
+      "sha256": "4c0907052614a9b70047c9d3ab9751aeddc081b7f48945c5047a22e7eee1bc50",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed4_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed4_phase4.pth",
+      "sha256": "3dddf9dd1090ba7654332a8dcd156c4c6591c9ba4ddeafb349fe3f3361cdcf97",
+      "size_bytes": 80165,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_b_seed4_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_b_seed4_pretrain.pth",
+      "sha256": "3fcea30696cb2a6bf84b04b8759da5821928b148808149a9438330d50155a89b",
+      "size_bytes": 80261,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed0_phase1.pth",
+      "sha256": "2b9dcf1326546989d2cc62bccbc25330b28ef080fd5d5378ff666b1e75a12bd6",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed0_phase2.pth",
+      "sha256": "226acce1f44a37bec84be135e1b1efcba2249df26923c1b2bd85d8597325f481",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed0_phase3.pth",
+      "sha256": "8e83a6678795af4cb826f2929eff61da928ca5d1d197e83a16827faf53e0f077",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed0_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed0_phase4.pth",
+      "sha256": "f23f16460314ac6e038d59bc0276358dc34e6d49804d82e81a016d15762699df",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed0_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed0_pretrain.pth",
+      "sha256": "06be43a7a30f2020ccc740ec3ce22b50018aeae30af3e749ef2f26c1b4b5816e",
+      "size_bytes": 80277,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed1_phase1.pth",
+      "sha256": "15722361ee8218466dec9a8f22f6148ef47b9789f8de9fa8c7626602a3188113",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed1_phase2.pth",
+      "sha256": "a4e4094050cea29e45aada0f030715650bdb46b4be997c1a6298dd1e37928a80",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed1_phase3.pth",
+      "sha256": "9a9f33dd4cc447a2f26686c075a31add68433ece6db809d744c985d645c7803c",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed1_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed1_phase4.pth",
+      "sha256": "1dc063f7bcf7e6bc79b3a2ef58ebe43e6192caf4435732a139fe32f581f7faca",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed1_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed1_pretrain.pth",
+      "sha256": "f2d667593f946c0862c234fdf30e5d3cee6c8d0564753e8236cfaed3d5fe5f6f",
+      "size_bytes": 80277,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed2_phase1.pth",
+      "sha256": "2a4b38e714c5569925a676cbdf23aa35f781543a38fb94ebf1ad5033304f24ed",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed2_phase2.pth",
+      "sha256": "d8506baa2d201e5ebae0941666a41950d337d1fd009e663cc1c0dbc8713c5482",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed2_phase3.pth",
+      "sha256": "999729e75d393bd1752320806b8fae898922b7b44c1d5bc9a37dd2ffc496536d",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed2_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed2_phase4.pth",
+      "sha256": "67c6b98b096b3dd0c8d48f3bb70af785c3bd3039b01fbcba5d0fba390ff958a5",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed2_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed2_pretrain.pth",
+      "sha256": "6df301b73bbc46082a751dd5bdaf6dc0010268c6a35ae672800328b8f91c2dc1",
+      "size_bytes": 80277,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed3_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed3_phase1.pth",
+      "sha256": "f1ec33e6c927c5d64479346b72ff931b7c4a95fa6d6f4801b33e80930694a4b4",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed3_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed3_phase2.pth",
+      "sha256": "ecd40fa74111c6f599ca2df4f1bf6dd28d82afa1513350ee87d7ba51c3726b78",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed3_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed3_phase3.pth",
+      "sha256": "add9f577880c56f424a7be3c59ff9f39cbce204ce68f9f5e0f5979b3111062e8",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed3_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed3_phase4.pth",
+      "sha256": "27930b11a0e0044f06c4c2bb1381fd95e7213f55847628aacad19d3bae7acdaa",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed3_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed3_pretrain.pth",
+      "sha256": "e74f850a2465094e6831af59372373efd15e300c2c1b931c45b3341ad52021d1",
+      "size_bytes": 80277,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed4_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed4_phase1.pth",
+      "sha256": "9327097c02c3ff6451f3f2392eb21f6cad47ddb7c6b61096706ad052e8e1db76",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed4_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed4_phase2.pth",
+      "sha256": "940426f0c74755be8ba92cdbe67cebb63b2853b3e0f6d289a5e2287233c801a4",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed4_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed4_phase3.pth",
+      "sha256": "3c364e75919341bcef53a8c693a08db36efc1103aa29226586a36cce6af6229f",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed4_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed4_phase4.pth",
+      "sha256": "e0aadcd91e2e6c588b5e43227ea94c62054db9b61c82b902873325b4ad6a3a5a",
+      "size_bytes": 80245,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_s2_bp_seed4_pretrain.pth": {
+      "file": "rl_training/models/checkpoints/dqn_s2_bp_seed4_pretrain.pth",
+      "sha256": "8273c1b79a815798c34e36f17369c4875ed1ec1d887bce8efab1f31284aa8291",
+      "size_bytes": 80277,
+      "total_parameters": 18948,
+      "layers": {
+        "trunk.0.weight": [
+          128,
+          14
+        ],
+        "trunk.0.bias": [
+          128
+        ],
+        "trunk.2.weight": [
+          128,
+          128
+        ],
+        "trunk.2.bias": [
+          128
+        ],
+        "value.weight": [
+          1,
+          128
+        ],
+        "value.bias": [
+          1
+        ],
+        "advantage.weight": [
+          2,
+          128
+        ],
+        "advantage.bias": [
+          2
+        ],
+        "aux.weight": [
+          1,
+          128
+        ],
+        "aux.bias": [
+          1
+        ]
+      }
+    },
+    "dqn_v0r_seed0_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed0_phase1.pth",
+      "sha256": "6b165f79fde5db9d0ca615dfc3d5c6f1d3c532c8479c369f4c2284a6a496d931",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed0_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed0_phase2.pth",
+      "sha256": "4cb919c3839fad235f7b574fdf34bad7113f93535fc5e6255063564470093b3a",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed0_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed0_phase3.pth",
+      "sha256": "40c4764b486528239c75840d591838bbfe0dd57a3e92daaeb3ed1ea28d9781c8",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed0_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed0_phase4.pth",
+      "sha256": "8f2e1d865d8ecd464b8f3df91b5df8b4a299279df69e38b8865b19b5bf8f618f",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed1_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed1_phase1.pth",
+      "sha256": "dd6fe50b47aebfc3f455fdc3c682c033d52ca8e6fc5b05e15872d1a247266552",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed1_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed1_phase2.pth",
+      "sha256": "9b048b7eaf859c97e36d4769cb9429d4601d7f1210760d2ee5f10757d69edbfa",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed1_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed1_phase3.pth",
+      "sha256": "826a4a0ba8a8c14ebcbd8360fafbb2e3b956c2498bed2a1e1afbfcc78c188550",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed1_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed1_phase4.pth",
+      "sha256": "457231f251414dbec5ed1daef538a297737da028fa366d83442c9625ff152c0a",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed2_phase1.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed2_phase1.pth",
+      "sha256": "ebf5a19fc4dda5924d2f7ce90a8481b61ce2ad9ecc27bd6a06cbea937790ee8c",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed2_phase2.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed2_phase2.pth",
+      "sha256": "7e874bb4fcd8f8cbd955759794272d969a669f6ebf995687a11fa19deefd7730",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed2_phase3.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed2_phase3.pth",
+      "sha256": "c38773cf92430a4edd7a1d1d8f1d602152cc2a2c46ba23c628e1ad94a3f1f164",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
+    },
+    "dqn_v0r_seed2_phase4.pth": {
+      "file": "rl_training/models/checkpoints/dqn_v0r_seed2_phase4.pth",
+      "sha256": "77c673521007033bf6a20eb0c1961e6db3e733a5761e8eb72b55a8a8b6fcfd86",
+      "size_bytes": 78065,
+      "total_parameters": 18690,
+      "layers": {
+        "network.0.weight": [
+          128,
+          14
+        ],
+        "network.0.bias": [
+          128
+        ],
+        "network.2.weight": [
+          128,
+          128
+        ],
+        "network.2.bias": [
+          128
+        ],
+        "network.4.weight": [
+          2,
+          128
+        ],
+        "network.4.bias": [
+          2
+        ]
+      }
     }
+  },
+  "agents": {
+    "Base-0": [
+      "dqn_curriculum_phase4.pth"
+    ],
+    "Base": [
+      "dqn_v0r_seed0_phase4.pth",
+      "dqn_v0r_seed1_phase4.pth",
+      "dqn_v0r_seed2_phase4.pth"
+    ],
+    "Ext-steps": [
+      "dqn_s2_b_seed0_phase4.pth",
+      "dqn_s2_b_seed1_phase4.pth",
+      "dqn_s2_b_seed2_phase4.pth",
+      "dqn_s2_b_seed3_phase4.pth",
+      "dqn_s2_b_seed4_phase4.pth"
+    ],
+    "Ext-sec": [
+      "dqn_s2_bp_seed0_phase4.pth",
+      "dqn_s2_bp_seed1_phase4.pth",
+      "dqn_s2_bp_seed2_phase4.pth",
+      "dqn_s2_bp_seed3_phase4.pth",
+      "dqn_s2_bp_seed4_phase4.pth"
+    ]
+  },
+  "result_files": {
+    "results/stage4e_eval/evaluation_100/benchmark_traditional_vs_rl_raw.csv": "270e9a507623b4c28eab33c6ad17a8a80191fee18c5605fca325bf04d4d126f5",
+    "results/stage4e_eval/heldout2/benchmark_traditional_vs_rl_raw.csv": "bb729d67d6926772e03991782aedfc30fcfd89c27b51840df68d0b1b8ff992f3",
+    "results/stage4e_eval/tuning_run/benchmark_traditional_vs_rl_raw.csv": "5051064056fe028f40363692f7b0b1b95ccbcce8a0106f37a2e69c94b0051251",
+    "results/stage4f_eval/heldout/benchmark_traditional_vs_rl_raw.csv": "9ce2c5a60a3a180a6a28142670ce9b832004a2de1b9d0e138c69622fbf4f326e",
+    "results/stage4f_eval/shift_noise1.5/benchmark_traditional_vs_rl_raw.csv": "878897ddf84cc0e85003affe75fb0a18df6101a0a67133db7d8f0c735a75a8fc",
+    "results/stage4f_eval/shift_noise2/benchmark_traditional_vs_rl_raw.csv": "cf853b1ddf777ecb5481a5e15863943fb2b13ecd447e31d0b2320941a42761d9",
+    "results/stage4f_eval/shift_range1.2/benchmark_traditional_vs_rl_raw.csv": "4ffee0714c33c35068e6dcb188e51322b415062a23abec94c140850867b3ef1d",
+    "results/stage4f_eval/shift_size0.7/benchmark_traditional_vs_rl_raw.csv": "06f4c6d0f8cd4b78e3a20bed7636ba8df3417f998a28df9d9423f4d735447162",
+    "results/hp_validation_4e/calibration_diagnosis.csv": "bb0fcbde62a04b02195c47bafc823ecd8c37bf79889183751a1547bee5584246",
+    "results/hp_validation_4e/calibration_diagnosis_summary.json": "01e234612e94a5708e69d16389132d943acc8f5b1c112bd3cf6b41582b89ac8b",
+    "results/hp_validation_4e/hp_validation_shots.csv": "1a8505394335ce70bbe60935001b8de997c91be7bf72b5843f9f8632663279e0",
+    "results/hp_validation_4e/hp_validation_summary.json": "dc30091c8d36e4cb3a757c79b0ad83c940f3372b6c7132f55527186dd7829552",
+    "results/decision_cost_benchmark.json": "7b33d02dd6f106cea26bb02ec28da028faee5b41f94afbc7a76fa44fafd06696",
+    "results/paper_numbers.json": "7a3b32d79d48da5a46c794fe60e840c3602f9358df7814fcf72e4cef3b45a0f2",
+    "results/discussion_analysis.json": "ae68d47721b2edab1fcda0eebdd9192864470db8e1f2b7f8163e7499f37aa5c3"
   }
 }
